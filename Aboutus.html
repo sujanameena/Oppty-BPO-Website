@@ -516,7 +516,8 @@
     </div>
   </div>
 </section>
-<!--Footer section-->
+    <!-- Footer Section -->
+ <!--Footer section-->
 <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-grid">
@@ -567,8 +568,79 @@
                 </div>
             </div>
         </div>
-    </footer>
+        <div class="social-media" style="margin-left: 20px;">
+            <h5>Social Media</h5>
+        <div class="social-icons" aria-label="Social links" style="margin-top:18px;">
+            <style>
+                .social-icons { display:flex; gap:10px; align-items:center; }
+                .social-link {
+                    width:20px; height:20px; display:inline-flex; align-items:center; justify-content:center;
+                    border-radius:50%; color:#fff; text-decoration:none; font-size:18px; box-shadow:0 2px 6px rgba(0,0,0,.15);
+                    transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+                }
+                .social-link:focus { outline:3px solid rgba(0,0,0,.12); outline-offset:2px; }
+                .social-link:hover { transform:translateY(-3px); box-shadow:0 6px 18px rgba(0,0,0,.18); opacity:0.98; }
 
+                /* brand colors */
+                .social-link.linkedin  { background:#0077B5; }
+                .social-link.twitter   { background:#1DA1F2; }
+                .social-link.facebook  { background:#1877F2; }
+                .social-link.instagram {
+                    background: radial-gradient(circle at 15% 15%, #feda75 0%, #f58529 20%, #dd2a7b 50%, #515BD4 100%);
+                }
+                .social-link.youtube   { background:#FF0000; }
+                .social-link.github    { background:grey; }
+
+                /* icon color override to ensure white icons */
+                .social-link i { color:#fff; font-size:10px; }
+            </style>
+
+            <a class="social-link linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+               title="LinkedIn" aria-label="LinkedIn">
+                <i class="fa fa-linkedin"></i>
+            </a>
+
+            <a class="social-link twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+               title="Twitter" aria-label="Twitter">
+                <i class="fa fa-twitter"></i>
+            </a>
+
+            <a class="social-link facebook" href="https://www.facebook.com/wnsglobalservices/" target="_blank" rel="noopener noreferrer"
+               title="Facebook" aria-label="Facebook">
+                <i class="fa fa-facebook"></i>
+            </a>
+
+            <a class="social-link instagram" href="https://www.instagram.com/procareer.tech/#" target="_blank" rel="noopener noreferrer"
+               title="Instagram" aria-label="Instagram">
+                <i class="fa fa-instagram"></i>
+            </a>
+
+            <a class="social-link youtube" href="https://www.youtube.com/channel/UC5i64n89D6YSoiyGA5JBxMQ" target="_blank" rel="noopener noreferrer"
+               title="YouTube" aria-label="YouTube">
+                <i class="fa fa-youtube-play"></i>
+            </a>
+
+            <a class="social-link github" href="https://github.com/" target="_blank" rel="noopener noreferrer"
+               title="GitHub" aria-label="GitHub">
+                <i class="fa fa-github"></i>
+            </a>
+
+            <script>
+                // Ensure links open in a new tab reliably and safely (also supports cases where target attr may be removed)
+                (function(){
+                    document.querySelectorAll('.social-link').forEach(function(el){
+                        el.addEventListener('click', function(e){
+                            e.preventDefault();
+                            var url = el.href;
+                            // open in new tab with noopener + noreferrer for security
+                            window.open(url, '_blank', 'noopener,noreferrer');
+                        });
+                    });
+                })();
+            </script>
+        </div>
+        </div>
+    </footer>
     <!-- Link to your external JavaScript file -->
     <script src="Aboutus.js"></script>
 </body>

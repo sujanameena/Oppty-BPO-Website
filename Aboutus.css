@@ -1144,8 +1144,8 @@ body {
 }
 /*footer section*/
 .site-footer {
-    background-color: var(--dark-bg);
-    color: var(--text-light);
+    background-color: black;
+    color: #ffffff;
     padding: 80px 0;
     font-size: 1rem;
 }
