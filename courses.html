@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses - Bridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/dripicons@2.0.0/dripicons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Add this style block inside <head> for exact look -->
+    <style>
+        .courses-page-header {
+            background: #28ac75;
+            padding: 80px 0 60px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .courses-page-header h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 0;
+            letter-spacing: -2px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+        }
+
+        .courses-main-layout {
+            background: #f7f7f7;
+            padding: 60px 0;
+        }
+
+        .courses-content {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+            padding: 32px;
+        }
+
+        .course-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+        }
+
+        .view-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .view-icon {
+            width: 40px;
+            height: 40px;
+            background: #f7f7f7;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            color: #999;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .view-icon.active {
+            background: #ffbe30;
+            color: #fff;
+        }
+
+        .results-info {
+            margin-left: 24px;
+            font-size: 16px;
+            color: #888;
+        }
+
+        .sort-dropdown select {
+            border-radius: 8px;
+            padding: 8px 16px;
+            border: 1px solid #eee;
+            font-size: 16px;
+        }
+
+        .courses-grid,
+        .courses-list {
+            display: none;
+        }
+
+        .courses-grid.active {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .courses-list.active {
+            display: block;
+        }
+
+        .course-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+
+        .course-card:hover {
+            box-shadow: 0 4px 32px rgba(0, 0, 0, 0.10);
+        }
+
+        .course-card-image {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .course-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-price {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: #ffbe30;
+            color: #fff;
+            font-weight: 700;
+            padding: 6px 18px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .course-price.free {
+            background: #2ecc71;
+        }
+
+        .course-card-body {
+            padding: 24px;
+        }
+
+        .course-instructor {
+            font-size: 15px;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .course-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 8px 0 12px 0;
+            color: #222;
+        }
+
+        .course-description {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 16px;
+        }
+
+        .course-category {
+            font-size: 14px;
+            color: #ffbe30;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .course-list-item {
+            display: flex;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+            margin-bottom: 32px;
+            overflow: hidden;
+        }
+
+        .course-list-image {
+            position: relative;
+            width: 220px;
+            height: 180px;
+            flex-shrink: 0;
+        }
+
+        .course-list-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .course-list-content {
+            padding: 24px;
+            flex: 1;
+        }
+
+        .courses-sidebar {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 24px rgba(0, 0, 0, 0.06);
+            padding: 32px;
+        }
+
+        .sidebar-form h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .sidebar-form p {
+            font-size: 15px;
+            color: #888;
+            margin-bottom: 18px;
+        }
+
+        .sidebar-form .form-group {
+            margin-bottom: 16px;
+        }
+
+        .sidebar-form input {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            font-size: 16px;
+        }
+
+        .btn-register-cta {
+            background: #ffbe30;
+            color: #fff;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 0;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .sidebar-categories h3,
+        .sidebar-recommendations h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px 0;
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            color: #222;
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .category-list a:hover {
+            color: #ffbe30;
+        }
+
+        .sidebar-recommendations .recommendation-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+
+        .recommendation-image img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 16px;
+        }
+
+        .recommendation-content h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+        }
+
+        .recommendation-content .price {
+            font-size: 15px;
+            color: #ffbe30;
+            font-weight: 700;
+        }
+
+        .recommendation-content .price.free {
+            color: #2ecc71;
+        }
+
+        @media (max-width: 991px) {
+            .courses-grid.active {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .courses-grid.active {
+                grid-template-columns: 1fr;
+            }
+
+            .courses-content,
+            .courses-sidebar {
+                padding: 16px;
+            }
+
+            .course-card-body,
+            .course-list-content {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="Home.html">
+                    <img src="https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/logo.png" alt="Bridge Logo">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto me-4">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="courses.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="instructor.html">Instructors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about-us.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pricing.html">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn-register">Register now</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Courses Page Header -->
+    <section class="courses-page-header">
+        <div class="container">
+            <h1>All Courses</h1>
+        </div>
+    </section>
+
+    <!-- Main Courses Layout -->
+    <section class="courses-main-layout">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="courses-content">
+                        <!-- Course Controls -->
+                        <div class="course-controls">
+                            <div class="view-controls">
+                                <div class="view-icon active" id="gridView" onclick="toggleView('grid')">
+                                    <i class="fas fa-th"></i>
+                                </div>
+                                <div class="view-icon" id="listView" onclick="toggleView('list')">
+                                    <i class="fas fa-list"></i>
+                                </div>
+                                <span class="results-info">Showing 1 – 9 of 12</span>
+                            </div>
+                            <div class="sort-dropdown">
+                                <select id="sortSelect" onchange="sortCourses()">
+                                    <option value="newest">Newly Published</option>
+                                    <option value="a-z">A-Z</option>
+                                    <option value="z-a">Z-A</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Courses Grid -->
+                        <div class="courses-grid active" id="coursesGrid">
+                            <!-- Course cards will be generated here -->
+                        </div>
+
+                        <!-- Courses List -->
+                        <div class="courses-list" id="coursesList">
+                            <!-- List items will be generated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="courses-sidebar">
+                        <!-- Registration Form -->
+                        <div class="sidebar-form">
+                            <h3>Courses for Free</h3>
+                            <p>The best tutors in town.</p>
+                            <form id="courseForm">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Your name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Your email address" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" name="phone" placeholder="Your phone number" required>
+                                </div>
+                                <button type="submit" class="btn-register-cta" style="width: 100%;">Register now</button>
+                            </form>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="sidebar-categories">
+                            <h3>Categories</h3>
+                            <ul class="category-list">
+                                <li><a href="#" onclick="filterByCategory('business')">Business</a></li>
+                                <li><a href="#" onclick="filterByCategory('design')">Design</a></li>
+                                <li><a href="#" onclick="filterByCategory('education')">Education</a></li>
+                                <li><a href="#" onclick="filterByCategory('languages')">Languages</a></li>
+                                <li><a href="#" onclick="filterByCategory('software')">Software</a></li>
+                                <li><a href="#" onclick="filterByCategory('tutoring')">Tutoring</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- You May Like -->
+                        <div class="sidebar-recommendations">
+                            <h3>You may like</h3>
+                            <div class="recommendation-item">
+                                <div class="recommendation-image">
+                                    <img src="https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-12.jpg" alt="Experiences Education">
+                                </div>
+                                <div class="recommendation-content">
+                                    <h4>Experiences Education</h4>
+                                    <span class="price">$200</span>
+                                </div>
+                            </div>
+                            <div class="recommendation-item">
+                                <div class="recommendation-image">
+                                    <img src="https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-11.jpg" alt="Legacy of Excellence">
+                                </div>
+                                <div class="recommendation-content">
+                                    <h4>Legacy of Excellence.</h4>
+                                    <span class="price">$200</span>
+                                </div>
+                            </div>
+                            <div class="recommendation-item">
+                                <div class="recommendation-image">
+                                    <img src="https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-11.jpg" alt="Motivated achievers">
+                                </div>
+                                <div class="recommendation-content">
+                                    <h4>Motivated achievers.</h4>
+                                    <span class="price free">Free</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-column">
+                        <h2>About School</h2>
+                        <p>Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros
+                        </p>
+
+                        <h3>Contact details</h3>
+                        <ul class="footer-contact">
+                            <li><i class="dripicons-pin footer-icon"></i> Langebrogade 1DK, Copenhagen</li>
+                            <li><i class="dripicons-phone footer-icon"></i> +0080-33-666-234</li>
+                            <li><i class="dripicons-mail footer-icon"></i> bridge@example.com</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-column">
+                        <h2>Popular Courses</h2>
+                        <div class="footer-course">
+                            <a href="#" class="course-title-footer">Computer Science</a>
+                            <span class="course-instructor-footer">Brenda Harris</span>
+                        </div>
+                        <div class="footer-course">
+                            <a href="#" class="course-title-footer">Business English</a>
+                            <span class="course-instructor-footer">Brenda Harris</span>
+                        </div>
+                        <div class="footer-course">
+                            <a href="#" class="course-title-footer">Photoshop Tutorial</a>
+                            <span class="course-instructor-footer">Sarah Rogers</span>
+                        </div>
+                        <div class="footer-course">
+                            <a href="#" class="course-title-footer">Business Course</a>
+                            <span class="course-instructor-footer">Sarah Rogers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-column">
+                        <h2>Useful Links</h2>
+                        <ul class="footer-links">
+                            <li><a href="#">Building an Excellence</a></li>
+                            <li><a href="#">Choose Your Destination</a></li>
+                            <li><a href="#">Believe in Yourself</a></li>
+                            <li><a href="#">Fast Way of Learning!</a></li>
+                            <li><a href="#">Educating Leaders</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-column">
+                        <h2>Our Place</h2>
+                        <img src="https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/footer-map.png" alt="Our Place Map" style="width: 100%; border-radius: 10px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; 2020 Qode Interactive.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-social">
+                            <span>Center: (555) 789 6754</span>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+        // Course data matching the reference website
+        const courses = [
+            {
+                id: 1,
+                title: "Computer Science",
+                instructor: "Brenda Harris",
+                price: "Free",
+                category: "Software",
+                description: "Lorem Ipsn gravida nibh vel velit auctor aliquet.Aenean soll",
+                image: "https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-1-1.jpg"
+            },
+            {
+                id: 2,
+                title: "Business English",
+                instructor: "Brenda Harris",
+                price: "$200",
+                category: "Languages",
+                description: "Lorem Ipsn gravida nibh vel velit auctor aliquet.Aenean soll",
+                image: "https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-2.jpg"
+            },
+            {
+                id: 3,
+                title: "Photoshop Tutorial",
+                instructor: "Sarah Rogers",
+                price: "$200",
+                category: "Business",
+                description: "Lorem Ipsn gravida nibh vel velit auctor aliquet.Aenean soll",
+                image: "https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-3.jpghttps://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-3.jpg"
+            },
+            {
+                id: 4,
+                title: "Business Course",
+                instructor: "Sarah Rogers",
+                price: "$200",
+                category: "Business",
+                description: "Lorem Ipsn gravida nibh vel velit auctor aliquet.Aenean soll",
+                image: "https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-4.jpg"
+            },
+            {
+                id: 5,
+                title: "Academic English",
+                instructor: "Sem Rodriges",
+                price: "$200",
+                category: "Languages",
+                description: "Lorem Ipsn gravida nibh vel velit auctor aliquet.Aenean soll",
+                image: "https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-5.jpg"
+            },
+            {
+                id: 6,
+                title: "Learn Spanish",
+                instructor: "Bred Harson",
+                price: "$200",
+                category: "Languages",
+                description: "Lorem Ipsn gravida nibh vel velit auctor aliquet.Aenean soll",
+                image: "https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-6.jpg"
+            },
+            {
+                id: 7,
+                title: "Social Computing",
+                instructor: "Amanda Jonson",
+                price: "$200",
+                category: "Business",
+                description: "Lorem Ipsn gravida nibh vel velit auctor aliquet.Aenean soll",
+                image: "https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-7.jpg"
+            },
+            {
+                id: 8,
+                title: "Java, html, css",
+                instructor: "Victor Green",
+                price: "$200",
+                category: "Software",
+                description: "Lorem Ipsn gravida nibh vel velit auctor aliquet.Aenean soll",
+                image: "https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-8.jpg"
+            },
+            {
+                id: 9,
+                title: "Experience Design",
+                instructor: "Victor Green",
+                price: "$200",
+                category: "Design",
+                description: "Lorem Ipsn gravida nibh vel velit auctor aliquet.Aenean soll",
+                image: "https://bridge369.qodeinteractive.com/wp-content/uploads/2020/06/courses-img-9.jpg"
+            }
+        ];
+
+        let currentCourses = [...courses];
+        let currentView = 'grid';
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCourses();
+
+            // Form submission
+            document.getElementById('courseForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Registration successful! We will contact you soon.');
+                this.reset();
+            });
+        });
+
+        // Render courses based on current view
+        function renderCourses() {
+            if (currentView === 'grid') {
+                renderGridView();
+            } else {
+                renderListView();
+            }
+        }
+
+        // Render grid view
+        function renderGridView() {
+            const grid = document.getElementById('coursesGrid');
+            grid.innerHTML = currentCourses.map(course => `
+                <div class="course-card">
+                    <div class="course-card-image">
+                        <img src="${course.image}" alt="${course.title}">
+                        <div class="course-price ${course.price === 'Free' ? 'free' : ''}">${course.price}</div>
+                    </div>
+                    <div class="course-card-body">
+                        <span class="course-instructor">${course.instructor}</span>
+                        <h3 class="course-title">${course.title}</h3>
+                        <p class="course-description">${course.description}</p>
+                        <span class="course-category">${course.category}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render list view
+        function renderListView() {
+            const list = document.getElementById('coursesList');
+            list.innerHTML = currentCourses.map(course => `
+                <div class="course-list-item">
+                    <div class="course-list-image">
+                        <img src="${course.image}" alt="${course.title}">
+                        <div class="course-price ${course.price === 'Free' ? 'free' : ''}">${course.price}</div>
+                    </div>
+                    <div class="course-list-content">
+                        <span class="course-instructor">${course.instructor}</span>
+                        <h3 class="course-title">${course.title}</h3>
+                        <p class="course-description">${course.description}</p>
+                        <span class="course-category">${course.category}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Toggle between grid and list view
+        function toggleView(view) {
+            currentView = view;
+
+            // Update active states
+            document.getElementById('gridView').classList.toggle('active', view === 'grid');
+            document.getElementById('listView').classList.toggle('active', view === 'list');
+
+            // Show/hide containers
+            document.getElementById('coursesGrid').classList.toggle('active', view === 'grid');
+            document.getElementById('coursesList').classList.toggle('active', view === 'list');
+
+            renderCourses();
+        }
+
+        // Sort courses
+        function sortCourses() {
+            const sortValue = document.getElementById('sortSelect').value;
+
+            switch (sortValue) {
+                case 'a-z':
+                    currentCourses.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+                case 'z-a':
+                    currentCourses.sort((a, b) => b.title.localeCompare(a.title));
+                    break;
+                case 'newest':
+                default:
+                    currentCourses = [...courses]; // Reset to original order
+                    break;
+            }
+
+            renderCourses();
+        }
+
+        // Filter by category
+        function filterByCategory(category) {
+            if (category === 'all') {
+                currentCourses = [...courses];
+            } else {
+                currentCourses = courses.filter(course =>
+                    course.category.toLowerCase() === category.toLowerCase()
+                );
+            }
+            renderCourses();
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.main-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>
