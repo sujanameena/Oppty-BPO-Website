@@ -3,18 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oppty BPO | Human-Led Transformation</title>
-
+    <title>About Us.com</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/dripicons@2.0.0/dripicons.css">
+    <link href="https://fonts.googleapis.com/css?family=Dripicons" rel="stylesheet">
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Link to your external CSS file -->
-    <link rel="stylesheet" href="Aboutus.css">
+    <link rel="stylesheet" href="aboutUs.css">
 </head>
 <body>
+<!-- header start -->
+  <header>
+            <div class="header-container">
+                <nav class="navbar" style="background: transparent; border: none; justify-content: flex-start; color: #fff;"></nav>
+                    <div class="container-fluid d-flex align-items-center" style="justify-content: flex-start;width:10%;">
+                        <button id="customHamburger" class="navbar-toggler border-0 shadow-none" type="button"
+                            aria-label="Toggle navigation" style="outline: none; background: transparent; padding: 10px; width: 56px; height: 56px; display: inline-flex; align-items: center; justify-content: center;">
+                            <span class="hamburger-lines" style="display:inline-block;width:34px;height:24px;position:relative;">
+                                <span style="position:absolute;left:0;top:0;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                                <span style="position:absolute;left:0;top:10px;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                                <span style="position:absolute;left:0;top:20px;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                            </span>
+                        </button>
+                    </div>
+                </nav>
+                <!-- Sidebar -->
+                <div id="sidebar" class="sidebar">
+                    <ul class="sidebar-menu">
+                        
+                         <li class="nav_bar_list_item"><a class="anchor" href="home.html">Home</a></li>
+                         <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
+                         <li class="nav_bar_list_item"><a class="anchor" href="capabilities.html">Capabilities-Service</a></li>
+                         <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
+                         <li class="nav_bar_list_item"><a class="anchor" href="perspectives.html">Perspectives</a></li>
+                       
+                    </ul>
+                    <style>
+                        .expandable {
+                            position: relative;
+                        }
 
+                        .expandable .expand-btn {
+                            transition: opacity 0.2s;
+                        }
+
+                        .expandable:hover .expand-btn {
+                            display: inline-block !important;
+                        }
+
+                        .expand-content li a {
+                            font-size: 0.95em;
+                            color: #555;
+                        }
+                    </style>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var expandable = document.querySelector('.expandable');
+                            var expandBtn = expandable.querySelector('.expand-btn');
+                            var expandContent = expandable.querySelector('.expand-content');
+                            var expandIcon = expandable.querySelector('.expand-icon');
+
+                            expandBtn.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                if (expandContent.style.display === 'none' || expandContent.style.display === '') {
+                                    expandContent.style.display = 'block';
+                                    expandIcon.innerHTML = '&#9660;';
+                                } else {
+                                    expandContent.style.display = 'none';
+                                    expandIcon.innerHTML = '&#9654;';
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+                <img src="assets/oppty.png" alt="OpptyBPO-Logo" class="logo-img" style="margin-right: -51px;">
+                <div class="search-button">
+                    <button id="searchBtn" class="search-icon-btn" type="button" aria-label="Search"
+                        style="border: none; box-shadow: none;">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div class="register-now">
+                    <button class="btn btn-primary" href="#">contact us</button>
+                </div>
+            </div>
+        </header>
+ <!-- header end -->
     <section class="hero-section">
         
         <!-- Background Video -->
@@ -76,7 +155,7 @@
         <!-- The container for the header keeps it centered -->
         <div class="content-container">
             <div class="section-header">
-                <h2>Awards & Recognition</h2>
+                <h2 style="color:#ffffff;">Awards & Recognition</h2>
                 <a href="#" class="link-arrow">View All <span>&nearr;</span></a>
             </div>
         </div>
@@ -176,7 +255,7 @@
         <!-- The container keeps the header and controls centered -->
         <div class="content-container">
             <div class="section-header">
-                <h2>In the News</h2>
+                <h2 style="color:#ffffff;">In the News</h2>
                 <a href="#" class="link-arrow">Explore More <span>&nearr;</span></a>
             </div>
         </div>
@@ -516,7 +595,6 @@
     </div>
   </div>
 </section>
-    <!-- Footer Section -->
  <!--Footer section-->
 <footer class="site-footer">
         <div class="footer-container">
@@ -642,6 +720,6 @@
         </div>
     </footer>
     <!-- Link to your external JavaScript file -->
-    <script src="Aboutus.js"></script>
+    <script src="aboutUs.js"></script>
 </body>
 </html>

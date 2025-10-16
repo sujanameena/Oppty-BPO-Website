@@ -282,3 +282,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // This script confirms that the page has loaded correctly.
     console.log("Footer loaded successfully.");
 });
+// hamburger
+document.addEventListener('DOMContentLoaded', function () {
+    const hamburger = document.getElementById('customHamburger');
+    const sidebar = document.getElementById('sidebar');
+    document.addEventListener('click', function (e) {
+        if (hamburger.contains(e.target)) {
+            sidebar.classList.toggle('active');
+        } else if (!sidebar.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+});
