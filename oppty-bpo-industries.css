@@ -115,7 +115,7 @@ body {
 /* ensure header sits above the fixed video */
 header {
     position: relative;
-    z-index: 3;
+    z-index: 10;
 }
 
 /* small responsiveness tweak for very small screens */
@@ -342,11 +342,11 @@ header {
     height:500px;
     width:100%;
     display:flex;
-    flex-direction:row;
-    gap:24px;
-    align-items:stretch;
-    justify-content:space-between;
-    flex-wrap:nowrap;
+    /* flex-direction:row; */
+    /* gap:24px; */
+    /* align-items:stretch; */
+    /* justify-content:space-between; */
+    /* flex-wrap:nowrap; */
 }
 
 /* ensure the two columns split evenly */
@@ -367,7 +367,7 @@ header {
     }
 }
 .advantage-image-container{
-    width:50%;
+    width:30%;
     height:90%;
     display:flex;
     margin:80px 0px 0px 100px;
@@ -377,6 +377,13 @@ header {
     height:200px;
     display:flex;
     flex-direction:column;
-    justify-content:flex-end;
-    align-items:flex-end;
+    /* justify-content:flex-end; */
+    /* align-items:flex-end; */
+    margin:100px 0px 0px -120px;
+    font-size: 18px;
+    color: #ffffff;
+    gap:20px;
+    line-height: 40px;
 }
+/* footer section */
+
