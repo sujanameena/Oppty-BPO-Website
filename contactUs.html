@@ -277,55 +277,58 @@
         <p class="map-subtitle">Discover our locations worldwide</p>
 
         <div class="world-map">
-            <img src="assets/map.svg" alt="World Map" class="map-image">
+            <!-- <img src="assets/map.svg" alt="World Map" class="map-image"> -->
 
             <!-- Location dots - corrected positions -->
-            <div class="location-dot india" data-country="india" style="top:42%; left:76%;"></div>
-            <div class="location-label" data-country="india" style="top:38%; left:76%;">India</div>
+            <div class="location-dot india" data-country="india" style="top:424%; left:84%;"></div>
+            <div class="location-label" data-country="india" style="top:445%; left:87%;">India</div>
 
-            <div class="location-dot canada" data-country="canada" style="top:22%; left:23%;"></div>
-            <div class="location-label" data-country="canada" style="top:18%; left:23%;">Canada</div>
+            <div class="location-dot canada" data-country="canada" style="top:230%; left:41%;"></div>
+            <div class="location-label" data-country="canada" style="top:253%; left:45%;">Canada</div>
 
-            <div class="location-dot south-africa" data-country="south-africa" style="top:67%; left:55%;"></div>
-            <div class="location-label" data-country="south-africa" style="top:63%; left:55%;">South Africa</div>
+            <div class="location-dot south-africa" data-country="south-africa" style="top:756%; left:70%;"></div>
+            <div class="location-label" data-country="south-africa" style="top:777%; left:75%;">South Africa</div>
 
-            <div class="location-dot australia" data-country="australia" style="top:72%; left:85%;"></div>
-            <div class="location-label" data-country="australia" style="top:68%; left:85%;">Australia</div>
+            <div class="location-dot australia" data-country="australia" style="top:723%; left:94%;"></div>
+            <div class="location-label" data-country="australia" style="top:744%; left:98%;">Australia</div>
 
-            <div class="location-dot malaysia" data-country="malaysia" style="top:50%; left:78%;"></div>
-            <div class="location-label" data-country="malaysia" style="top:46%; left:78%;">Malaysia</div>
+            <div class="location-dot malaysia" data-country="malaysia" style="top:529%; left:92%;"></div>
+            <div class="location-label" data-country="malaysia" style="top:548%; left:96%;">Malaysia</div>
 
-            <div class="location-dot china" data-country="china" style="top:32%; left:78%;"></div>
-            <div class="location-label" data-country="china" style="top:28%; left:78%;">China</div>
+            <div class="location-dot china" data-country="china" style="top:384%; left:90%;"></div>
+            <div class="location-label" data-country="china" style="top:408%; left:93%;">China</div>
 
-            <div class="location-dot usa" data-country="usa" style="top:33%; left:25%;"></div>
-            <div class="location-label" data-country="usa" style="top:29%; left:25%;">USA</div>
+            <div class="location-dot usa" data-country="usa" style="top:325%; left:39%;"></div>
+            <div class="location-label" data-country="usa" style="top:350%; left:45%;">United States</div>
 
-            <div class="location-dot poland" data-country="poland" style="top:28%; left:55%;"></div>
-            <div class="location-label" data-country="poland" style="top:24%; left:55%;">Poland</div>
+            <div class="location-dot poland" data-country="poland" style="top:220%; left:68%;"></div>
+            <div class="location-label" data-country="poland" style="top:244%; left:71%;">Poland</div>
 
-            <div class="location-dot switzerland" data-country="switzerland" style="top:30%; left:52%;"></div>
-            <div class="location-label" data-country="switzerland" style="top:26%; left:52%;">Switzerland</div>
+            <div class="location-dot switzerland" data-country="switzerland" style="top:277%; left:67%;"></div>
+            <div class="location-label" data-country="switzerland" style="top:299%; left:62%;">Switzerland</div>
 
-            <div class="location-dot turkey" data-country="turkey" style="top:35%; left:58%;"></div>
-            <div class="location-label" data-country="turkey" style="top:31%; left:58%;">Turkey</div>
+            <div class="location-dot turkey" data-country="turkey" style="top:319%; left:72%;"></div>
+            <div class="location-label" data-country="turkey" style="top:344%; left:75%;">Turkey</div>
 
-            <div class="location-dot chennai" data-country="chennai" style="top:48%; left:77%;"></div>
-            <div class="location-label" data-country="chennai" style="top:44%; left:77%;">Chennai</div>
+            <div class="location-dot costa-rica" data-country="costa-rica" style="top:459%; left:45%;"></div>
+            <div class="location-label" data-country="costa-rica" style="top:477%; left:50%;">Costa Rica</div>
 
-            <div class="location-dot rajasthan" data-country="rajasthan" style="top:40%; left:74%;"></div>
-            <div class="location-label" data-country="rajasthan" style="top:36%; left:74%;">Rajasthan</div>
+            <div class="location-dot uae" data-country="uae" style="top:404%; left:77%;"></div>
+            <div class="location-label" data-country="uae" style="top:430%; left:79%;">UAE</div>
 
-            <div class="location-dot sri-lanka" data-country="sri-lanka" style="top:50%; left:77%;"></div>
-            <div class="location-label" data-country="sri-lanka" style="top:46%; left:77%;">Sri Lanka</div>
+            <div class="location-dot philippines" data-country="philippines" style="top:479%; left:96%;"></div>
+            <div class="location-label" data-country="philippines" style="top:500%; left:100%;">Philippines</div>
         </div>
 
         <!-- Info panel -->
         <div class="location-info-panel" id="locationPanel" aria-hidden="true">
             <div class="info-content">
-                <h3 id="locationName"></h3>
-                <p id="locationAddress"></p>
-                <button class="explore-btn" id="exploreBtn">Explore More</button>
+                <h3 id="locationName" style="font-size: 18px;font-family: Poppins, sans-serif;"></h3>
+                <p id="locationAddress" style="font-size: 14px;font-family: Poppins, sans-serif;"></p>
+                <a href="#" class="explore-btn" id="exploreBtn" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    Explore More
+                    <i class="fa fa-caret-right" style="margin-left: 8px;"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -335,13 +338,18 @@
 /* expanded background and intro */
 .world-map-section {
     width: 100%;
-    padding: 100px 20px;
-    background: linear-gradient(135deg, #fff 0%, #fff 60%, #fff 100%);
-    background-size: cover;
-    min-height: 65em;
-    box-sizing: border-box;
-    position: relative;
-    color: #fff;
+    /* padding: 100px 20px; */
+    /* background: linear-gradient(135deg, #fff 0%, #fff 60%, #fff 100%); */
+    background-size: 60%;
+    background-position: 450px center;
+    min-height: 38em;
+    /* box-sizing: border-box; */
+    /* position: relative; */
+    /* color: #fff; */
+    background-image: url('assets/map.svg');
+    background-color: #ffffff;
+    /* background-attachment: fixed; */
+    
 }
 
 /* new intro container (separate heading/description) */
@@ -382,10 +390,10 @@
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    background: rgba(255,255,255,0.03);
+    /* background: rgba(255,255,255,0.03); */
     border-radius: 15px;
     padding: 24px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+    /* box-shadow: 0 30px 60px rgba(0,0,0,0.25); */
 }
 
 .map-image {
@@ -398,10 +406,10 @@
 /* dots */
 .location-dot {
     position: absolute;
-    width: 16px;
-    height: 16px;
-    background: #ff4757;
-    border: 3px solid white;
+    width: 12px;
+    height: 12px;
+    background: #000000;
+    border: 1px solid white;
     border-radius: 50%;
     cursor: pointer;
     transform: translate(-50%, -50%);
@@ -414,22 +422,23 @@
     box-shadow: 0 8px 28px rgba(255,71,87,0.35);
 }
 .location-dot.active {
-    background: #2ed573;
-    box-shadow: 0 8px 28px rgba(46,213,115,0.25);
+    background: #f76e11;
+    /* box-shadow: 0 8px 28px rgba(46,213,115,0.25); */
 }
 
 /* labels (country names on the map) */
 .location-label {
     position: absolute;
     transform: translate(-50%, -100%);
-    background: linear-gradient(90deg,#f76e11,#ff8c42);
-    color: #fff;
-    padding: 6px 10px;
+    /* background: linear-gradient(90deg,#f76e11,#ff8c42); */
+    color: #000000;
+    /* padding: 6px 10px; */
+    padding: 6px 10px 0px 10px;
     border-radius: 16px;
     font-size: 0.85rem;
     white-space: nowrap;
     z-index: 12;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    /* box-shadow: 0 6px 18px rgba(0,0,0,0.25); */
     cursor: pointer;
     transition: transform 0.15s ease, opacity 0.15s ease;
     opacity: 0.95;
@@ -443,16 +452,16 @@
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.96); /* removed black */
-    color: #222;
+    background: #000000; /* removed black */
+    color: #ffffff;
     padding: 22px;
     border-radius: 10px;
     width: 320px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.25s ease;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(0,0,0,0.06);
+    /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12); */
+    /* border: 1px solid rgba(0,0,0,0.06); */
     z-index: 20;
 }
 .location-info-panel.show {
@@ -470,15 +479,15 @@
 .info-content p {
     margin: 0 0 16px 0;
     line-height: 1.5;
-    color: #333;
+    color: #ffffff;
     font-size: 0.95rem;
 }
 .explore-btn {
-    background: linear-gradient(45deg,#f76e11,#ff8c42);
+    /* background: linear-gradient(45deg,#f76e11,#ff8c42); */
     color: #fff;
     border: none;
-    padding: 10px 14px;
-    border-radius: 24px;
+    /* padding: 10px 14px; */
+    /* border-radius: 24px; */
     cursor: pointer;
     font-weight: 600;
     width: 100%;
@@ -504,67 +513,67 @@
 const locationData = {
     india: {
         name: "India",
-        address: "Multiple locations across major cities including Mumbai, Delhi, Bangalore, and Chennai. Serving as our primary development and operations hub.",
+        address: "Global Headquarters:Plant No. 10/11, Gate No. 4,Godrej & Boyce Complex,Pirojshanagar, Vikhroli (West),Mumbai – 400 079Tel: +91 22 6826 2100Fax: +91 22 2518 8307",
         details: "Our largest operational center with 24/7 support services."
     },
     canada: {
         name: "Canada",
-        address: "Toronto and Vancouver offices providing North American market expertise and client services.",
+        address: "145, King Street West, Suite 2701, Toronto, ON, M5H 1J8, Canada",
         details: "Strategic location for North American business expansion."
     },
     "south-africa": {
         name: "South Africa",
-        address: "Cape Town and Johannesburg offices serving the African continent with multilingual support services.",
+        address: "2nd & 3rd floor, Bridge Park, ERF 6993, Portion of ERF 6992, Montague Gardens, Century City, 7441, South Africa.Tel: +27 21 527 6600",
         details: "Gateway to African markets with diverse language capabilities."
     },
     australia: {
         name: "Australia",
-        address: "Sydney and Melbourne locations offering Asia-Pacific region coverage and specialized IT services.",
+        address: "OPPTY Global Services (Australia) Pty Ltd.Suite 13.03, Level 13,20 Berry Street,North Sydney, NSW 2060Tel: +61 2 8068 0676",
         details: "Key hub for Asia-Pacific operations and client management."
     },
     malaysia: {
         name: "Malaysia",
-        address: "Kuala Lumpur office providing Southeast Asian market access and regional coordination.",
+        address: "CEO Suite, 27th Floor Axiata Towers, Kuala Lumpur, Malaysia",
         details: "Strategic Southeast Asian operations center."
     },
     china: {
         name: "China",
-        address: "Shanghai and Beijing offices offering market entry services and local business development.",
+        address: "Room 201, Building 22, No. 36 East Software Park Road, Dalian - 116023Tel: +86 411 3984 3199Fax: +86 411 3984 3145",
         details: "Essential hub for Chinese market penetration and growth."
     },
     usa: {
         name: "United States",
-        address: "New York, California, and Texas offices providing comprehensive US market coverage and enterprise solutions.",
+        address: "Global Headquarters:Jay Suites - New York, 515 Madison Avenue, 8th Floor, New York, NY 10022",
         details: "Primary North American headquarters with full-service capabilities."
     },
     poland: {
         name: "Poland",
-        address: "Warsaw and Krakow offices serving Central and Eastern European markets with technical expertise.",
+        address: "C & D Building, Luzycka Office ParkGdynia, Poland",
         details: "European technical hub with specialized development teams."
     },
     switzerland: {
         name: "Switzerland",
-        address: "Zurich office providing premium financial services and high-value client management.",
+        address: "OPPTY Value Edge AG,Bahnhofstraße 10, 6300 Zug,Switzerland",
         details: "Center of excellence for financial services and precision solutions."
     },
     turkey: {
         name: "Turkey",
-        address: "Istanbul office bridging European and Asian markets with cultural expertise and logistics support.",
+        address: "Kozyatağı Mahallesi, Değirmen Sokak, 18-19/ B – Kozyatağı Nikakule Kat:10, Kadıköy İstanbulTel: +90 216 250 6529Fax: +90 216 250 6500",
         details: "Strategic bridge between European and Asian operations."
     },
-    chennai: {
-        name: "Chennai",
-        address: "Major technology hub in South India, specializing in software development and automotive industry solutions.",
+    "costa-rica": {
+        name: "Costa Rica",
+        address: "3rd Floor, Building H, Forum Business Park, Santa Ana, San Jose, Costa Rica",
         details: "Specialized center for automotive and technology solutions."
     },
-    rajasthan: {
-        name: "Rajasthan",
-        address: "Jaipur and Udaipur offices focusing on traditional industries modernization and heritage tourism services.",
-        details: "Cultural heritage and traditional industry modernization center."
+    uae: {
+        name: "UAE",
+        address: "Unit No. 3W, 113,West Wing, DAFZA, Dubai,United Arab Emirates",
+        details: "Key player in the global BPO landscape with a skilled workforce."
     },
-    "sri-lanka": {
-        name: "Sri Lanka",
-        address: "Colombo office providing regional coordination and specialized language services for South Asian markets.",
+    philippines: {
+        name: "Philippines",
+        address: "9th and 10th Floors, 1880 Building, Eastwood City,Cyberpark, Bagumbayan, Quezon City 1100Tel: +632 318 2000",
         details: "South Asian coordination center with multilingual expertise."
     }
 };
