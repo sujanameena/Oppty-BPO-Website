@@ -2373,5 +2373,66 @@ body {
         margin-right: auto;
     }
 }
+/* copy rights */
+.site-footer {
+            background-color: #212529; /* Dark charcoal background */
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-top-border {
+            height: 1px;
+            background-color: #3e3e3e; /* Subtle lighter grey line */
+            max-width: 1140px; /* Adjust to match your site's content width */
+            margin: 0 auto 40px; /* Center it and add space below */
+        }
+
+        .recognitions-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
+            gap: 40px; /* Space between logos */
+        }
+
+        .recognitions-container img {
+            max-height: 100px; /* Medium size for logos */
+            width: auto;
+            object-fit: contain; /* Ensures logos scale correctly without distortion */
+            transition: transform 0.3s ease; /* Smooth hover transition */
+        }
+
+        .recognitions-container img:hover {
+            transform: scale(1.1); /* Slight scale increase on hover */
+        }
+
+        .copyright-text {
+            margin-top: 30px;
+            color: #adb5bd; /* Light grey text color */
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .copyright-text p {
+            margin-left: 0;
+        }
+        
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .recognitions-container {
+                flex-direction: column; /* Stack logos vertically on mobile */
+                gap: 30px;
+                padding: 25px;
+            }
+
+            .recognitions-container img {
+                max-height: 85px; /* Adjusted for medium size on mobile */
+            }
+        }
 
 
