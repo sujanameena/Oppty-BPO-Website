@@ -149,6 +149,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 80px;
 }
 
 /* Dark overlay effect */

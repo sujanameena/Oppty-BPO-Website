@@ -190,14 +190,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px; /* Space between content elements */
+    gap: 25px;
+    margin-top: 40px; /* Space between content elements */
 }
 
 /* --- TEXT STYLING --- */
 .hero-content h1 {
     font-size: clamp(2.8rem, 6vw, 4.5rem); /* Responsive font size */
-    font-weight: 700;
-    line-height: 1.1;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
 /* Gradient text effect */
@@ -212,12 +213,14 @@ body {
 .hero-content .subtitle {
     font-size: 1.5rem;
     font-weight: 400;
+    margin-top: -30px;
 }
 
 .hero-content .tagline {
     font-size: 1.1rem;
     font-weight: 500;
     letter-spacing: 1px;
+    margin-top: -30px;
 }
 
 /* --- CALL TO ACTION LINK --- */
@@ -283,7 +286,7 @@ p {
   font-size: 1.8rem;
   font-weight: 500;
   margin-bottom: 30px;
-  color: #f36f21;
+  color: #ffffff;
 }
 
 .video-container {
@@ -348,11 +351,11 @@ iframe {
 }
 
 .fourth-page-content-container h2 {
-  font-size: 2.6rem;
+  font-size: 1.6rem;
   font-weight: 400;
   color: #090601;
   line-height: 1.3;
-  max-width: 1100px;
+  max-width: 902px;
 }
 
 /* --- IMAGE ROW --- */
@@ -674,6 +677,9 @@ iframe {
 /* --- SECTION STYLING --- */
 .thought-leadership-section {
     padding: 100px 0;
+    width: 100%;
+    min-width: 40%;
+    min-height: 50%;
     background: radial-gradient(circle at 50% 50%, var(--dark-blue-center), var(--dark-bg-edge) 80%);
 }
 .container {
@@ -694,7 +700,7 @@ iframe {
 .articles-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px;
 }
 
 /* --- ARTICLE CARD STYLING --- */
@@ -706,6 +712,8 @@ iframe {
     text-decoration: none;
     aspect-ratio: 3 / 4;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* width: 80%; */
+    /* min-width: 50%; */
 }
 
 .article-card img {
