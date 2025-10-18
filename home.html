@@ -17,28 +17,35 @@
     <div class="first-page-container">
         <header>
             <div class="header-container">
-                <nav class="navbar" style="background: transparent; border: none; justify-content: flex-start; color: #fff;"></nav>
-                    <div class="container-fluid d-flex align-items-center" style="justify-content: flex-start;width:10%;">
-                        <button id="customHamburger" class="navbar-toggler border-0 shadow-none" type="button"
-                            aria-label="Toggle navigation" style="outline: none; background: transparent; padding: 10px; width: 56px; height: 56px; display: inline-flex; align-items: center; justify-content: center;">
-                            <span class="hamburger-lines" style="display:inline-block;width:34px;height:24px;position:relative;">
-                                <span style="position:absolute;left:0;top:0;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
-                                <span style="position:absolute;left:0;top:10px;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
-                                <span style="position:absolute;left:0;top:20px;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
-                            </span>
-                        </button>
-                    </div>
+                <nav class="navbar"
+                    style="background: transparent; border: none; justify-content: flex-start; color: #fff;"></nav>
+                <div class="container-fluid d-flex align-items-center" style="justify-content: flex-start;width:10%;">
+                    <button id="customHamburger" class="navbar-toggler border-0 shadow-none" type="button"
+                        aria-label="Toggle navigation"
+                        style="outline: none; background: transparent; padding: 10px; width: 56px; height: 56px; display: inline-flex; align-items: center; justify-content: center;">
+                        <span class="hamburger-lines"
+                            style="display:inline-block;width:34px;height:24px;position:relative;">
+                            <span
+                                style="position:absolute;left:0;top:0;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                            <span
+                                style="position:absolute;left:0;top:10px;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                            <span
+                                style="position:absolute;left:0;top:20px;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                        </span>
+                    </button>
+                </div>
                 </nav>
                 <!-- Sidebar -->
                 <div id="sidebar" class="sidebar">
                     <ul class="sidebar-menu">
-                        
-                         <li class="nav_bar_list_item"><a class="anchor" href="home.html">Home</a></li>
-                         <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
-                         <li class="nav_bar_list_item"><a class="anchor" href="capabilities.html">Capabilities-Service</a></li>
-                         <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
-                         <li class="nav_bar_list_item"><a class="anchor" href="perspectives.html">Perspectives</a></li>
-                       
+
+                        <li class="nav_bar_list_item"><a class="anchor" href="home.html">Home</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor"
+                                href="capabilities.html">Capabilities-Service</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor" href="perspectives.html">Perspectives</a></li>
+
                     </ul>
                     <style>
                         .expandable {
@@ -86,7 +93,7 @@
                     </button>
                 </div>
                 <div class="register-now">
-                    <button class="btn btn-primary" href="#">contact us</button>
+                    <button class="btn btn-primary" onclick="window.location.href='contactUs.html'">Contact Us</button>
                 </div>
             </div>
         </header>
@@ -421,14 +428,13 @@
             </div>
         </div>
     </div>
-    <!-- fifth page -->
     <div class="fifth-page-container">
         <div class="fifth-page-content-container">
             <h2 class="smart-heading1">Smarter by Design</h2>
             <h2 class="smart-heading2">Innovation Meets Execution</h2>
             <div class="view-all"
                 style="transition: transform 0.3s; position: absolute; z-index: 2;text-align: left;margin-top: 60px;">
-                <p class="view-all-text" style="cursor:pointer;color: black;">
+                <p class="view-all-text" style="cursor:pointer;color: black;margin-top: 50px">
                     Case Studies
                     <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
                         <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
@@ -437,21 +443,28 @@
             </div>
         </div>
         <!-- first slider for smarter by design-->
-        <div class="swiper-container">
-            <div class="swiper-slider">
-                <div class="swiper-content">
-                    <h3 class="swiper-heading">
-                        Co-creating Smarter Airline Claims with AI to Detect $6.3M in Fraud
-                    </h3>
-                    <p class="swiper-text">
-                        OPPTY collaborated with a leading European airline to embed AI-driven fraud analytics into its
-                        customer claims management process. The solution enabled real-time fraud scoring, faster
-                        resolution
-                        of genuine claims and enhanced customer experience.
-                    </p>
+        <div class="swiper-container" style="min-height: 400px;">
+            <div class="swiper-slider" style="min-height: 350px;">
+                <div class="swiper-content"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px;">
+                    <div>
+                        <h3 class="swiper-heading">
+
+                            British Gas &amp; OPPTY: 15 Years of Innovation and Excellence
+
+                        </h3>
+                        <p class="swiper-text">
+
+                            Jess Johnson, Head of Operational Excellence at British Gas, shares how OPPTY’s expertise in
+                            energy
+                            utilities and innovation helped drive high service levels, improve NPS and ensure continuity
+                            even through turbulence.
+
+                        </p>
+                    </div>
                     <div class="view-all"
-                        style="transition: transform 0.3s; position: absolute; z-index: 2;text-align: left;margin-top: 140px;">
-                        <p class="view-all-text" style="cursor:pointer;color: black;font-weight: bold;">
+                        style="transition: transform 0.3s; z-index: 2; text-align: left; margin-top: -200px;margin-right: 450px;">
+                        <p class="view-all-text" style="cursor:pointer; color: black; font-weight: bold;">
                             Read More
                             <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
                                 <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
@@ -459,27 +472,30 @@
                         </p>
                     </div>
                 </div>
-                <div class="swiper-video">
-                    <video controls style="width:45%;">
-                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    </video>
+                <div class="swiper-video" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/w3-img1.jpg" alt="Video Placeholder"
+                        style="width: 90%; max-width: 500px; border-radius: 8px;">
                 </div>
             </div>
             <!-- second slider -->
-            <div class="swiper-slider">
-                <div class="swiper-content">
-                    <h3 class="swiper-heading">
-                        Co-creating Smarter Airline Claims with AI to Detect $6.3M in Fraud
-                    </h3>
-                    <p class="swiper-text">
-                        OPPTY collaborated with a leading European airline to embed AI-driven fraud analytics into its
-                        customer claims management process. The solution enabled real-time fraud scoring, faster
-                        resolution
-                        of genuine claims and enhanced customer experience.
-                    </p>
+            <div class="swiper-slider" style="display: none">
+                <div class="swiper-content"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px;">
+                    <div>
+                        <h3 class="swiper-heading">
+                            Co-creating Smarter Airline Claims with AI to Detect $6.3M in Fraud
+                        </h3>
+                        <p class="swiper-text">
+                            OPPTY collaborated with a leading European airline to embed AI-driven fraud analytics into
+                            its
+                            customer claims management process. The solution enabled real-time fraud scoring, faster
+                            resolution
+                            of genuine claims and enhanced customer experience.
+                        </p>
+                    </div>
                     <div class="view-all"
-                        style="transition: transform 0.3s; position: absolute; z-index: 2;text-align: left;margin-top: 140px;">
-                        <p class="view-all-text" style="cursor:pointer;color: black;font-weight: bold;">
+                        style="transition: transform 0.3s; z-index: 2; text-align: left; margin-top: -200px;margin-right: 450px;">
+                        <p class="view-all-text" style="cursor:pointer; color: black; font-weight: bold;">
                             Read More
                             <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
                                 <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
@@ -487,15 +503,118 @@
                         </p>
                     </div>
                 </div>
-                <div class="swiper-video">
-                    <video controls style="width:45%;">
-                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-                    </video>
+                <div class="swiper-video" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/w3-img2.jpg" alt="Video Placeholder"
+                        style="width: 90%; max-width: 500px; border-radius: 8px;">
+                </div>
+            </div>
+            <!-- third slide -->
+            <div class="swiper-slider" style="display: none">
+                <div class="swiper-content"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px;">
+                    <div>
+                        <h3 class="swiper-heading">
+
+                            How Virgin Atlantic Achieved Overall Chargeback Win Rates of 54% with OPPTY
+
+                        </h3>
+                        <p class="swiper-text">
+
+                            Discover how Virgin Atlantic transformed its chargeback process and slashed revenue losses
+                            by
+                            partnering with OPPTY. Hear from Angela Maguire, Manager - Agency, Refunds and Chargebacks, as
+                            she
+                            shares how digital process mapping, workflow optimization and seamless system integration
+                            led to
+                            a 60% win rate with Worldpay—far above industry standards.
+
+                        </p>
+                    </div>
+                    <div class="view-all"
+                        style="transition: transform 0.3s; z-index: 2; text-align: left; margin-top: -200px;margin-right: 450px;">
+                        <p class="view-all-text" style="cursor:pointer; color: black; font-weight: bold;">
+                            Read More
+                            <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                                <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-video" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/w3-img3.jpg" alt="Video Placeholder"
+                        style="width: 90%; max-width: 500px; border-radius: 8px;">
+                </div>
+            </div>
+            <!-- fourth slide -->
+            <div class="swiper-slider" style="display: none">
+                <div class="swiper-content"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px;">
+                    <div>
+                        <h3 class="swiper-heading">
+
+                            Empowering Insurance Innovation: Mosaic Insurance’s Strategic Collaboration with OPPTY
+
+                        </h3>
+                        <p class="swiper-text">
+
+                            Explore how OPPTY drives business transformation through digital innovation, domain expertise,
+                            and
+                            data-driven strategies to deliver impactful outcomes for global clients.
+
+                        </p>
+                    </div>
+                    <div class="view-all"
+                        style="transition: transform 0.3s; z-index: 2; text-align: left; margin-top: -200px;margin-right: 450px;">
+                        <p class="view-all-text" style="cursor:pointer; color: black; font-weight: bold;">
+                            Read More
+                            <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                                <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-video" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/w3-img4.jpg" alt="Video Placeholder"
+                        style="width: 90%; max-width: 500px; border-radius: 8px;">
+                </div>
+            </div>
+            <!-- fifth slide -->
+            <div class="swiper-slider" style="display: none">
+                <div class="swiper-content"
+                    style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 230px;">
+                    <div>
+                        <h3 class="swiper-heading">
+
+                            Co-creating Smarter Digital Ad Onboarding with AI to Unlock $70M+ in Revenue
+
+                        </h3>
+                        <p class="swiper-text">
+
+                            OPPTY collaborated with a global digital advertising platform to streamline advertiser
+                            onboarding, improve conversion outcomes and reduce acquisition costs. By deploying AI-led
+                            prioritization, intelligent scheduling and smarter communication workflows, the engagement
+                            delivered measurable business impact.
+
+                        </p>
+                    </div>
+                    <div class="view-all"
+                        style="transition: transform 0.3s; z-index: 2; text-align: left; margin-top: -200px;margin-right: 450px;">
+                        <p class="view-all-text" style="cursor:pointer; color: black; font-weight: bold;">
+                            Read More
+                            <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
+                                <i class="fa fa-arrow-up" aria-hidden="true" style="color: #f76e11;"></i>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-video" style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/w3-img5.jpg" alt="Video Placeholder"
+                        style="width: 90%; max-width: 500px; border-radius: 8px;">
                 </div>
             </div>
             <!-- Slider Controls and Progress Bar -->
             <div class="swiper-controls-container"
-                style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px;">
+                style="display: flex; align-items: center; justify-content: space-between; margin: 150px 50px 0 50px;">
                 <div class="swiper-progress-bar"
                     style="flex:1; height: 6px; background: #e0e0e0; border-radius: 3px; margin-right: 16px; overflow: hidden;">
                     <div class="swiper-progress-inner" id="swiperProgress"
@@ -514,18 +633,39 @@
                 </div>
             </div>
             <script>
-                (function () {
+                document.addEventListener('DOMContentLoaded', function () {
                     const sliders = document.querySelectorAll('.swiper-slider');
                     const progress = document.getElementById('swiperProgress');
                     const prevBtn = document.getElementById('swiperPrev');
                     const nextBtn = document.getElementById('swiperNext');
+
+                    // Check if elements exist before proceeding
+                    if (!sliders.length || !progress || !prevBtn || !nextBtn) {
+                        console.error('Swiper elements not found');
+                        return;
+                    }
+
                     let current = 0;
                     const total = sliders.length;
 
                     function updateSlider() {
+                        // Hide all sliders first
                         sliders.forEach((el, idx) => {
-                            el.style.display = idx === current ? 'flex' : 'none';
+                            if (idx === current) {
+                                el.style.display = 'flex';
+                                el.style.opacity = '0';
+                                // Fade in animation
+                                setTimeout(() => {
+                                    el.style.transition = 'opacity 0.5s ease-in-out';
+                                    el.style.opacity = '1';
+                                }, 10);
+                            } else {
+                                el.style.display = 'none';
+                                el.style.opacity = '0';
+                            }
                         });
+
+                        // Update progress bar with animation
                         const percent = total <= 1 ? 100 : (current / (total - 1)) * 100;
                         progress.style.width = percent + '%';
                     }
@@ -534,137 +674,98 @@
                         current = (current - 1 + total) % total;
                         updateSlider();
                     });
+
                     nextBtn.addEventListener('click', function () {
                         current = (current + 1) % total;
                         updateSlider();
                     });
 
-                    // Init
+                    // Initialize the slider
                     updateSlider();
-                })();
+                });
             </script>
-            <style>
-                .swiper-container {
-                    width: 100%;
-                    height: 200px;
-                    max-width: 1100px;
-                    margin: 0 auto 40px auto;
-                    position: relative;
-                    margin-top: 100px;
-                }
-
-                .swiper-slider {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: flex-start;
-                    justify-content: space-between;
-                    gap: 40px;
-                    width: 100%;
-                }
-
-                .swiper-content {
-                    flex: 1 1 55%;
-                    min-width: 0;
-                    position: relative;
-                }
-
-                .swiper-video {
-                    flex: 1 1 40%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                @media (max-width: 900px) {
-                    .swiper-slider {
-                        flex-direction: column;
-                        gap: 24px;
-                    }
-
-                    .swiper-video {
-                        width: 100%;
-                    }
-                }
-            </style>
         </div>
         <!-- companies scrolling -->
-        <div class="business-heading">
-            <h2 class="smartBusiness-heading">Partnerships That Power Smarter Businesses</h2>
-        </div>
-        <div class="companies-list-container">
-            <div class="companies-slider">
-                <div class="companies-track" id="companiesTrack">
-                    <a href="https://www.ibm.com/in-en" target="_blank" class="company-icon" title="ibm">
-                        <img src="assets/61-ibm.png" alt="ibm" />
-                    </a>
-                    <a href="https://www.uniphore.com/" target="_blank" class="company-icon" title="uniphore">
-                        <img src="assets/62-uni.png" alt="uniphore" />
-                    </a>
-                    <a href="https://www.blackline.com/" target="_blank" class="company-icon" title="blackline">
-                        <img src="assets/63-blackline.png" alt="blackline" />
-                    </a>
-                    <a href="https://www.microsoft.com/en-in/" target="_blank" class="company-icon" title="microsoft">
-                        <img src="assets/64-miscrosoft.png" alt="microsoft" />
-                    </a>
-                    <a href="https://www.pega.com/" target="_blank" class="company-icon" title="pega">
-                        <img src="assets/65-pega.png" alt="pega" />
-                    </a>
-                    <a href="https://www.zohocorp.com/" target="_blank" class="company-icon" title="zoho">
-                        <img src="assets/66-zoho.png" alt="zoho" />
-                    </a>
-                    <a href="https://www.uipath.com/" target="_blank" class="company-icon" title="uiPath">
-                        <img src="assets/67-uiPath.png" alt="uiPath" />
-                    </a>
-                    <a href="https://www.ibm.com/in-en" target="_blank" class="company-icon" title="ibm">
-                        <img src="assets/68-workfusion.png" alt="ibm" />
-                    </a>
-                    <a href="https://appian.com/" target="_blank" class="company-icon" title="appian">
-                        <img src="assets/69-appian.png" alt="appian" />
-                    </a>
-                    <a href="https://www.blueprism.com/" target="_blank" class="company-icon" title="ssc">
-                        <img src="assets/610-ssc.png" alt="ssc" />
-                    </a>
-                    <a href="https://algonox.com/index" target="_blank" class="company-icon" title="igonox">
-                        <img src="assets/611-igonox.png" alt="igonox" />
-                    </a>
-                    <a href="https://www.logmein.com/" target="_blank" class="company-icon" title="logMeln">
-                        <img src="assets/612-logMeln.png" alt="logMeln" />
-                    </a>
-                    <a href="https://tradeshift.com/" target="_blank" class="company-icon" title="tradeshift">
-                        <img src="assets/613-tradeshift.png" alt="tradeshift" />
-                    </a>
-                    <a href="https://www.nice.com/" target="_blank" class="company-icon" title="nice">
-                        <img src="assets/614-nice.png" alt="nice" />
-                    </a>
-                </div>
+        <div class="partnerships-companies-scrolling" style="margin-top: 10px;">
+            <div class="business-heading">
+                <h2 class="smartBusiness-heading">Partnerships That Power Smarter Businesses</h2>
             </div>
-            <script>
-                (function () {
-                    const track = document.getElementById('companiesTrack');
-                    const slider = track.parentElement;
-                    let speed = 1; // px per frame
-                    let pos = 0;
-                    let trackWidth = track.scrollWidth / 2;
+            <div class="companies-list-container" style="margin-top: 10px;">
+                <div class="companies-slider">
+                    <div class="companies-track" id="companiesTrack">
+                        <a href="https://www.ibm.com/in-en" target="_blank" class="company-icon" title="ibm">
+                            <img src="assets/61-ibm.png" alt="ibm" />
+                        </a>
+                        <a href="https://www.uniphore.com/" target="_blank" class="company-icon" title="uniphore">
+                            <img src="assets/62-uni.png" alt="uniphore" />
+                        </a>
+                        <a href="https://www.blackline.com/" target="_blank" class="company-icon" title="blackline">
+                            <img src="assets/63-blackline.png" alt="blackline" />
+                        </a>
+                        <a href="https://www.microsoft.com/en-in/" target="_blank" class="company-icon"
+                            title="microsoft">
+                            <img src="assets/64-miscrosoft.png" alt="microsoft" />
+                        </a>
+                        <a href="https://www.pega.com/" target="_blank" class="company-icon" title="pega">
+                            <img src="assets/65-pega.png" alt="pega" />
+                        </a>
+                        <a href="https://www.zohocorp.com/" target="_blank" class="company-icon" title="zoho">
+                            <img src="assets/66-zoho.png" alt="zoho" />
+                        </a>
+                        <a href="https://www.uipath.com/" target="_blank" class="company-icon" title="uiPath">
+                            <img src="assets/67-uiPath.png" alt="uiPath" />
+                        </a>
+                        <a href="https://www.ibm.com/in-en" target="_blank" class="company-icon" title="ibm">
+                            <img src="assets/68-workfusion.png" alt="ibm" />
+                        </a>
+                        <a href="https://appian.com/" target="_blank" class="company-icon" title="appian">
+                            <img src="assets/69-appian.png" alt="appian" />
+                        </a>
+                        <a href="https://www.blueprism.com/" target="_blank" class="company-icon" title="ssc">
+                            <img src="assets/610-ssc.png" alt="ssc" />
+                        </a>
+                        <a href="https://algonox.com/index" target="_blank" class="company-icon" title="igonox">
+                            <img src="assets/611-igonox.png" alt="igonox" />
+                        </a>
+                        <a href="https://www.logmein.com/" target="_blank" class="company-icon" title="logMeln">
+                            <img src="assets/612-logMeln.png" alt="logMeln" />
+                        </a>
+                        <a href="https://tradeshift.com/" target="_blank" class="company-icon" title="tradeshift">
+                            <img src="assets/613-tradeshift.png" alt="tradeshift" />
+                        </a>
+                        <a href="https://www.nice.com/" target="_blank" class="company-icon" title="nice">
+                            <img src="assets/614-nice.png" alt="nice" />
+                        </a>
+                    </div>
+                </div>
+                <script>
+                    (function () {
+                        const track = document.getElementById('companiesTrack');
+                        const slider = track.parentElement;
+                        let speed = 1; // px per frame
+                        let pos = 0;
+                        let trackWidth = track.scrollWidth / 2;
 
-                    function animate() {
-                        pos += speed;
-                        if (pos >= trackWidth) {
-                            pos = 0;
+                        function animate() {
+                            pos += speed;
+                            if (pos >= trackWidth) {
+                                pos = 0;
+                            }
+                            track.style.transform = `translateX(-${pos}px)`;
+                            requestAnimationFrame(animate);
                         }
-                        track.style.transform = `translateX(-${pos}px)`;
-                        requestAnimationFrame(animate);
-                    }
 
-                    // Pause on hover
-                    slider.addEventListener('mouseenter', () => speed = 0);
-                    slider.addEventListener('mouseleave', () => speed = 1);
+                        // Pause on hover
+                        slider.addEventListener('mouseenter', () => speed = 0);
+                        slider.addEventListener('mouseleave', () => speed = 1);
 
-                    // Clicks handled by <a> tags (default behavior)
-                    animate();
-                })();
-            </script>
+                        // Clicks handled by <a> tags (default behavior)
+                        animate();
+                    })();
+                </script>
+            </div>
         </div>
-        <div class="view-all" style="transition: transform 0.3s; position: relative; z-index: 2;">
+        <div class="view-all" style="transition: transform 0.3s; position: relative; z-index: 2;margin-bottom: 50px;">
             <p class="view-all-text-partner-hover">
                 View Our Global Partner Network
                 <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
@@ -723,7 +824,8 @@
                 </div>
                 <div class="custom-slider-col">
                     <h5>
-                        Capgemini to Acquire OPPTY to Create a Global Leader in Agentic AI-powered Intelligent Operations
+                        Capgemini to Acquire OPPTY to Create a Global Leader in Agentic AI-powered Intelligent
+                        Operations
                     </h5>
                 </div>
                 <div class="custom-slider-col">
@@ -833,7 +935,6 @@
                 </div>
             </div>
             <!-- text-image container -->
-
             <div class="six-col-grid" id="sixColGrid"></div>
             <script>
                 // Example data: alternate text and image
@@ -866,10 +967,10 @@
                     div.className = 'six-col-cell';
                     if (cell.type === 'text') {
                         div.innerHTML = `
-                <span style="display:inline-block; position:relative;">
-                    <span style="display:block; text-align:center;">${cell.value}</span>
-                </span>
-                `;
+                            <span style="display:inline-block; position:relative;">
+                                <span class="counter-text" style="display:block; text-align:center; font-size: 20px; font-weight: bold;">${cell.value}</span>
+                            </span>
+                        `;
                     } else {
                         const img = document.createElement('img');
                         img.src = cell.value;
@@ -878,6 +979,54 @@
                     }
                     grid.appendChild(div);
                 });
+
+                // Counter animation function
+                function animateCounters() {
+                    const counterElements = document.querySelectorAll('.counter-text');
+                    
+                    counterElements.forEach(element => {
+                        const text = element.innerHTML;
+                        const numbers = text.match(/\d+/g);
+                        
+                        if (numbers) {
+                            let animatedText = text;
+                            
+                            numbers.forEach(num => {
+                                const targetNum = parseInt(num);
+                                let currentNum = 0;
+                                const increment = Math.ceil(targetNum / 50); // Adjust speed
+                                
+                                const counter = setInterval(() => {
+                                    currentNum += increment;
+                                    if (currentNum >= targetNum) {
+                                        currentNum = targetNum;
+                                        clearInterval(counter);
+                                    }
+                                    
+                                    animatedText = text.replace(num, currentNum + (num.includes('+') ? '+' : ''));
+                                    element.innerHTML = animatedText;
+                                }, 50); // Animation speed
+                            });
+                        }
+                    });
+                }
+
+                // Start animation when page loads
+                window.addEventListener('load', () => {
+                    setTimeout(animateCounters, 500); // Small delay for better effect
+                });
+
+                // Optional: Trigger animation when scrolled into view
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounters();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+
+                observer.observe(grid);
             </script>
         </div>
         <!-- Awards  -->
@@ -1348,11 +1497,33 @@
         </div>
     </div>
     <!-- seventh page -->
-     <div class="seventh-page-container">
-    <div class="smarter-heading">
-        <h2 class="smarterBusiness-heading">Co-create a Smarter Business with OPPTY Today</h2>
-    </div>
-      <div class="view-all" style="transition: transform 0.3s; position: relative; z-index: 2;margin-top:50px;">
+    <div class="seventh-page-container">
+        <div class="smarter-heading">
+            <h2 class="smarterBusiness-heading animated-gradient-text">Co-create a Smarter Business with OPPTY Today</h2>
+            <style>
+            .animated-gradient-text {
+                background: linear-gradient(90deg, #f76e11, green, red, blue);
+                background-size: 300% 100%;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: gradientFlow 3s ease-in-out infinite;
+            }
+
+            @keyframes gradientFlow {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+            </style>
+        </div>
+        <div class="view-all" style="transition: transform 0.3s; position: relative; z-index: 2;margin-top:50px;">
             <p class="view-all-text-partner-hover">
                 Contact Us
                 <span style="display: inline-block; transform: rotate(45deg); margin-left: 8px;">
@@ -1362,29 +1533,31 @@
         </div>
     </div>
     <!-- footer section -->
-<!--Footer section-->
-<footer class="site-footer">
+    <!--Footer section-->
+    <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-grid">
                 <!-- Column 1: About -->
                 <div class="footer-about">
                     <img src="assets/oppty.png" alt="Oppty BPO Logo" class="footer-logo">
                     <p>
-                        Power up your success with innovative IT, BPO, E-commerce, Web Development, and AI solutions tailored to your vision.
+                        Power up your success with innovative IT, BPO, E-commerce, Web Development, and AI solutions
+                        tailored to your vision.
                     </p>
                 </div>
 
                 <!-- Column 2: Hyderabad Location -->
                 <div class="footer-column">
-                    <h4>Hyderabad Locations</h4>
+                    <h4 style="color: #f76e11;">Hyderabad Locations</h4>
                     <p>
-                        Hyderabad - Flat number 601, Mahitha's green galaxy, CBCID Colony, NRSA Colony, Bagath Singh Nagar Phase 2, Kukatpally, Hyderabad, Telangana 500085
+                        Hyderabad - Flat number 601, Mahitha's green galaxy, CBCID Colony, NRSA Colony, Bagath Singh
+                        Nagar Phase 2, Kukatpally, Hyderabad, Telangana 500085
                     </p>
                 </div>
 
                 <!-- Column 3: Udaipur Location -->
                 <div class="footer-column">
-                    <h4>Udaipur Locations</h4>
+                    <h4 style="color: #f76e11;">Udaipur Locations</h4>
                     <p>
                         Udaipur - Plot No: 26, 100 Feet Rd, Shobhagpura, Udaipur, Rajasthan 313011
                     </p>
@@ -1392,7 +1565,7 @@
 
                 <!-- Column 4: Contact Us -->
                 <div class="footer-column">
-                    <h4>Contact Us</h4>
+                    <h4 style="color: #f76e11;">Contact Us</h4>
                     <p>
                         <a href="mailto:info@oppty.in">info@oppty.in</a>
                     </p>
@@ -1403,7 +1576,7 @@
 
                 <!-- Column 5: Quick Links -->
                 <div class="footer-column">
-                    <h4>Quick Links</h4>
+                    <h4 style="color: #f76e11;">Quick Links</h4>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About Us</a></li>
@@ -1413,80 +1586,135 @@
                 </div>
             </div>
         </div>
-        <div class="social-media" style="margin-left: 20px;">
-            <h5>Social Media</h5>
-        <div class="social-icons" aria-label="Social links" style="margin-top:18px;">
-            <style>
-                .social-icons { display:flex; gap:10px; align-items:center; }
-                .social-link {
-                    width:20px; height:20px; display:inline-flex; align-items:center; justify-content:center;
-                    border-radius:50%; color:#fff; text-decoration:none; font-size:18px; box-shadow:0 2px 6px rgba(0,0,0,.15);
-                    transition:transform .15s ease, box-shadow .15s ease, opacity .15s ease;
-                }
-                .social-link:focus { outline:3px solid rgba(0,0,0,.12); outline-offset:2px; }
-                .social-link:hover { transform:translateY(-3px); box-shadow:0 6px 18px rgba(0,0,0,.18); opacity:0.98; }
+        <div class="social-media" style="margin-left: 50px;">
+            <h5 style="margin-right: 1050px;color: #f76e11;">Social Media</h5>
+            <div class="social-icons" aria-label="Social links" style="margin-top:18px;">
+                <style>
+                    .social-icons {
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                    }
 
-                /* brand colors */
-                .social-link.linkedin  { background:#0077B5; }
-                .social-link.twitter   { background:#1DA1F2; }
-                .social-link.facebook  { background:#1877F2; }
-                .social-link.instagram {
-                    background: radial-gradient(circle at 15% 15%, #feda75 0%, #f58529 20%, #dd2a7b 50%, #515BD4 100%);
-                }
-                .social-link.youtube   { background:#FF0000; }
-                .social-link.github    { background:grey; }
+                    .social-link {
+                        width: 20px;
+                        height: 20px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        color: #fff;
+                        text-decoration: none;
+                        font-size: 18px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+                        transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+                    }
 
-                /* icon color override to ensure white icons */
-                .social-link i { color:#fff; font-size:10px; }
-            </style>
+                    .social-link:focus {
+                        outline: 3px solid rgba(0, 0, 0, .12);
+                        outline-offset: 2px;
+                    }
 
-            <a class="social-link linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
-               title="LinkedIn" aria-label="LinkedIn">
-                <i class="fa fa-linkedin"></i>
-            </a>
+                    .social-link:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+                        opacity: 0.98;
+                    }
 
-            <a class="social-link twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
-               title="Twitter" aria-label="Twitter">
-                <i class="fa fa-twitter"></i>
-            </a>
+                    /* brand colors */
+                    .social-link.linkedin {
+                        background: #0077B5;
+                    }
 
-            <a class="social-link facebook" href="https://www.facebook.com/wnsglobalservices/" target="_blank" rel="noopener noreferrer"
-               title="Facebook" aria-label="Facebook">
-                <i class="fa fa-facebook"></i>
-            </a>
+                    .social-link.twitter {
+                        background: #1DA1F2;
+                    }
 
-            <a class="social-link instagram" href="https://www.instagram.com/procareer.tech/#" target="_blank" rel="noopener noreferrer"
-               title="Instagram" aria-label="Instagram">
-                <i class="fa fa-instagram"></i>
-            </a>
+                    .social-link.facebook {
+                        background: #1877F2;
+                    }
 
-            <a class="social-link youtube" href="https://www.youtube.com/channel/UC5i64n89D6YSoiyGA5JBxMQ" target="_blank" rel="noopener noreferrer"
-               title="YouTube" aria-label="YouTube">
-                <i class="fa fa-youtube-play"></i>
-            </a>
+                    .social-link.instagram {
+                        background: radial-gradient(circle at 15% 15%, #feda75 0%, #f58529 20%, #dd2a7b 50%, #515BD4 100%);
+                    }
 
-            <a class="social-link github" href="https://github.com/" target="_blank" rel="noopener noreferrer"
-               title="GitHub" aria-label="GitHub">
-                <i class="fa fa-github"></i>
-            </a>
+                    .social-link.youtube {
+                        background: #FF0000;
+                    }
 
-            <script>
-                // Ensure links open in a new tab reliably and safely (also supports cases where target attr may be removed)
-                (function(){
-                    document.querySelectorAll('.social-link').forEach(function(el){
-                        el.addEventListener('click', function(e){
-                            e.preventDefault();
-                            var url = el.href;
-                            // open in new tab with noopener + noreferrer for security
-                            window.open(url, '_blank', 'noopener,noreferrer');
+                    .social-link.github {
+                        background: grey;
+                    }
+
+                    /* icon color override to ensure white icons */
+                    .social-link i {
+                        color: #fff;
+                        font-size: 10px;
+                    }
+                </style>
+
+                <a class="social-link linkedin" href="https://www.linkedin.com/" target="_blank"
+                    rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <a class="social-link twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+                    title="Twitter" aria-label="Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+
+                <a class="social-link facebook" href="https://www.facebook.com/wnsglobalservices/" target="_blank"
+                    rel="noopener noreferrer" title="Facebook" aria-label="Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+
+                <a class="social-link instagram" href="https://www.instagram.com/procareer.tech/#" target="_blank"
+                    rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
+                    <i class="fa fa-instagram"></i>
+                </a>
+
+                <a class="social-link youtube" href="https://www.youtube.com/channel/UC5i64n89D6YSoiyGA5JBxMQ"
+                    target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube">
+                    <i class="fa fa-youtube-play"></i>
+                </a>
+
+                <a class="social-link github" href="https://github.com/" target="_blank" rel="noopener noreferrer"
+                    title="GitHub" aria-label="GitHub">
+                    <i class="fa fa-github"></i>
+                </a>
+
+                <script>
+                    // Ensure links open in a new tab reliably and safely (also supports cases where target attr may be removed)
+                    (function () {
+                        document.querySelectorAll('.social-link').forEach(function (el) {
+                            el.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                var url = el.href;
+                                // open in new tab with noopener + noreferrer for security
+                                window.open(url, '_blank', 'noopener,noreferrer');
+                            });
                         });
-                    });
-                })();
-            </script>
-        </div>
+                    })();
+                </script>
+            </div>
         </div>
     </footer>
-
+ </footer>
+    <!-- Copyright Section -->
+ <footer class="site-footer">
+        <div class="footer-top-border"></div>
+        
+        <div class="footer-content">
+            <div class="recognitions-container">
+                <img src="assets/copyright1.png.png" alt="Ministry of MSME, Govt. of India">
+                <img src="assets/copyright2.png.png" alt="ISO 9001:2015 Certified">
+                <img src="assets/copyright3.jpg.jpg" alt="ISO 22000:2018 Certified">
+            </div>
+            <div class="copyright-text">
+                <p>&copy;<span id="copyright-year">2025</span> Oppty. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
     <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
 </body>
 
