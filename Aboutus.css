@@ -200,6 +200,7 @@ body {
 
 .hero-content {
     width: 100%;
+    margin-top: 100px;
     max-width: 950px; /* Constrains the width of the text for readability */
     z-index: 1; /* Ensures content is on top */
     display: flex;
