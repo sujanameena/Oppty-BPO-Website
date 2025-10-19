@@ -78,6 +78,12 @@ document.addEventListener('DOMContentLoaded', function() {
             locationAddress: document.getElementById('locationAddress'),
             exploreBtn: document.getElementById('exploreBtn')
         },
+        panel2: {
+            panel: document.getElementById('locationPanel2'),
+            locationName: document.getElementById('locationName2'),
+            locationAddress: document.getElementById('locationAddress2'),
+            exploreBtn: document.getElementById('exploreBtn2')
+        }
     };
 
     let currentLocation = null;
