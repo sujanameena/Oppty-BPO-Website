@@ -441,6 +441,366 @@
     margin-right: auto;
   }
 }
+<<<<<<< HEAD
+/*+ and - sectiomm */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    color: #2c2c2c;
+}
+
+.ecosystem-section {
+    position: relative;
+    background-color: #F5F6FA;
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.ecosystem-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #E85D2C;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+    max-width: 800px;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 1rem 0;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #5a5a5a;
+    margin: 0;
+}
+
+/* --- GRADIENT TEXT LOGIC --- */
+/* Permanent gradient for the main header's highlight */
+.section-header .highlight {
+    background: linear-gradient(90deg, #E85D2C, #D9531E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback for older browsers */
+}
+
+/* Conditional gradient: applies ONLY when the accordion item has the .active class */
+.accordion-item.active .accordion-title,
+.accordion-item.active .accordion-toggle {
+    background: linear-gradient(90deg, #E85D2C, #D9531E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* Fallback */
+}
+/* --- END GRADIENT LOGIC --- */
+
+.accordion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 4rem;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #F6A888;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Default (inactive) styles */
+.accordion-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c2c2c;
+    margin-right: 1rem;
+    transition: color 0.3s;
+}
+
+.accordion-toggle {
+    background: none;
+    border: none;
+    color: #E85D2C;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+}
+
+.accordion-item.active .accordion-toggle {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease-out;
+}
+
+.accordion-content p {
+    color: #5a5a5a;
+    line-height: 1.6;
+    padding-bottom: 1.25rem;
+    margin: 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .accordion-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem 0;
+    }
+    .section-header h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ecosystem-section {
+        padding: 60px 0;
+    }
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+/*case study section*/
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5F6FA;
+    color: #2c2c2c;
+}
+
+.case-studies-section {
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- Header Styling --- */
+.section-header {
+    margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 1rem 0;
+}
+
+.section-header .highlight {
+    background: linear-gradient(90deg, #E85D2C, #D9531E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.case-studies-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.case-studies-link:hover {
+    color: #E85D2C;
+}
+
+/* --- Slider Styling --- */
+.slider-container {
+    margin-bottom: 2rem;
+}
+
+.slider-viewport {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-track {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Adjust height based on content */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out, left 0.6s ease-in-out, width 0.6s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.slide .caption {
+    margin: 1rem 0 0 0;
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* SLIDER STATES */
+.slide.large {
+    width: 62%;
+    left: 0;
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide.medium {
+    width: 35%;
+    left: 65%;
+    transform: translateX(0) scale(0.9);
+    opacity: 1;
+    z-index: 1;
+}
+.slide.medium img { height: 75%; }
+.slide.medium .caption { font-size: 1rem; }
+
+.slide.hidden-left {
+    left: 0;
+    transform: translateX(-50%) scale(0.8);
+    opacity: 0;
+    z-index: 0;
+}
+
+.slide.hidden-right {
+    left: 100%;
+    transform: translateX(50%) scale(0.8);
+    opacity: 0;
+    z-index: 0;
+}
+
+
+/* --- Controls Styling --- */
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-bar-container {
+    flex-grow: 1;
+    height: 4px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    margin-right: 2rem;
+}
+
+.progress-bar-fill {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #E85D2C, #D9531E);
+    border-radius: 2px;
+    transition: width 0.5s ease-out;
+}
+
+.nav-buttons button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.nav-buttons button:hover {
+    background-color: #E85D2C;
+    border-color: #E85D2C;
+}
+.nav-buttons button:hover svg {
+    fill: #fff;
+}
+
+.nav-buttons button svg {
+    fill: #E85D2C;
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .slider-track { height: 380px; }
+    .slide.large { width: 58%; }
+    .slide.medium { width: 38%; left: 62%; }
+}
+
+@media (max-width: 768px) {
+    .section-header h2 { font-size: 2rem; }
+    .slider-track { height: auto; }
+    /* Stack slides on mobile */
+    .slide {
+        position: relative;
+        width: 100%;
+        margin-bottom: 2rem;
+        transform: none !important;
+        left: 0 !important;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.6s, opacity 0.6s;
+    }
+    .slide.large {
+        opacity: 1;
+        max-height: 500px; /* Allow content to expand */
+    }
+    .slide.medium, .slide.hidden-left, .slide.hidden-right {
+        display: none; /* Hide other slides completely */
+    }
+=======
 
 /* copy rights */
 .site-footer {
@@ -515,4 +875,5 @@
     max-height: 85px;
     /* Adjusted for medium size on mobile */
   }
+>>>>>>> c66f84acc9f8a48093ca064e799984cabcd7cfcc
 }
