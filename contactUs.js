@@ -1,7 +1,7 @@
 const locationData = {
     india: {
-        name: "Udaipur",
-        address: "Udaipur - Plot No: 26, 100 Feet Rd, Shobhagpura, Udaipur, Rajasthan 313011",
+        name: "Hyderabad",
+        address: "Hyderabad - Flat number 601, Mahitha's green galaxy, CBCID Colony, NRSA Colony, Bagath Singh Nagar Phase 2, Kukatpally, Hyderabad, Telangana 500085",
         details: "Our largest operational center with 24/7 support services."
     },
     canada: {
