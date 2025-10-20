@@ -40,11 +40,13 @@
                     <ul class="sidebar-menu">
 
                         <li class="nav_bar_list_item"><a class="anchor" href="home.html">Home</a></li>
-                        <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
+                        
                         <li class="nav_bar_list_item"><a class="anchor"
                                 href="capabilities.html">Capabilities-Service</a></li>
-                        <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
+
                         <li class="nav_bar_list_item"><a class="anchor" href="perspectives.html">Perspectives</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
 
                     </ul>
                     <style>
@@ -88,10 +90,13 @@
                 <img src="assets/oppty.png" alt="OpptyBPO-Logo" class="logo-img" style="margin-right: -51px;">
                 <div class="search-button">
                     <button id="searchBtn" class="search-icon-btn" type="button" aria-label="Search"
-                        style="border: none; box-shadow: none;">
+                        onclick="window.location.href='search.html'" style="border: none; box-shadow: none;">
                         <i class="fa fa-search"></i>
                     </button>
                 </div>
+                <!-- <div class="search-button">
+                    <button class="fa fa-search button-css" onclick="window.location.href='search.html'"></button>
+                </div> -->
                 <div class="register-now">
                     <button class="btn btn-primary" onclick="window.location.href='contactUs.html'">Contact Us</button>
                 </div>
@@ -522,7 +527,8 @@
 
                             Discover how Virgin Atlantic transformed its chargeback process and slashed revenue losses
                             by
-                            partnering with OPPTY. Hear from Angela Maguire, Manager - Agency, Refunds and Chargebacks, as
+                            partnering with OPPTY. Hear from Angela Maguire, Manager - Agency, Refunds and Chargebacks,
+                            as
                             she
                             shares how digital process mapping, workflow optimization and seamless system integration
                             led to
@@ -557,7 +563,8 @@
                         </h3>
                         <p class="swiper-text">
 
-                            Explore how OPPTY drives business transformation through digital innovation, domain expertise,
+                            Explore how OPPTY drives business transformation through digital innovation, domain
+                            expertise,
                             and
                             data-driven strategies to deliver impactful outcomes for global clients.
 
@@ -983,26 +990,26 @@
                 // Counter animation function
                 function animateCounters() {
                     const counterElements = document.querySelectorAll('.counter-text');
-                    
+
                     counterElements.forEach(element => {
                         const text = element.innerHTML;
                         const numbers = text.match(/\d+/g);
-                        
+
                         if (numbers) {
                             let animatedText = text;
-                            
+
                             numbers.forEach(num => {
                                 const targetNum = parseInt(num);
                                 let currentNum = 0;
                                 const increment = Math.ceil(targetNum / 50); // Adjust speed
-                                
+
                                 const counter = setInterval(() => {
                                     currentNum += increment;
                                     if (currentNum >= targetNum) {
                                         currentNum = targetNum;
                                         clearInterval(counter);
                                     }
-                                    
+
                                     animatedText = text.replace(num, currentNum + (num.includes('+') ? '+' : ''));
                                     element.innerHTML = animatedText;
                                 }, 50); // Animation speed
@@ -1499,28 +1506,31 @@
     <!-- seventh page -->
     <div class="seventh-page-container">
         <div class="smarter-heading">
-            <h2 class="smarterBusiness-heading animated-gradient-text">Co-create a Smarter Business with OPPTY Today</h2>
+            <h2 class="smarterBusiness-heading animated-gradient-text">Co-create a Smarter Business with OPPTY Today
+            </h2>
             <style>
-            .animated-gradient-text {
-                background: linear-gradient(90deg, #f76e11, green, red, blue);
-                background-size: 300% 100%;
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                animation: gradientFlow 3s ease-in-out infinite;
-            }
+                .animated-gradient-text {
+                    background: linear-gradient(90deg, #f76e11, green, red, blue);
+                    background-size: 300% 100%;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: gradientFlow 3s ease-in-out infinite;
+                }
 
-            @keyframes gradientFlow {
-                0% {
-                    background-position: 0% 50%;
+                @keyframes gradientFlow {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+
+                    50% {
+                        background-position: 100% 50%;
+                    }
+
+                    100% {
+                        background-position: 0% 50%;
+                    }
                 }
-                50% {
-                    background-position: 100% 50%;
-                }
-                100% {
-                    background-position: 0% 50%;
-                }
-            }
             </style>
         </div>
         <div class="view-all" style="transition: transform 0.3s; position: relative; z-index: 2;margin-top:50px;">
@@ -1699,11 +1709,11 @@
             </div>
         </div>
     </footer>
- </footer>
+    </footer>
     <!-- Copyright Section -->
- <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-top-border"></div>
-        
+
         <div class="footer-content">
             <div class="recognitions-container">
                 <img src="assets/copyright1.png.png" alt="Ministry of MSME, Govt. of India">

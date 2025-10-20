@@ -76,13 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
             panel: document.getElementById('locationPanel'),
             locationName: document.getElementById('locationName'),
             locationAddress: document.getElementById('locationAddress'),
-            exploreBtn: document.getElementById('exploreBtn')
-        },
-        panel2: {
-            panel: document.getElementById('locationPanel2'),
-            locationName: document.getElementById('locationName2'),
-            locationAddress: document.getElementById('locationAddress2'),
-            exploreBtn: document.getElementById('exploreBtn2')
+            exploreBtn: document.getElementById('exploreBtn'),
+            careers_panel: document.getElementById('locationPanel1'),
+            careers_hl: document.getElementById('careers-hl'),
         }
     };
 
@@ -107,7 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         panelElements.locationName.textContent = data.name;
         panelElements.locationAddress.textContent = data.address;
+        panelElements.careers_hl.textContent = data.name + ' Careers';
 
+        panelElements.careers_panel.classList.add('show');
+        panelElements.panel.setAttribute('aria-hidden', 'false');
         panelElements.panel.classList.add('show');
         panelElements.panel.setAttribute('aria-hidden', 'false');
         currentLocation = country;
@@ -123,6 +122,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (panelElements.panel) {
                 panelElements.panel.classList.remove('show');
                 panelElements.panel.setAttribute('aria-hidden', 'true');
+                panelElements.careers_panel.classList.remove('show');
+                panelElements.careers_panel.setAttribute('aria-hidden', 'true');
             }
         });
         dots.forEach(d => d.classList.remove('active'));

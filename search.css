@@ -1,5 +1,5 @@
 .search-secondpage-container {
-    height: 40em;
+    height: 35em;
     background-color: rgb(244, 244, 244);
     /* padding: 80px 0 40px; */
     /* margin-top: 90px; */
@@ -14,22 +14,37 @@
     padding: 60px 20px;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 150px;
-}
-
-.search-heading {
-    color: #000000;
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: left;
+    margin-top: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    margin-left: 100px;
 }
 
 .search-text {
     color: #000000;
-    font-size: 1.2rem;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
     text-align: left;
+    font-family: Poppins, sans-serif;
+    letter-spacing: 0.67px;
+    line-height: 1.57px;
+}
+
+.search-heading {
+    color: #000000;
+    font-size: 40px;
+    /* text-align: left; */
     margin-bottom: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: Poppins, sans-serif;
+    letter-spacing: 0.67px;
+    line-height: 50px;
+    /* align-items: left; */
 }
 
 .search-container {
@@ -41,11 +56,11 @@
 .search-input-wrapper {
     display: flex;
     align-items: center;
-    background: #ddbfab;
+    background: #dabea8;
     border: 2px solid #f76e11;
     border-radius: 50px;
     padding: 15px 25px;
-    min-width: 400px;
+    min-width: 800px;
     backdrop-filter: blur(10px);
 }
 
@@ -67,6 +82,7 @@
 
 .search-input::placeholder {
     color: grey;
+    font-size: 28px;
 }
 
 @media (max-width: 768px) {
@@ -77,4 +93,51 @@
     .search-heading {
         font-size: 2rem;
     }
+}
+
+/* for buttons  */
+.trending-title-text {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tags-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.tags-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+    margin: -85px 0px 10px 550px;
+    gap: 10px;
+}
+
+.btn.btn-primary.search-buttons-css {
+    background-color: #fff;
+    color: #000000;
+    border-radius: 30px;
+    border: 2px solid #000000;
+}
+
+.search-buttons {
+    margin: 0px 0px 0px 0px;
+}
+
+.title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    margin: 15px 0px 10px 129px;
+    width: 250px;
+    /* margin-left: 5px; */
+}
+
+.trending-title {
+    padding: 0px 0px 10px 0px;
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpptyBPO.com</title>
+    <title>search.com</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="search.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/dripicons@2.0.0/dripicons.css">
@@ -42,11 +42,13 @@
                 <ul class="sidebar-menu">
 
                     <li class="nav_bar_list_item"><a class="anchor" href="home.html">Home</a></li>
-                    <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
+                    <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
+                    <!-- <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li> -->
                     <li class="nav_bar_list_item"><a class="anchor" href="capabilities.html">Capabilities-Service</a>
                     </li>
-                    <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
+                    <!-- <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li> -->
                     <li class="nav_bar_list_item"><a class="anchor" href="perspectives.html">Perspectives</a></li>
+                    <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
 
                 </ul>
                 <style>
@@ -89,7 +91,7 @@
             </div>
             <img src="assets/oppty.png" alt="OpptyBPO-Logo" class="logo-img" style="margin-right: -51px;">
             <div class="search-button">
-                <button id="searchBtn" class="search-icon-btn" type="button" aria-label="Search"
+                <button id="searchBtn" class="search-icon-btn" type="button" aria-label="Search" onclick="window.location.href='search.html'"
                     style="border: none; box-shadow: none;">
                     <i class="fa fa-search"></i>
                 </button>
@@ -111,93 +113,113 @@
         </div>
         <style>
             .animated-stripes {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 35em;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 35em;
+                overflow: hidden;
+                pointer-events: none;
+                z-index: 1;
             }
-            
+
             .stripe {
-            position: absolute;
-            width: 100%;
-            height: 15px;
-            background: linear-gradient(60deg, transparent, #f76e11, transparent);
-            animation: floatStripe 8s ease-in-out infinite;
-            opacity: 0.6;
+                position: absolute;
+                width: 100%;
+                height: 15px;
+                background: linear-gradient(60deg, transparent, #f76e11, transparent);
+                animation: floatStripe 8s ease-in-out infinite;
+                opacity: 0.6;
             }
-            
+
             .stripe-1 {
-            animation-delay: 0s;
+                animation-delay: 0s;
             }
-            
+
             .stripe-2 {
-            animation-delay: 1.5s;
+                animation-delay: 1.5s;
             }
-            
+
             .stripe-3 {
-            animation-delay: 3s;
+                animation-delay: 3s;
             }
-            
+
             .stripe-4 {
-            animation-delay: 4.5s;
+                animation-delay: 4.5s;
             }
-            
+
             .stripe-5 {
-            animation-delay: 6s;
+                animation-delay: 6s;
             }
-            
+
             @keyframes floatStripe {
-            0% {
-            transform: translateY(100vh) translateX(100%);
-            opacity: 0;
-            }
-            25% {
-            transform: translateY(75vh) translateX(75%);
-            opacity: 0.8;
-            }
-            50% {
-            transform: translateY(50vh) translateX(50%);
-            opacity: 0.8;
-            }
-            75% {
-            transform: translateY(25vh) translateX(25%);
-            opacity: 0.8;
-            }
-            100% {
-            transform: translateY(0vh) translateX(0%);
-            opacity: 0;
-            }
+                0% {
+                    transform: translateY(100vh) translateX(100%);
+                    opacity: 0;
+                }
+
+                25% {
+                    transform: translateY(75vh) translateX(75%);
+                    opacity: 0.8;
+                }
+
+                50% {
+                    transform: translateY(50vh) translateX(50%);
+                    opacity: 0.8;
+                }
+
+                75% {
+                    transform: translateY(25vh) translateX(25%);
+                    opacity: 0.8;
+                }
+
+                100% {
+                    transform: translateY(0vh) translateX(0%);
+                    opacity: 0;
+                }
             }
         </style>
         <div class="search-content">
-            <h1 class="search-heading">Search</h1>
-            <p class="search-text">What are you looking for?</p>
+            <p class="search-text">Search</p>
+            <h1 class="search-heading">What are you looking for?</h1>
             <div class="search-container">
                 <div class="search-input-wrapper">
                     <i class="fa fa-search search-logo"></i>
                     <input type="text" id="searchInput" class="search-input"
-                        placeholder="Search for services, solutions, or industries...">
+                        placeholder="Search for anything here...">
                 </div>
             </div>
         </div>
         <section class="trending-section">
-            <div class="trending-title">
-                <span class="trending-title-text">What areas interest you?</span>
-                <span class="trending-title-text">Most Trending</span>
+            <div class="title-section">
+                <div class="trending-title-one">
+                    <i class="fa fa-caret-right" style="margin-right: 10px; color: #f76e11;font-size: 20px;"></i>
+                    <span class="trending-title-text">What areas interest you?</span>
+                </div>
+                <div class="trending-title-two">
+                    <i class="fa fa-caret-right" style="margin-right: 10px;color: #f76e11;font-size: 20px;"></i>
+                    <span class="trending-title-text">Most trending</span>
+                </div>
             </div>
             <div class="tags-container">
-                <button class="btn btn-primary">Search</button>
-                <button class="btn btn-primary">Search</button>
-                <button class="btn btn-primary">Search</button>
-                <button class="btn btn-primary">Search</button>
-                <button class="btn btn-primary">Search</button>
-                <button class="btn btn-primary">Search</button>
-                <button class="btn btn-primary">Search</button>
-                <button class="btn btn-primary">Search</button>
+                <div class="search-buttons">
+                    <div class="tags-row">
+                        <button class="btn btn-primary search-buttons-css">Automation</button>
+                        <button class="btn btn-primary search-buttons-css">In The News</button>
+                        <button class="btn btn-primary search-buttons-css">Blockchain</button>
+                        <button class="btn btn-primary search-buttons-css">Analytics</button>
+                    </div>
+                    <div class="tags-row">
+                        <button class="btn btn-primary search-buttons-css">Data Analytics</button>
+                        <button class="btn btn-primary search-buttons-css">Digital Transformation</button>
+                    </div>
+                    <div class="tags-row">
+                        <button class="btn btn-primary search-buttons-css">Customer Experience</button>
+                        <button class="btn btn-primary search-buttons-css">Finance and Accounting</button>
+                    </div>
+                </div>
+               
+
             </div>
         </section>
 

@@ -44,11 +44,13 @@ body {
     margin-left: 800px;
 }
 
+
 .register-now {
     display: flex;
     justify-content: center;
     width: 200px;
     height: 68px;
+    align-content: center;
 }
 
 .register-now button {
@@ -61,6 +63,10 @@ body {
     font-style: normal;
     font-weight: 500;
     text-transform: uppercase;
+    align-content: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     margin: 20px 30px 0px 51px;
 }
 
@@ -706,7 +712,7 @@ body {
     position: absolute;
     width: 100%;
     letter-spacing: 1px;
-} */
+}
 body {
     background-color: black;
     display: block;
@@ -758,6 +764,7 @@ body {
     justify-content: center;
     width: 200px;
     height: 68px;
+    align-content: center;
 }
 
 .register-now button {
@@ -770,7 +777,7 @@ body {
     font-style: normal;
     font-weight: 500;
     text-transform: uppercase;
-    margin: 20px 30px 0px 51px;
+    /*margin: 20px 30px 0px 51px;*/
 }
 
 .register-now button:hover {
