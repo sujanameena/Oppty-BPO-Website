@@ -105,14 +105,50 @@
         <!-- first page -->
         <div class="video-background">
             <video id="bgVideo" autoplay loop playsinline controls>
-                <source
-                    src="https://www.wns.com/Portals/_default/Skins/WNS-revamp/WNS-Home/videos/Home-Video-Banner.mp4"
-                    type="video/mp4">
+            <source
+                src="https://www.wns.com/Portals/_default/Skins/WNS-revamp/WNS-Home/videos/Home-Video-Banner.mp4"
+                type="video/mp4">
             </video>
             <button id="speakerToggle" aria-label="Toggle sound">
-                <i id="speakerIcon" class="fa fa-volume-up"></i>
+            <i id="speakerIcon" class="fa fa-volume-up"></i>
             </button>
         </div>
+
+        <style>
+            .video-background {
+            transition: transform 0.3s ease-out;
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const videoBackground = document.querySelector('.video-background');
+            let lastScrollY = window.scrollY;
+
+            function handleScroll() {
+                const currentScrollY = window.scrollY;
+                const scrollDelta = currentScrollY - lastScrollY;
+                
+                // Calculate scale based on scroll direction
+                if (scrollDelta > 0) {
+                // Scrolling down - zoom out
+                videoBackground.style.transform = 'scale(0.95)';
+                } else if (scrollDelta < 0) {
+                // Scrolling up - zoom in
+                videoBackground.style.transform = 'scale(1.05)';
+                }
+                
+                // Reset to normal scale after a short delay
+                setTimeout(() => {
+                videoBackground.style.transform = 'scale(1)';
+                }, 150);
+                
+                lastScrollY = currentScrollY;
+            }
+
+            window.addEventListener('scroll', handleScroll, { passive: true });
+            });
+        </script>
         <!-- Scroll Down Button -->
         <div class="scroll-down-container">
             <button id="scrollDownBtn" aria-label="Scroll Down">
