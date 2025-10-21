@@ -404,7 +404,302 @@
         </div>
     </section> -->
     <!-- siidu sections starts here -->
-     
+    <section class="image-slider-section">
+        <div class="container">
+            <h2 class="slider-heading">Smarter by Design & Execution</h2>
+            <div class="image-slider-container">
+                <div class="slider-wrapper">
+                    <div class="image-track" id="imageTrack">
+                        <div class="image-slide">
+                            <img src="assets/case study slider1.jpg" alt="AI Solutions" />
+                            <div class="slide-content">
+                                <h3>AI Solutions</h3>
+                                <p>Evaluate & OPPTY: Co-creating Domain-led Datasets for AI research</p>
+                            </div>
+                        </div>
+                        <div class="image-slide">
+                            <img src="assets/case study slider2.jpg" alt="Data Analytics" />
+                            <div class="slide-content">
+                                <h3>Data Analytics</h3>
+                                <p>ALM Media Harnesses Intelligent Automation to Streamline Publishing Workflow</p>
+                            </div>
+                        </div>
+                        <div class="image-slide">
+                            <img src="assets/case study slider3.jpg" alt="Digital Transformation" />
+                            <div class="slide-content">
+                                <h3>Digital Transformation</h3>
+                                <p>Boosting Sales Productivity for a Global Tech Firm with AI-Powered Insights</p>
+                            </div>
+                        </div>
+                        <div class="image-slide">
+                            <img src="assets/case study slider4.jpg" alt="Customer Experience" />
+                            <div class="slide-content">
+                                <h3>Customer Experience</h3>
+                                <p>Agentic AI in Retail: Unlocking Autonomous Innovation Across the Value Chain</p>
+                            </div>
+                        </div>
+                        <div class="image-slide">
+                            <img src="assets/news4.jpg" alt="Cloud Services" />
+                            <div class="slide-content">
+                                <h3>Cloud Services</h3>
+                                <p>Scale your infrastructure efficiently</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev-btn" id="prevBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="slider-btn next-btn" id="nextBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20">
+                            <path d="M7.5 5L12.5 10L7.5 15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+    .image-slider-section {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+
+    .slider-heading {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 3rem;
+    }
+
+    .image-slider-container {
+        position: relative;
+        max-width: 1400px;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .slider-wrapper {
+        position: relative;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .image-track {
+        display: flex;
+        transition: transform 0.6s ease-in-out;
+        height: 100%;
+        width: 500%;
+    }
+
+    .image-slide {
+        flex: 0 0 20%;
+        position: relative;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .image-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .image-slide:hover img {
+        transform: scale(1.1);
+    }
+
+    .slide-content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: white;
+        padding: 2rem 1rem 1rem;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
+
+    .image-slide:hover .slide-content {
+        transform: translateY(0);
+    }
+
+    .slide-content h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .slide-content p {
+        font-size: 1rem;
+        opacity: 0.9;
+        margin: 0;
+    }
+
+    .slider-controls {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        pointer-events: none;
+    }
+
+    .slider-btn {
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        pointer-events: all;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .slider-btn:hover {
+        background: white;
+        transform: scale(1.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .slider-btn:active {
+        transform: scale(0.95);
+    }
+
+    .slider-btn svg {
+        color: #2c3e50;
+        width: 24px;
+        height: 24px;
+    }
+
+    @media (max-width: 1024px) {
+        .image-slider-container {
+            max-width: 1000px;
+        }
+        
+        .slider-wrapper {
+            height: 400px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .image-track {
+            width: 500%;
+        }
+        
+        .image-slide {
+            flex: 0 0 20%;
+        }
+        
+        .slider-heading {
+            font-size: 2rem;
+        }
+        
+        .slider-wrapper {
+            height: 300px;
+        }
+        
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .slider-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .image-slider-container {
+            margin: 0 10px;
+        }
+        
+        .slider-controls {
+            padding: 0 10px;
+        }
+    }
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const imageTrack = document.getElementById('imageTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slides = document.querySelectorAll('.image-slide');
+        
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        
+        function updateSlider() {
+            const translateX = -currentIndex * 20; // 20% per slide
+            imageTrack.style.transform = `translateX(${translateX}%)`;
+        }
+        
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateSlider();
+        }
+        
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+        
+        // Event listeners for buttons
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            nextSlide();
+        });
+        
+        prevBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            prevSlide();
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            } else if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+        });
+        
+        // Auto-play functionality (optional - remove if not needed)
+        let autoPlayInterval = setInterval(nextSlide, 5000);
+        
+        // Pause auto-play on hover
+        const sliderContainer = document.querySelector('.image-slider-container');
+        sliderContainer.addEventListener('mouseenter', function() {
+            clearInterval(autoPlayInterval);
+        });
+        
+        sliderContainer.addEventListener('mouseleave', function() {
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Initialize
+        updateSlider();
+    });
+    </script>
      <!-- siidu sections ends here -->
     <!-- new section starts here -->
       <section class="interactive-3d-section">
