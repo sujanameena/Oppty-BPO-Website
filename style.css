@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1d24;
+    color: #f0f0f0;
+}
+
+.interactive-3d-section {
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+/* This container defines the 3D space for the card */
+.card-container {
+    perspective: 1500px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 16px;
+    overflow: hidden;
+    /* This is crucial for the 3D effect to work on child elements */
+    transform-style: preserve-3d;
+    will-change: transform;
+    transition: transform 0.5s ease-out;
+}
+
+.card-content {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+}
+
+.card-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    /* Push the background back in 3D space */
+    transform: translateZ(0px);
+}
+
+.card-glare {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.card:hover .card-glare {
+    opacity: 1;
+}
+
+.card-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 10%, transparent 60%);
+    /* This makes the text content "float" above the background */
+    transform: translateZ(30px);
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 0.5rem 0;
+    /* Make the title float even more forward */
+    transform: translateZ(50px);
+}
+
+.card-body {
+    font-size: 1rem;
+    color: #d0d0d0;
+    margin: 0 0 1.5rem 0;
+    /* Keep the body slightly behind the title */
+    transform: translateZ(40px);
+}
+
+.card-link {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #E85D2C;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    align-self: flex-start;
+    transition: background-color 0.3s;
+    /* Make the link the most forward element */
+    transform: translateZ(60px);
+}
+
+.card-link:hover {
+    background-color: #D9531E;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+    /* On mobile, we disable the 3D effect for better performance and usability */
+    .card-container, .card, .card-text, .card-title, .card-body, .card-link {
+        perspective: none;
+        transform: none;
+        transition: none;
+    }
+}
