@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    display: block;
+    /* display: block; */
     overflow-x: hidden;
 }
 
@@ -157,7 +157,7 @@ body {
 }
 
 .video-background {
-    position: absolute;
+    position: relative;
     top: 80px;
     left: 50px;
     right: 50px;
@@ -169,7 +169,7 @@ body {
 }
 
 .video-background video {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     min-width: 100%;
@@ -182,7 +182,7 @@ body {
 }
 
 #speakerToggle {
-    position: absolute;
+    position: relative;
     bottom: 20px;
     right: 20px;
     z-index: 3;
@@ -200,7 +200,7 @@ body {
 
 /* scroll down button */
 .scroll-down-container {
-    position: absolute;
+    position: relative;
     left: 50%;
     bottom: 40px;
     transform: translateX(-50%);
@@ -272,7 +272,7 @@ body {
 
 
 .text-on-img {
-    position: absolute;
+    position: relative;
     font-size: 68px;
     font-weight: 400;
     text-align: center;
@@ -361,7 +361,7 @@ body {
 }
 
 .image-text {
-    position: absolute;
+    position: relative;
     bottom: 16px;
     left: 0;
     width: 100%;
@@ -455,11 +455,12 @@ body {
 
 .custom-image-row {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 25px;
     margin: 40px 0;
+    
 }
-
+    
 .custom-image-item {
     position: relative;
     overflow: hidden;
@@ -481,7 +482,7 @@ body {
 }
 
 .custom-image-text {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -511,7 +512,6 @@ body {
 .custom-image-hover-arrow:hover .hover-arrow {
     display: inline-block;
 }
-
 
 /* fourth page */
 .fourth-page-container {
@@ -556,7 +556,7 @@ body {
 }
 
 .hover-image-heading {
-    position: absolute;
+    position: relative;
     bottom: 16px;
     left: 0;
     width: 100%;
@@ -573,7 +573,7 @@ body {
 }
 
 .hover-image-overlay {
-    position: absolute;
+    position: relative;
     left: 0;
     top: 0;
     width: 100%;
@@ -736,6 +736,56 @@ body {
     height: 80px;
     background-color: black;
 }
+.customHamburger {
+    outline: none;
+    background: transparent;
+    border: none;
+    padding: 10px;
+    width: 56px;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1200;
+}
+
+.customHamburger:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+@media (min-width: 1440px) {
+    .customHamburger {
+        left: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .customHamburger {
+        left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .customHamburger {
+        left: 10px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .customHamburger {
+        left: 5px;
+        width: 44px;
+        height: 44px;
+    }
+}
 
 .logo-img {
     height: 40px;
@@ -743,7 +793,32 @@ body {
     object-fit: cover;
     display: block;
     overflow: hidden;
-    margin: 0px -100px 0px -1px;
+    position: absolute;
+    left: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+    .logo-img {
+        height: 35px;
+        left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 30px;
+        left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 25px;
+        left: 10px;
+    }
 }
 
 .search-icon-btn {
