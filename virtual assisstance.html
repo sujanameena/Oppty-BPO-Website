@@ -1,0 +1,2050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpptyBPO.com</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/dripicons@2.0.0/dripicons.css">
+    <link href="https://fonts.googleapis.com/css?family=Dripicons" rel="stylesheet">
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="home.js"></script>
+</head>
+
+<body class="main-body">
+    <div class="first-page-container">
+        <header>
+            <div class="header-container">
+                <nav class="navbar"
+                    style="background: transparent; border: none; justify-content: flex-start; color: #fff;"></nav>
+                <div class="container-fluid d-flex align-items-center" style="justify-content: flex-start;width:10%;">
+                    <button id="customHamburger" class="navbar-toggler border-0 shadow-none" type="button"
+                        aria-label="Toggle navigation">
+                        <span class="hamburger-lines"
+                            style="display:inline-block;width:34px;height:24px;position:relative;">
+                            <span
+                                style="position:absolute;left:0;top:0;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                            <span
+                                style="position:absolute;left:0;top:10px;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                            <span
+                                style="position:absolute;left:0;top:20px;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                        </span>
+                    </button>
+                </div>
+                </nav>
+                <!-- Sidebar -->
+                <div id="sidebar" class="sidebar">
+                    <ul class="sidebar-menu">
+
+                        <li class="nav_bar_list_item"><a class="anchor" href="home.html">Home</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
+                        
+                        <li class="nav_bar_list_item"><a class="anchor"
+                                href="capabilities.html">Capabilities-Service</a></li>
+
+                        <li class="nav_bar_list_item"><a class="anchor" href="perspectives.html">Perspectives</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
+
+                    </ul>
+                    <style>
+                        .expandable {
+                            position: relative;
+                        }
+
+                        .expandable .expand-btn {
+                            transition: opacity 0.2s;
+                        }
+
+                        .expandable:hover .expand-btn {
+                            display: inline-block !important;
+                        }
+
+                        .expand-content li a {
+                            font-size: 0.95em;
+                            color: #555;
+                        }
+                    </style>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var expandable = document.querySelector('.expandable');
+                            var expandBtn = expandable.querySelector('.expand-btn');
+                            var expandContent = expandable.querySelector('.expand-content');
+                            var expandIcon = expandable.querySelector('.expand-icon');
+
+                            expandBtn.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                if (expandContent.style.display === 'none' || expandContent.style.display === '') {
+                                    expandContent.style.display = 'block';
+                                    expandIcon.innerHTML = '&#9660;';
+                                } else {
+                                    expandContent.style.display = 'none';
+                                    expandIcon.innerHTML = '&#9654;';
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+                <img src="assets/oppty.png" alt="OpptyBPO-Logo" class="logo-img" style="margin-right: -51px;">
+                <div class="search-button">
+                    <button id="searchBtn" class="search-icon-btn" type="button" aria-label="Search"
+                        onclick="window.location.href='search.html'" style="border: none; box-shadow: none;">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <!-- <div class="search-button">
+                    <button class="fa fa-search button-css" onclick="window.location.href='search.html'"></button>
+                </div> -->
+                <div class="register-now">
+                    <button class="btn btn-primary" onclick="window.location.href='contactUs.html'">Contact Us</button>
+                </div>
+            </div>
+        </header>
+        <!--hero section starts here-->
+        <section>
+        <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* --- Hero Section Styles --- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+        
+        /* 1. The Background Image (<img> tag) */
+        .hero-background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This makes the image cover the area */
+            z-index: 1;
+
+            /* 
+             * THE FIX: This tells the browser WHICH PART of the image to focus on.
+             * 'center' is the most common. You can also use 'top', 'bottom', etc.
+             */
+            object-position: center; 
+        }
+
+        /* 2. The Overlay (<div>) for better text contrast */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 37, 64, 0.75);
+            z-index: 2;
+        }
+
+        /* 3. The Content Container */
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 3;
+            padding: 30px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            animation: slideInLeft 1s forwards;
+        }
+
+        .hero-content p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            animation: fadeInUp 1s 0.3s forwards;
+        }
+
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .primary-cta {
+            background: #00d4ff;
+            color: #0a2540;
+            border: none;
+            padding: 16px 45px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s 0.6s;
+        }
+
+        .primary-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .secondary-cta {
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 16px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: 2px solid #00d4ff;
+        }
+
+        .secondary-cta:hover {
+            color: white;
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* --- Section 2: Services --- */
+        .services {
+            padding: 100px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: #0a2540;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #0a2540;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* --- Animations --- */
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 768px) {
+            .cta-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .primary-cta,
+            .secondary-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    </section>
+</head>
+<>
+    
+ <style>
+        /*
+         * KEYFRAME ANIMATIONS
+         * These create the "slide-in and attach" effect for the text.
+        */
+
+        @keyframes slideFromLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideFromRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideFromBottom {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /*
+         * HERO SECTION STYLES
+         * All styles are scoped to the '.hero-sleek' class.
+        */
+
+        .hero-sleek {
+            position: relative; /* Anchor for the overlay */
+            height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+            background-color: #000000; /* Black background fallback */
+            overflow: hidden; /* Crucial for hiding text as it slides in */
+            font-family: 'Poppins', sans-serif;
+            
+            /* The background image */
+            background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* --- Dark Overlay for Text Readability --- */
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            z-index: 1;
+            /* A gradient that darkens the image, especially at the edges */
+            background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+        }
+
+        /* --- Content Container --- */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* --- Headline & Animation --- */
+        .hero-content h1 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin: 0 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            /* A subtle glow to lift the text off the background */
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Container for each line of the headline to animate them separately */
+        .hero-content .headline-line {
+            display: block;
+            opacity: 0; /* Start hidden before animation */
+        }
+        
+        /* Applying the slide-in animations with delays */
+        .hero-content .line-1 {
+            animation: slideFromLeft 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+        }
+        .hero-content .line-2 {
+            animation: slideFromRight 1.2s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
+        }
+
+        /* --- Sub-headline & Animation --- */
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 400;
+            max-width: 500px;
+            margin: 0 auto 2.5rem;
+            opacity: 0; /* Start hidden */
+            line-height: 1.6;
+            animation: slideFromBottom 1s ease-out 1.2s forwards;
+        }
+        
+        /* --- CTA Button & Animation --- */
+        .hero-cta {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #ffffff;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+            /* Sleek "ghost button" style */
+            background: transparent;
+            border: 2px solid #ffffff;
+            
+            /* Interaction */
+            transition: all 0.3s ease;
+
+            /* Animation */
+            opacity: 0; /* Start hidden */
+            animation: slideFromBottom 1s ease-out 1.5s forwards;
+        }
+
+        .hero-cta:hover {
+            background: #ffffff;
+            color: #000000;
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="hero-sleek">
+        <!-- Layer 1: Dark Overlay -->
+        <div class="hero-overlay"></div>
+
+        <!-- Layer 2: Animated Content -->
+        <div class="hero-content">
+            
+            <h1>
+                <span class="headline-line line-1">Your Focus.</span>
+                <span class="headline-line line-2">Our Support.</span>
+            </h1>
+
+            <p>
+                Delegate your tasks. Reclaim your time. We provide expert virtual assistance so you can concentrate on what truly matters.
+            </p>
+
+            <a href="#contact" class="hero-cta">Hire your Virtual Assistance</a>
+
+        </div>
+    </section>
+<!--hero sections ends here-->
+    <!--email section starts here-->
+    <section>
+        <style>
+        /*
+         * ELITE SERVICES SECTION STYLES
+        */
+        .elite-services-section {
+            position: relative;
+            padding: 120px 20px;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif; /* FONT CHANGE */
+            background-color: #121212;
+            overflow: hidden;
+        }
+        
+        .spotlight-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% var(--y, 50%), rgba(255, 107, 8, 0.08), transparent 40%);
+        }
+        
+        .elite-services-section .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- Section Header --- */
+        .section-header {
+            text-align: center;
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .section-header.is-visible { opacity: 1; transform: translateY(0); }
+        .section-header h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            margin: 0;
+        }
+        .section-header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 600px;
+            margin: 0.5rem auto 0;
+            color: #ff6b08;
+            font-weight: 600;
+        }
+
+        /* --- Features List --- */
+        .features-list { display: grid; gap: 120px; }
+        .feature-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out 0.2s;
+        }
+        .feature-item.is-visible { opacity: 1; transform: translateY(0); }
+        .feature-item:nth-child(even) .feature-visual { order: -1; }
+
+        /* --- Text Content --- */
+        .feature-text h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0 0 15px 0;
+        }
+        .feature-text p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        /* --- Visual Content --- */
+        .feature-visual { perspective: 1500px; }
+        .visual-stage {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+            background: #1c1c1c;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            padding: 20px;
+        }
+        
+        /* === NEW & UNIQUE STORYTELLING ANIMATIONS === */
+
+        /* General styles for animated elements */
+        .email-item, .bar-item, .draft-item {
+            position: absolute;
+            background: #2a2a2a;
+            border-radius: 6px;
+            transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        /* 1. Triage Animation */
+        .triage-anim .email-item { height: 12%; width: 90%; left: 5%; }
+        .triage-anim .e1 { top: 10%; } .triage-anim .e2 { top: 25%; } .triage-anim .e3 { top: 40%; }
+        .triage-anim .e4 { top: 55%; } .triage-anim .e5 { top: 70%; }
+        .feature-item.is-visible .triage-anim .e1 { transform: scale(0); opacity: 0; transition-delay: 0.5s; }
+        .feature-item.is-visible .triage-anim .e2 { top: 10%; background: #ff6b08; transition-delay: 1.5s; }
+        .feature-item.is-visible .triage-anim .e3 { transform: scale(0); opacity: 0; transition-delay: 0.8s; }
+        .feature-item.is-visible .triage-anim .e4 { top: 25%; transition-delay: 1.8s; }
+        .feature-item.is-visible .triage-anim .e5 { top: 40%; transition-delay: 2s; }
+
+        /* 2. Filter Animation */
+        .filter-anim .email-item { height: 15%; width: 90%; left: 5%; }
+        .filter-anim .e1 { top: 15%; background: rgba(255,255,255,0.1); }
+        .filter-anim .e2 { top: 40%; background: #ff6b08; }
+        .filter-anim .e3 { top: 65%; background: rgba(255,255,255,0.1); }
+        .feature-item.is-visible .filter-anim .e1,
+        .feature-item.is-visible .filter-anim .e3 { transform: translateX(120%) rotate(15deg); opacity: 0; transition-delay: 0.8s; }
+        .feature-item.is-visible .filter-anim .e2 { top: 15%; transition-delay: 1.5s; }
+
+        /* 3. Drafting Animation */
+        .draft-anim .email-item { top: 15%; left: 5%; width: 90%; height: 15%; background: #ff6b08; }
+        .draft-anim .draft-item { top: 35%; left: 5%; width: 90%; height: 45%; opacity: 0; transform: translateY(20px); }
+        .draft-anim .typing-line { position: absolute; top: 20%; left: 10%; height: 8px; border-radius: 4px; background: rgba(255,255,255,0.7); width: 0; }
+        .feature-item.is-visible .draft-anim .draft-item { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
+        .feature-item.is-visible .draft-anim .typing-line { width: 80%; transition: width 1s ease-out 1.2s; }
+        .feature-item.is-visible .draft-anim .draft-item { opacity: 0; transform: translateY(-20px); transition-delay: 2.5s; }
+
+        /* 4. Analytics Animation */
+        .analytics-anim .email-item { height: 15%; width: 40%; }
+        .analytics-anim .e1 { top: 15%; left: 5%; } .analytics-anim .e2 { top: 40%; left: 5%; }
+        .analytics-anim .bar-item { bottom: 0; width: 20%; transform: scaleY(0); transform-origin: bottom; }
+        .analytics-anim .b1 { left: 10%; height: 60%; background: #ff6b08; }
+        .analytics-anim .b2 { left: 40%; height: 80%; } .analytics-anim .b3 { left: 70%; height: 40%; }
+        .feature-item.is-visible .analytics-anim .email-item { transform: scale(0); opacity: 0; transition-delay: 0.5s; }
+        .feature-item.is-visible .analytics-anim .b1 { transform: scaleY(1); transition-delay: 1s; }
+        .feature-item.is-visible .analytics-anim .b2 { transform: scaleY(1); transition-delay: 1.2s; }
+        .feature-item.is-visible .analytics-anim .b3 { transform: scaleY(1); transition-delay: 1.4s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-item, .feature-item:nth-child(even) { grid-template-columns: 1fr; grid-template-areas: unset; text-align: center; }
+            .feature-visual { order: -1; margin-bottom: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="elite-services-section">
+        <div class="spotlight-bg"></div>
+        <div class="container">
+            <header class="section-header">
+                <h2>The Inbox, Transformed</h2>
+                <p>Oppty BPO turns your email from a daily liability into a powerful asset for growth.</p>
+            </header>
+            
+            <div class="features-list">
+                
+                <div class="feature-item">
+                    <div class="feature-text">
+                        <h3>Intelligent Triage</h3>
+                        <p>Our experts categorize every incoming message in real-time. Urgent tasks are flagged, key conversations are highlighted, and you focus only on what demands your direct attention.</p>
+                    </div>
+                    <div class="feature-visual">
+                        <div class="visual-stage triage-anim">
+                            <div class="email-item e1"></div><div class="email-item e2"></div><div class="email-item e3"></div>
+                            <div class="email-item e4"></div><div class="email-item e5"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-text">
+                        <h3>Automated Decluttering</h3>
+                        <p>Custom-built filters and rulesets work 24/7 to archive non-essential communications, keeping your primary inbox pristine and focused on high-value interactions.</p>
+                    </div>
+                    <div class="feature-visual">
+                         <div class="visual-stage filter-anim">
+                            <div class="email-item e1"></div><div class="email-item e2"></div><div class="email-item e3"></div>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-text">
+                        <h3>Response Assistance & Drafting</h3>
+                        <p>Delegate routine replies and follow-ups. We learn your voice to draft professional responses, manage meeting requests, and ensure no opportunity is missed.</p>
+                    </div>
+                    <div class="feature-visual">
+                         <div class="visual-stage draft-anim">
+                            <div class="email-item"></div>
+                            <div class="draft-item"><div class="typing-line"></div></div>
+                         </div>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-text">
+                        <h3>Actionable Analytics</h3>
+                        <p>We transform your email data into valuable insights. Understand response times, peak activity hours, and common queries to continuously optimize your communication strategy.</p>
+                    </div>
+                    <div class="feature-visual">
+                         <div class="visual-stage analytics-anim">
+                            <div class="email-item e1"></div><div class="email-item e2"></div>
+                            <div class="bar-item b1"></div><div class="bar-item b2"></div><div class="bar-item b3"></div>
+                         </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.section-header, .feature-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            animatedElements.forEach(element => observer.observe(element));
+
+            const section = document.querySelector('.elite-services-section');
+            const stages = document.querySelectorAll('.visual-stage');
+            section.addEventListener('mousemove', (e) => {
+                const { clientX, clientY } = e;
+                const { innerWidth, innerHeight } = window;
+                const x = (clientX / innerWidth - 0.5) * 2;
+                const y = (clientY / innerHeight - 0.5) * 2;
+                stages.forEach(stage => {
+                    stage.style.transform = `rotateY(${x * 8}deg) rotateX(${-y * 8}deg)`;
+                });
+            });
+            
+            const spotlight = document.querySelector('.spotlight-bg');
+            window.addEventListener('scroll', () => {
+                const rect = section.getBoundingClientRect();
+                const yPercent = ((window.innerHeight / 2 - rect.top) / rect.height) * 100;
+                spotlight.style.setProperty('--y', `${yPercent}%`);
+            });
+        });
+    </script>
+    </section>
+    <!--Email sectoon ends here-->
+    <!-- calender sections starts here-->
+
+    <style>
+        
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(20px, -30px) rotate(45deg); }
+            50% { transform: translate(-10px, 20px) rotate(90deg); }
+            75% { transform: translate(30px, 10px) rotate(135deg); }
+            100% { transform: translate(0, 0) rotate(180deg); }
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes rotateHour {
+            from { transform: rotate(45deg); }
+            to { transform: rotate(405deg); } /* 360 + 45 */
+        }
+        @keyframes rotateMinute {
+            from { transform: rotate(90deg); }
+            to { transform: rotate(43290deg); } /* 12 full rotations + 90 */
+        }
+        
+        /*
+         * CALENDAR & SCHEDULING SECTION STYLES
+        */
+        .calendar-section {
+            position: relative;
+            padding: 120px 20px;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc; /* Clean, slightly off-white */
+            overflow: hidden;
+        }
+
+        /* Animated Gradient Orbs in Background */
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: 1;
+            opacity: 0.15;
+        }
+        .orb-1 {
+            width: 500px; height: 500px;
+            top: 10%; left: 10%;
+            background: #ff6b08; /* Orange */
+            animation: drift 30s alternate infinite ease-in-out;
+        }
+        .orb-2 {
+            width: 400px; height: 400px;
+            bottom: 5%; right: 5%;
+            background: #4a90e2; /* A complementary soft blue */
+            animation: drift 35s alternate-reverse infinite ease-in-out;
+        }
+
+        .calendar-section .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        /* Section Header */
+        .calendar-header {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .calendar-header.is-visible { opacity: 1; transform: translateY(0); }
+        .calendar-header h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: #1a1a1a;
+            margin: 0;
+        }
+        .calendar-header p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin: 0.5rem auto 0;
+            color: #555;
+        }
+
+        /* Animated Clock */
+        .clock-wrapper {
+            position: relative;
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 60px auto;
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s;
+        }
+        .clock-wrapper.is-visible { opacity: 1; transform: scale(1); }
+
+        .ticking-border {
+            position: absolute;
+            width: 100%; height: 100%;
+            border: 2px dashed rgba(0,0,0,0.1);
+            border-radius: 50%;
+            animation: spin 60s linear infinite;
+        }
+        .clock-face {
+            width: 85%; height: 85%;
+            background: #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        .clock-center {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px; height: 12px;
+            background: #ff6b08;
+            border-radius: 50%;
+            z-index: 3;
+        }
+        .clock-hand {
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform-origin: bottom;
+            border-radius: 5px;
+        }
+        .hour-hand {
+            width: 5px; height: 30%;
+            background: #1a1a1a;
+            z-index: 1;
+            animation: rotateHour 43200s linear infinite; /* 12 hours */
+        }
+        .minute-hand {
+            width: 3px; height: 40%;
+            background: #555;
+            z-index: 2;
+            animation: rotateMinute 3600s linear infinite; /* 60 minutes */
+        }
+
+        /* Feature Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            perspective: 2000px;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+            border: 1px solid #ebebeb;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .feature-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .feature-card:hover {
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        .feature-card:nth-child(1):hover { transform: translateY(-10px) rotateY(-8deg) rotateX(3deg); }
+        .feature-card:nth-child(2):hover { transform: translateY(-10px) rotateX(5deg); }
+        .feature-card:nth-child(3):hover { transform: translateY(-10px) rotateY(8deg) rotateX(3deg); }
+
+        .card-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            background: #fff0e6; /* Very light orange */
+        }
+        .card-icon svg {
+            width: 28px; height: 28px;
+            stroke: #ff6b08;
+            stroke-width: 2;
+        }
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 0 0 10px 0;
+        }
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            margin: 0;
+        }
+
+        @media (max-width: 900px) {
+            .cards-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+        
+        /* Dummy styles for demonstration context */
+        body { margin: 0; }
+        .dummy-section { height: 100vh; display: grid; place-content: center; font-family: 'Inter', sans-serif; font-size: 2rem; color: #ccc;}
+    </style>
+</head>
+<body>
+ 
+    <section class="calendar-section">
+        <!-- Animated background elements -->
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        
+        <div class="container">
+            <header class="calendar-header">
+                <h2>Calendar & Scheduling</h2>
+                <p>Oppty BPO provides intelligent calendar management to eliminate conflicts and maximize your availability.</p>
+            </header>
+            
+            <!-- Animated Clock -->
+            <div class="clock-wrapper">
+                <div class="ticking-border"></div>
+                <div class="clock-face">
+                    <div class="clock-hand hour-hand"></div>
+                    <div class="clock-hand minute-hand"></div>
+                    <div class="clock-center"></div>
+                </div>
+            </div>
+
+            <!-- 3D Interactive Cards -->
+            <div class="cards-grid">
+                
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4m8-4v4M3 10h18M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4M5 10v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V10"/></svg>
+                    </div>
+                    <h3>Complex Meeting Setup</h3>
+                    <p>We coordinate with multiple stakeholders across departments to find the optimal meeting time, handling all back-and-forth communication.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </div>
+                    <h3>Automated Reminders</h3>
+                    <p>Proactive reminders are sent to you and all attendees before key appointments, ensuring everyone is prepared and on time.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <h3>Time Zone Coordination</h3>
+                    <p>Our global team seamlessly manages international scheduling, converting time zones to prevent confusion and facilitate worldwide collaboration.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Select all elements that need to animate on scroll
+            const animatedElements = document.querySelectorAll('.calendar-header, .clock-wrapper, .feature-card');
+            
+            // Create an Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Get the staggered delay from the data attribute, defaulting to 0
+                        const delay = parseInt(entry.target.dataset.delay) || 0;
+                        
+                        // Apply the 'is-visible' class after the specified delay
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, delay);
+                        
+                        // Stop observing the element once it's visible
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { 
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            // Observe each element and apply a staggered delay to the cards
+            animatedElements.forEach((element, index) => {
+                if (element.classList.contains('feature-card')) {
+                    // This applies a sequential delay to the cards only
+                    element.dataset.delay = index * 150;
+                }
+                observer.observe(element);
+            });
+        });
+    </script>
+     <!--clander section ends here-->
+
+     <!--customer cummincation section starts here-->
+        <style>
+        
+         /* KEYFRAME ANIMATIONS */
+        @keyframes panel-slide-in-left {
+            from { opacity: 0; transform: translateX(-50px) rotateY(15deg); }
+            to { opacity: 1; transform: translateX(0) rotateY(0deg); }
+        }
+        @keyframes panel-slide-in-right {
+            from { opacity: 0; transform: translateX(50px) rotateY(-15deg); }
+            to { opacity: 1; transform: translateX(0) rotateY(0deg); }
+        }
+        @keyframes dashboard-scale-in {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideFromBottom {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* COMMAND CENTER SECTION STYLES */
+        .comm-center-section {
+            position: relative;
+            padding: 120px 20px;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+            overflow: hidden;
+            perspective: 2000px;
+        }
+
+        /* Canvas Background */
+        #plexus-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .comm-center-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section-header.is-visible { opacity: 1; transform: translateY(0); }
+        .section-header h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: #fff; margin: 0; }
+        .section-header p { font-size: clamp(1rem, 2vw, 1.2rem); margin: 0.5rem auto 0; color: #ff6b08; font-weight: 600; }
+
+        /* Main Command Center Layout */
+        .command-center {
+            display: grid;
+            grid-template-columns: 250px 1fr 250px;
+            gap: 30px;
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease-out;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .command-center.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+        }
+
+        /* Shared Panel Styles */
+        .side-panel, .dashboard-panel {
+            background: rgba(28, 28, 28, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+        .side-panel h4 { margin: 0 0 20px 0; font-weight: 600; color: #fff; text-align: center; }
+
+        /* Left & Right Side Panels */
+        .side-panel { opacity: 0; transform-origin: center; }
+        .is-visible .agent-panel { animation: panel-slide-in-left 1s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards; }
+        .is-visible .profile-panel { animation: panel-slide-in-right 1s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards; text-align: center; }
+        
+        .profile-panel img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #ff6b08; margin-bottom: 15px; }
+        .profile-panel strong { display: block; color: #fff; font-weight: 600; }
+        .profile-panel span { color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+
+        .agent-panel ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 15px; }
+        .agent-panel li { display: flex; align-items: center; background: #2a2a2a; padding: 10px; border-radius: 8px; }
+        .agent-panel img { width: 35px; height: 35px; border-radius: 50%; object-fit: cover; margin-right: 10px; }
+        .agent-panel span { color: rgba(255,255,255,0.8); }
+        .agent-panel .status { width: 8px; height: 8px; border-radius: 50%; margin-left: auto; }
+        .agent-panel .status.online { background: #28a745; }
+        .agent-panel .status.busy { background: #ffc107; }
+
+        /* Central Dashboard Panel */
+        .dashboard-panel { opacity: 0; }
+        .is-visible .dashboard-panel { animation: dashboard-scale-in 1s cubic-bezier(0.25, 1, 0.5, 1) 0.2s forwards; }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .metric-item { text-align: center; }
+        .metric-title { display: block; font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-bottom: 5px; }
+        .metric-value { font-size: 2.5rem; font-weight: 800; color: #ff6b08; line-height: 1; }
+
+        .live-feed h5 { margin: 0 0 15px 0; font-weight: 600; color: #fff; }
+        .live-feed ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+        .live-feed .feed-item {
+            background: #2a2a2a;
+            padding: 12px;
+            border-radius: 8px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        .is-visible .feed-item:nth-child(1) { animation: slideFromBottom 0.5s ease 1.5s forwards; }
+        .is-visible .feed-item:nth-child(2) { animation: slideFromBottom 0.5s ease 1.7s forwards; }
+        .is-visible .feed-item:nth-child(3) { animation: slideFromBottom 0.5s ease 1.9s forwards; }
+        .live-feed .feed-item span { font-weight: 600; color: #ff6b08; }
+
+        @media (max-width: 900px) {
+            .command-center { grid-template-columns: 1fr; }
+            .side-panel { order: 3; }
+        }
+    </style>
+</head>
+<body>
+    <section class="comm-center-section">
+        <canvas id="plexus-canvas"></canvas>
+
+        <div class="container">
+            <header class="section-header">
+                <h2>The Command Center</h2>
+                <p>Real-time oversight of every customer interaction.</p>
+            </header>
+
+            <div class="command-center">
+                <div class="side-panel agent-panel">
+                    <h4>Active Agents</h4>
+                    <ul>
+                        <li>
+                            <img src="assets/va image 3.webp" alt="Agent Sarah">
+                            <span>Sarah J.</span>
+                            <span class="status online"></span>
+                        </li>
+                        <li>
+                            <img src="assets/va image 4.webp" alt="Agent David">
+                            <span>David L.</span>
+                            <span class="status online"></span>
+                        </li>
+                        <li>
+                            <img src="assets/va image 5.webp" alt="Agent Maria">
+                            <span>Maria G.</span>
+                            <span class="status busy"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dashboard-panel">
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <span class="metric-title">Satisfaction</span>
+                            <span class="metric-value" data-target="98.7">0</span>%
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-title">Response Time</span>
+                            <span class="metric-value" data-target="28">0</span>s
+                        </div>
+                    </div>
+                    <div class="live-feed">
+                        <h5>Live Inquiries</h5>
+                        <ul>
+                            <li class="feed-item"><span>INV-2024-0078</span> - Question about payment.</li>
+                            <li class="feed-item"><span>Order #5123</span> - Needs tracking update.</li>
+                            <li class="feed-item"><span>New Lead</span> - Demo request from website.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="side-panel profile-panel">
+                    <h4>Customer Profile</h4>
+                    <img src="assets/va image 6.webp" alt="Customer Alex">
+                    <strong>Alex Martinez</strong>
+                    <span>Loyalty Tier: Gold</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- 1. Scroll-triggered "is-visible" class for main elements ---
+            const animatedElements = document.querySelectorAll('.section-header, .command-center');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            animatedElements.forEach(el => observer.observe(el));
+
+            // --- 2. Live Data Counter Animation ---
+            const metricValues = document.querySelectorAll('.metric-value');
+            const metricObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = +el.dataset.target;
+                        let current = 0;
+                        const duration = 1500; // in ms
+                        const stepTime = 16; // approx 60fps
+                        const totalSteps = duration / stepTime;
+                        const increment = target / totalSteps;
+                        
+                        const updateCount = () => {
+                            if (current < target) {
+                                current += increment;
+                                el.innerText = current.toFixed(target % 1 === 0 ? 0 : 1);
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                el.innerText = target.toFixed(target % 1 === 0 ? 0 : 1);
+                            }
+                        };
+                        updateCount();
+                        metricObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.8 });
+            metricValues.forEach(el => metricObserver.observe(el));
+
+            // --- 3. 3D Mouse Parallax Effect ---
+            const commandCenter = document.querySelector('.command-center');
+            const section = document.querySelector('.comm-center-section');
+            section.addEventListener('mousemove', (e) => {
+                if (!commandCenter || !commandCenter.classList.contains('is-visible')) return;
+                const { clientX, clientY } = e;
+                const { offsetWidth, offsetHeight, offsetLeft, offsetTop } = section;
+                const x = ((clientX - offsetLeft) / offsetWidth - 0.5) * 2;
+                const y = ((clientY - offsetTop) / offsetHeight - 0.5) * 2;
+                commandCenter.style.transform = `rotateY(${x * 5}deg) rotateX(${-y * 5}deg)`;
+            });
+
+            // --- 4. Canvas Plexus Background Animation ---
+            const canvas = document.getElementById('plexus-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            function resizeCanvas() {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
+            resizeCanvas();
+
+            let particles = [];
+            const particleCount = Math.floor(canvas.width / 30);
+
+            function initParticles() {
+                particles = [];
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push({
+                        x: Math.random() * canvas.width,
+                        y: Math.random() * canvas.height,
+                        vx: Math.random() * 0.4 - 0.2,
+                        vy: Math.random() * 0.4 - 0.2,
+                        radius: 1.5
+                    });
+                }
+            }
+            initParticles();
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                });
+                
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i; j < particles.length; j++) {
+                        const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                        if (dist < 150) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(255, 107, 8, ${0.4 * (1 - dist / 150)})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(draw);
+            }
+            draw();
+
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                initParticles();
+            });
+        });
+    </script>
+     <!--customer cpmmunication section ends here-->
+
+    <!--travelling planning section starts here-->
+    <style>
+        
+        /* KEYFRAME ANIMATIONS */
+        @keyframes aurora-drift {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            50% { transform: translate(100px, 50px) rotate(180deg) scale(1.2); }
+            100% { transform: translate(0, 0) rotate(360deg) scale(1); }
+        }
+        @keyframes spin-orbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        @keyframes float-3d {
+            0% { transform: translateZ(10px) rotateY(0deg); }
+            50% { transform: translateZ(-10px) rotateY(180deg); }
+            100% { transform: translateZ(10px) rotateY(360deg); }
+        }
+
+        /* SOCIAL MEDIA SECTION STYLES */
+        .social-media-section {
+            position: relative;
+            padding: 120px 20px;
+            font-family: 'Inter', sans-serif;
+            background: #121212;
+            overflow: hidden;
+        }
+
+        /* Layer 1: Animated Aurora Background */
+        .aurora-bg {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 800px; height: 800px;
+            margin-top: -400px; margin-left: -400px;
+            background: radial-gradient(circle, rgba(195, 20, 50, 0.4) 0%, rgba(36, 11, 54, 0) 60%);
+            border-radius: 50%;
+            animation: aurora-drift 40s infinite linear;
+        }
+        
+        /* Layer 2: Main Content Container */
+        .social-media-section .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        /* Section Header */
+        .social-header {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .social-header.is-visible { opacity: 1; transform: translateY(0); }
+        .social-header h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: #fff; margin: 0; }
+        .social-header p { font-size: clamp(1rem, 2vw, 1.2rem); margin: 0.5rem auto 0; color: #ff6b08; font-weight: 600; }
+
+        /* Animated Metrics */
+        .metrics-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s;
+        }
+        .metrics-wrapper.is-visible { opacity: 1; transform: translateY(0); }
+        .metric-item { text-align: center; }
+        .metric-value { font-size: 2.5rem; font-weight: 800; color: #fff; line-height: 1; }
+        .metric-value small { font-size: 1.5rem; color: rgba(255,255,255,0.5); }
+        .metric-label { display: block; font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-top: 5px; }
+
+        /* Layer 3: 3D Icon Galaxy */
+        .icon-galaxy {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 1px; height: 1px;
+            z-index: 2;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .orbit-path {
+            position: absolute;
+            top: 0; left: 0;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform-style: preserve-3d;
+            animation: spin-orbit linear infinite;
+        }
+        .social-icon {
+            position: absolute;
+            width: 70px; height: 70px;
+            background: rgba(28, 28, 28, 0.8);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: float-3d linear infinite;
+        }
+        .social-icon i { font-size: 30px; }
+        .social-icon:hover {
+            transform: scale(1.2) !important; /* Override animation transform */
+            animation-play-state: paused;
+        }
+        
+        /* Individual Orbits & Icons */
+        #orbit1 { width: 300px; height: 300px; margin-left: -150px; margin-top: -150px; animation-duration: 25s; transform: rotateX(70deg); }
+        #icon-instagram { top: -35px; left: 50%; margin-left: -35px; animation-duration: 12s; }
+        #icon-instagram:hover { box-shadow: 0 0 30px #c31432; }
+        #icon-instagram .fa-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+        #orbit2 { width: 500px; height: 500px; margin-left: -250px; margin-top: -250px; animation-duration: 35s; animation-direction: reverse; transform: rotateX(70deg); }
+        #icon-linkedin { top: -35px; left: 50%; margin-left: -35px; animation-duration: 15s; animation-direction: reverse; }
+        #icon-linkedin:hover { box-shadow: 0 0 30px #0e76a8; }
+        .fa-linkedin-in { color: #0e76a8; }
+
+        #orbit3 { width: 700px; height: 700px; margin-left: -350px; margin-top: -350px; animation-duration: 45s; transform: rotateX(70deg); }
+        #icon-twitter { top: -35px; left: 50%; margin-left: -35px; animation-duration: 18s; }
+        #icon-twitter:hover { box-shadow: 0 0 30px #1da1f2; }
+        .fa-twitter { color: #1da1f2; }
+        
+        #orbit4 { width: 900px; height: 900px; margin-left: -450px; margin-top: -450px; animation-duration: 55s; animation-direction: reverse; transform: rotateX(70deg); }
+        #icon-facebook { top: -35px; left: 50%; margin-left: -35px; animation-duration: 20s; animation-direction: reverse; }
+        #icon-facebook:hover { box-shadow: 0 0 30px #1877f2; }
+        .fa-facebook-f { color: #1877f2; }
+
+        /* Feature Breakdown Text */
+        .features-breakdown {
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s ease-out 0.4s, transform 1s ease-out 0.4s;
+        }
+        .features-breakdown.is-visible { opacity: 1; transform: translateY(0); }
+        .feature-item-text { text-align: center; }
+        .feature-item-text h3 { font-weight: 600; color: #fff; margin-bottom: 5px; }
+        .feature-item-text p { color: rgba(255,255,255,0.6); margin: 0; line-height: 1.6; font-size: 0.95rem; }
+
+        @media (max-width: 768px) {
+            .icon-galaxy { transform: scale(0.6); margin-top: -50px; }
+            .features-breakdown { margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="social-media-section">
+        <div class="aurora-bg"></div>
+        
+        <div class="icon-galaxy">
+            <div id="orbit1" class="orbit-path">
+                <a href="#" id="icon-instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div id="orbit2" class="orbit-path">
+                <a href="#" id="icon-linkedin" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div id="orbit3" class="orbit-path">
+                <a href="#" id="icon-twitter" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+             <div id="orbit4" class="orbit-path">
+                <a href="#" id="icon-facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+
+        <div class="container">
+            <header class="social-header">
+                <h2>Social Media Management</h2>
+                <p>Grow your online presence effortlessly.</p>
+            </header>
+
+            <div class="metrics-wrapper">
+                <div class="metric-item">
+                    <span class="metric-value" data-target="250">0</span><small>%</small>
+                    <span class="metric-label">Engagement Growth</span>
+                </div>
+                <div class="metric-item">
+                    <span class="metric-value" data-target="15">0</span><small>k</small>
+                    <span class="metric-label">Followers Gained</span>
+                </div>
+                 <div class="metric-item">
+                    <span class="metric-value" data-target="85">0</span><small>%</small>
+                    <span class="metric-label">Lead Conversion</span>
+                </div>
+            </div>
+
+            <div class="features-breakdown">
+                <div class="feature-item-text">
+                    <h3>Strategic Content</h3>
+                    <p>Oppty BPO develops and schedules content aligned with your brand voice and business goals to maximize impact.</p>
+                </div>
+                <div class="feature-item-text">
+                    <h3>Community Engagement</h3>
+                    <p>We actively monitor comments, messages, and mentions, nurturing your community and turning followers into loyal customers.</p>
+                </div>
+                <div class="feature-item-text">
+                    <h3>Performance Analytics</h3>
+                    <p>Receive detailed monthly reports on key metrics, providing actionable insights to refine your social media strategy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- 1. Scroll-triggered "is-visible" class for main elements ---
+            const animatedElements = document.querySelectorAll('.social-header, .metrics-wrapper, .features-breakdown');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedElements.forEach(el => observer.observe(el));
+
+            // --- 2. Live Data Counter Animation ---
+            const metricValues = document.querySelectorAll('.metric-value');
+            const metricObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = +el.dataset.target;
+                        let current = 0;
+                        const duration = 2000; // 2 seconds
+                        const stepTime = 16;
+                        const totalSteps = duration / stepTime;
+                        const increment = target / totalSteps;
+                        
+                        const updateCount = () => {
+                            if (current < target) {
+                                current += increment;
+                                el.innerText = Math.floor(current);
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                el.innerText = target;
+                            }
+                        };
+                        updateCount();
+                        metricObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.8 });
+            metricValues.forEach(el => metricObserver.observe(el));
+        });
+    </script>
+    <!--travelling planning sections ends here-->  
+    
+    <!--call to function starts here-->
+    <style>
+        /* KEYFRAME ANIMATIONS */
+        @keyframes text-fade-in-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes flow-gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 40px 10px rgba(255, 107, 8, 0.15); opacity: 0.8; }
+            50% { box-shadow: 0 0 70px 25px rgba(255, 107, 8, 0.3); opacity: 1; }
+            100% { box-shadow: 0 0 40px 10px rgba(255, 107, 8, 0.15); opacity: 0.8; }
+        }
+
+        /* CTA NEXUS SECTION STYLES */
+        .cta-nexus-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            min-height: 600px;
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Layer 1: Interactive Canvas Background */
+        #particle-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+        }
+        
+        /* Layer 2: Main Content */
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cta-header {
+            color: #fff;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .cta-header.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .cta-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin: 0 0 1rem 0;
+            line-height: 1.3;
+        }
+        .cta-header h2 span { display: block; }
+        .cta-header .line2 {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s;
+        }
+        .cta-header.is-visible .line2 { opacity: 1; transform: translateY(0); }
+
+        /* Button Wrapper & Glow Ring */
+        .cta-button-wrapper {
+            position: relative;
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .cta-button-wrapper.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s ease-out 0.6s, transform 1s ease-out 0.6s;
+        }
+
+        .pulsing-glow-ring {
+            position: absolute;
+            width: 260px; height: 260px;
+            border-radius: 50%;
+            animation: pulse-ring 4s infinite ease-in-out;
+            transition: all 0.5s ease;
+        }
+        .cta-button-wrapper:hover .pulsing-glow-ring {
+            transform: scale(1.1);
+            box-shadow: 0 0 90px 30px rgba(255, 107, 8, 0.4);
+        }
+
+        /* The Nexus Button */
+        .cta-nexus-button {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            
+            background: #1c1c1c;
+            border: 2px solid rgba(255, 107, 8, 0.5);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+            
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        background 0.4s ease, border-color 0.4s ease;
+        }
+
+        .cta-nexus-button:hover {
+            transform: scale(1.05);
+            border-color: #ff6b08;
+            background: linear-gradient(-45deg, #ff6b08, #ffae42, #ff6b08);
+            background-size: 200% 200%;
+            animation: flow-gradient 3s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <section class="cta-nexus-section">
+        <!-- Layer 1: Interactive Canvas Background -->
+        <canvas id="particle-canvas"></canvas>
+
+        <!-- Layer 2: Main Content -->
+        <div class="cta-container">
+            <header class="cta-header">
+                <h2>
+                    <span class="line1">Ready to simplify your workday?</span>
+                    <span class="line2">Let’s get started today.</span>
+                </h2>
+            </header>
+
+            <div class="cta-button-wrapper">
+                <div class="pulsing-glow-ring"></div>
+                <a href="#hire" class="cta-nexus-button">
+                    <span>Hire Your Assistant</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- 1. Scroll-triggered "is-visible" class ---
+            const animatedElements = document.querySelectorAll('.cta-header, .cta-button-wrapper');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            animatedElements.forEach(el => observer.observe(el));
+
+            // --- 2. Interactive Particle Nexus Canvas ---
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+
+            let particles = [];
+            const mouse = { x: null, y: null, radius: 150 };
+
+            function resizeCanvas() {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
+            resizeCanvas();
+
+            window.addEventListener('resize', resizeCanvas);
+
+            canvas.addEventListener('mousemove', function(event) {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            });
+            canvas.addEventListener('mouseout', function() {
+                mouse.x = null;
+                mouse.y = null;
+            });
+            
+            class Particle {
+                constructor(x, y, vx, vy, color, size) {
+                    this.x = x;
+                    this.y = y;
+                    this.vx = vx;
+                    this.vy = vy;
+                    this.baseX = this.x; // Original position
+                    this.baseY = this.y;
+                    this.color = color;
+                    this.size = size;
+                    this.density = (Math.random() * 30) + 1;
+                }
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+                update() {
+                    // Interaction logic
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    let forceDirectionX = dx / distance;
+                    let forceDirectionY = dy / distance;
+                    let maxDistance = mouse.radius;
+                    
+                    // If mouse is close, particles are drawn towards it.
+                    if (distance < maxDistance) {
+                        let force = (maxDistance - distance) / maxDistance;
+                        let directionX = forceDirectionX * force * this.density;
+                        let directionY = forceDirectionY * force * this.density;
+                        this.x += directionX;
+                        this.y += directionY;
+                    } 
+                    // If mouse is away, they return to base position.
+                    else {
+                        if (this.x !== this.baseX) {
+                            let dx = this.x - this.baseX;
+                            this.x -= dx / 10;
+                        }
+                        if (this.y !== this.baseY) {
+                            let dy = this.y - this.baseY;
+                            this.y -= dy / 10;
+                        }
+                    }
+
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x > canvas.width || this.x < 0) this.vx *= -1;
+                    if (this.y > canvas.height || this.y < 0) this.vy *= -1;
+
+                    this.draw();
+                }
+            }
+
+            function init() {
+                particles = [];
+                let numberOfParticles = (canvas.height * canvas.width) / 9000;
+                for (let i = 0; i < numberOfParticles; i++) {
+                    let size = Math.random() * 2 + 1;
+                    let x = Math.random() * canvas.width;
+                    let y = Math.random() * canvas.height;
+                    let vx = Math.random() * 0.4 - 0.2;
+                    let vy = Math.random() * 0.4 - 0.2;
+                    let color = 'rgba(255, 107, 8, ' + (Math.random() * 0.5 + 0.2) + ')';
+                    particles.push(new Particle(x, y, vx, vy, color, size));
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+                requestAnimationFrame(animate);
+            }
+
+            init();
+            animate();
+        });
+    </script>
+    <!--call to functions ends here-->     
+
+    <!-- footer section strats here-->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: About -->
+                <div class="footer-about">
+                    <img src="assets/oppty.png" alt="Oppty BPO Logo" class="footer-logo">
+                    <p>
+                        Power up your success with innovative IT, BPO, E-commerce, Web Development, and AI solutions
+                        tailored to your vision.
+                    </p>
+                </div>
+
+                <!-- Column 2: Hyderabad Location -->
+                <div class="footer-column">
+                    <h4 style="color: #f76e11;">Hyderabad Locations</h4>
+                    <p>
+                        Hyderabad - Flat number 601, Mahitha's green galaxy, CBCID Colony, NRSA Colony, Bagath Singh
+                        Nagar Phase 2, Kukatpally, Hyderabad, Telangana 500085
+                    </p>
+                </div>
+
+                <!-- Column 3: Udaipur Location -->
+                <div class="footer-column">
+                    <h4 style="color: #f76e11;">Udaipur Locations</h4>
+                    <p>
+                        Udaipur - Plot No: 26, 100 Feet Rd, Shobhagpura, Udaipur, Rajasthan 313011
+                    </p>
+                </div>
+
+                <!-- Column 4: Contact Us -->
+                <div class="footer-column">
+                    <h4 style="color: #f76e11;">Contact Us</h4>
+                    <p>
+                        <a href="mailto:info@oppty.in">info@oppty.in</a>
+                    </p>
+                    <p>
+                        <a href="tel:+919491209900">+91-9491209900</a>
+                    </p>
+                </div>
+
+                <!-- Column 5: Quick Links -->
+                <div class="footer-column">
+                    <h4 style="color: #f76e11;">Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="social-media" style="margin-left: 50px;">
+            <h5 style="margin-right: 1050px;color: #f76e11;">Social Media</h5>
+            <div class="social-icons" aria-label="Social links" style="margin-top:18px;">
+                <style>
+                    .social-icons {
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                    }
+
+                    .social-link {
+                        width: 20px;
+                        height: 20px;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        color: #fff;
+                        text-decoration: none;
+                        font-size: 18px;
+                        box-shadow: 0 2px 6px rgba(0, 0, 0, .15);
+                        transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+                    }
+
+                    .social-link:focus {
+                        outline: 3px solid rgba(0, 0, 0, .12);
+                        outline-offset: 2px;
+                    }
+
+                    .social-link:hover {
+                        transform: translateY(-3px);
+                        box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+                        opacity: 0.98;
+                    }
+
+                    /* brand colors */
+                    .social-link.linkedin {
+                        background: #0077B5;
+                    }
+
+                    .social-link.twitter {
+                        background: #1DA1F2;
+                    }
+
+                    .social-link.facebook {
+                        background: #1877F2;
+                    }
+
+                    .social-link.instagram {
+                        background: radial-gradient(circle at 15% 15%, #feda75 0%, #f58529 20%, #dd2a7b 50%, #515BD4 100%);
+                    }
+
+                    .social-link.youtube {
+                        background: #FF0000;
+                    }
+
+                    .social-link.github {
+                        background: grey;
+                    }
+
+                    /* icon color override to ensure white icons */
+                    .social-link i {
+                        color: #fff;
+                        font-size: 10px;
+                    }
+                </style>
+
+                <a class="social-link linkedin" href="https://www.linkedin.com/" target="_blank"
+                    rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+
+                <a class="social-link twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+                    title="Twitter" aria-label="Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+
+                <a class="social-link facebook" href="https://www.facebook.com/wnsglobalservices/" target="_blank"
+                    rel="noopener noreferrer" title="Facebook" aria-label="Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+
+                <a class="social-link instagram" href="https://www.instagram.com/procareer.tech/#" target="_blank"
+                    rel="noopener noreferrer" title="Instagram" aria-label="Instagram">
+                    <i class="fa fa-instagram"></i>
+                </a>
+
+                <a class="social-link youtube" href="https://www.youtube.com/channel/UC5i64n89D6YSoiyGA5JBxMQ"
+                    target="_blank" rel="noopener noreferrer" title="YouTube" aria-label="YouTube">
+                    <i class="fa fa-youtube-play"></i>
+                </a>
+
+                <a class="social-link github" href="https://github.com/" target="_blank" rel="noopener noreferrer"
+                    title="GitHub" aria-label="GitHub">
+                    <i class="fa fa-github"></i>
+                </a>
+
+                <script>
+                    // Ensure links open in a new tab reliably and safely (also supports cases where target attr may be removed)
+                    (function () {
+                        document.querySelectorAll('.social-link').forEach(function (el) {
+                            el.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                var url = el.href;
+                                // open in new tab with noopener + noreferrer for security
+                                window.open(url, '_blank', 'noopener,noreferrer');
+                            });
+                        });
+                    })();
+                </script>
+            </div>
+        </div>
+    </footer>
+    </footer>
+    <!-- Copyright Section -->
+    <footer class="site-footer">
+        <div class="footer-top-border"></div>
+
+        <div class="footer-content">
+            <div class="recognitions-container">
+                <img src="assets/copyright1.png.png" alt="Ministry of MSME, Govt. of India">
+                <img src="assets/copyright2.png.png" alt="ISO 9001:2015 Certified">
+                <img src="assets/copyright3.jpg.jpg" alt="ISO 22000:2018 Certified">
+            </div>
+            <div class="copyright-text">
+                <p>&copy;<span id="copyright-year">2025</span> Oppty. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
