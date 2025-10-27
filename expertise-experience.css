@@ -1,0 +1,543 @@
+ .animation-container {
+     position: relative;
+     height: 20em;
+     background: #000;
+     overflow: hidden;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .falling-injections {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     pointer-events: none;
+ }
+
+ .injection {
+     position: absolute;
+     width: 2px;
+     height: 100px;
+     background: linear-gradient(to bottom, #f97216, #fff);
+     border-radius: 2px;
+     animation: fall linear infinite;
+ }
+
+ .injection:nth-child(1) {
+     left: 10%;
+     animation-duration: 3s;
+     animation-delay: 0s;
+ }
+
+ .injection:nth-child(2) {
+     left: 25%;
+     animation-duration: 4s;
+     animation-delay: 1s;
+ }
+
+ .injection:nth-child(3) {
+     left: 40%;
+     animation-duration: 3.5s;
+     animation-delay: 0.5s;
+ }
+
+ .injection:nth-child(4) {
+     left: 55%;
+     animation-duration: 4.5s;
+     animation-delay: 2s;
+ }
+
+ .injection:nth-child(5) {
+     left: 70%;
+     animation-duration: 3.2s;
+     animation-delay: 1.5s;
+ }
+
+ .injection:nth-child(6) {
+     left: 85%;
+     animation-duration: 4.2s;
+     animation-delay: 0.8s;
+ }
+
+ .injection:nth-child(7) {
+     left: 15%;
+     animation-duration: 3.8s;
+     animation-delay: 2.5s;
+ }
+
+ .injection:nth-child(8) {
+     left: 75%;
+     animation-duration: 3.6s;
+     animation-delay: 1.2s;
+ }
+
+ .injection:nth-child(9) {
+     left: 5%;
+     animation-duration: 4.8s;
+     animation-delay: 0.3s;
+ }
+
+ .injection:nth-child(10) {
+     left: 35%;
+     animation-duration: 3.3s;
+     animation-delay: 1.8s;
+ }
+
+ .injection:nth-child(11) {
+     left: 60%;
+     animation-duration: 4.1s;
+     animation-delay: 0.7s;
+ }
+
+ .injection:nth-child(12) {
+     left: 80%;
+     animation-duration: 3.7s;
+     animation-delay: 2.2s;
+ }
+
+ .injection:nth-child(13) {
+     left: 20%;
+     animation-duration: 4.3s;
+     animation-delay: 1.4s;
+ }
+
+ .injection:nth-child(14) {
+     left: 45%;
+     animation-duration: 3.9s;
+     animation-delay: 0.9s;
+ }
+
+ .injection:nth-child(15) {
+     left: 90%;
+     animation-duration: 3.4s;
+     animation-delay: 2.8s;
+ }
+
+ .injection:nth-child(16) {
+     left: 8%;
+     animation-duration: 4.6s;
+     animation-delay: 0.2s;
+ }
+
+
+ @keyframes fall {
+     from {
+         transform: translateY(-100vh) rotate(0deg);
+         opacity: 1;
+     }
+
+     to {
+         transform: translateY(100vh) rotate(360deg);
+         opacity: 0;
+     }
+ }
+
+ .content-overlay {
+     position: relative;
+     z-index: 10;
+     text-align: center;
+ }
+
+
+
+ .scope-circle {
+     width: 150px;
+     height: 150px;
+     border: 3px solid #f97216;
+     border-radius: 50%;
+     position: relative;
+     margin: 0 auto;
+     background: rgba(249, 114, 22, 0.1);
+ }
+
+ .crosshair-horizontal,
+ .crosshair-vertical {
+     position: absolute;
+     background: #f97216;
+ }
+
+ .crosshair-horizontal {
+     width: 100%;
+     height: 2px;
+     top: 50%;
+     left: 0;
+     transform: translateY(-50%);
+ }
+
+ .crosshair-vertical {
+     width: 2px;
+     height: 100%;
+     left: 50%;
+     top: 0;
+     transform: translateX(-50%);
+ }
+
+ .scope-dot {
+     position: absolute;
+     width: 8px;
+     height: 8px;
+     background: #f97216;
+     border-radius: 50%;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     animation: dotBlink 1s ease-in-out infinite alternate;
+ }
+
+ @keyframes scopePulse {
+
+     0%,
+     100% {
+         transform: scale(1);
+     }
+
+     50% {
+         transform: scale(1.1);
+     }
+ }
+
+ @keyframes dotBlink {
+     0% {
+         opacity: 1;
+     }
+
+     100% {
+         opacity: 0.3;
+     }
+ }
+
+ .animated-title {
+     color: #fff;
+     font-size: 3rem;
+     font-weight: bold;
+     letter-spacing: 3px;
+     animation: titleGlow 3s ease-in-out infinite;
+     text-shadow: 0 0 20px rgba(249, 114, 22, 0.5);
+     text-transform: uppercase;
+ }
+
+ @keyframes titleGlow {
+
+     0%,
+     100% {
+         text-shadow: 0 0 20px rgba(249, 114, 22, 0.5),
+             0 0 40px rgba(249, 114, 22, 0.3);
+     }
+
+     50% {
+         text-shadow: 0 0 30px rgba(249, 114, 22, 0.8),
+             0 0 60px rgba(249, 114, 22, 0.5);
+     }
+ }
+
+ @media (max-width: 768px) {
+     .animated-title {
+         font-size: 2rem;
+         letter-spacing: 2px;
+     }
+
+     .scope-circle {
+         width: 100px;
+         height: 100px;
+     }
+ }
+
+ /* OPPTY Analytics */
+ .expertise-section {
+     background-color: #f97216;
+     padding: 80px 0;
+     min-height: 500px;
+ }
+
+ .content-left {
+     text-align: left;
+     padding-right: 30px;
+     width: 120%;
+ }
+
+ .small-heading {
+     color: #fff;
+     font-size: 16px;
+     font-weight: 500;
+     margin-bottom: 10px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+ }
+
+ .big-heading {
+     color: #fff;
+     font-size: 42px;
+     font-weight: 700;
+     line-height: 1.2;
+     margin-bottom: 25px;
+ }
+
+ .section-paragraph {
+     color: #fff;
+     font-size: 18px;
+     line-height: 22px;
+     margin-bottom: 20px;
+     opacity: 0.9;
+     letter-spacing: 0.67px;
+ }
+
+ .image-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .circular-image {
+     width: 400px;
+     height: 400px;
+     border-radius: 50%;
+     overflow: hidden;
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+     border: 5px solid #fff;
+ }
+
+ .expertise-image {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+
+ @media (max-width: 768px) {
+     .expertise-section {
+         padding: 60px 0;
+     }
+
+     .content-left {
+         padding-right: 0;
+         margin-bottom: 40px;
+     }
+
+     .big-heading {
+         font-size: 32px;
+     }
+
+     .circular-image {
+         width: 250px;
+         height: 250px;
+     }
+ }
+ /* Awards & Recognition */
+        .awards-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .awards-heading {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .ribbon-icon {
+            position: relative;
+        }
+
+        .ribbon-icon i {
+            font-size: 2.5rem;
+            color: white;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+        }
+
+        
+
+        .awards-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .award-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .award-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .award-icon {
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+
+        .award-icon i {
+            font-size: 3rem;
+            color: #f97216;
+        }
+
+        .award-text h4 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .award-text p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .awards-section {
+            padding: 60px 0;
+            }
+            
+            .awards-heading {
+            font-size: 2rem;
+            }
+
+            .recognition-banner {
+            flex-direction: column;
+            padding: 20px;
+            margin-bottom: 40px;
+            }
+
+            .ribbon-icon {
+            margin-bottom: 10px;
+            }
+
+            .recognition-text p {
+            font-size: 1rem;
+            text-align: center;
+            }
+            
+            .award-item {
+            flex-direction: column;
+            text-align: center;
+            padding: 25px;
+            }
+            
+            .award-icon {
+            margin-right: 0;
+            margin-bottom: 20px;
+            }
+        }
+        /* Healthcare and Life Sciences Analytics Services */
+        .services-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .services-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .service-image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .service-image {
+            width: 100%;
+            max-width: 400px;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .service-btn {
+            padding: 12px 20px;
+            border: 2px solid #f97216;
+            background: transparent;
+            color: #f97216;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        .service-btn:hover,
+        .service-btn.active {
+            background: #f97216;
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .service-content {
+            position: relative;
+            min-height: 200px;
+        }
+
+        .service-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .service-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-item h3 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .service-item p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .services-section {
+                padding: 50px 0;
+            }
+
+            .service-buttons {
+                margin-bottom: 20px;
+            }
+
+            .service-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            .service-item h3 {
+                font-size: 1.5rem;
+            }
+        }
