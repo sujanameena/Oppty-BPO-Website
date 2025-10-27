@@ -396,6 +396,7 @@
     box-shadow: 0 6px 20px rgba(224, 170, 22, 0.4);
     background: linear-gradient(45deg, #df6228, #b87946);
 }
+
 /* The Back Office */
 .back-office-key-heading {
     width: 100%;
@@ -568,68 +569,351 @@
         width: 100%;
     }
 }
+
 /* Recruitment Process Section */
 
-    .recruitment-process-section {
-        padding: 60px 20px;
-        background-color: #f8f9fa;
+.recruitment-process-section {
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+}
+
+
+.recruitment-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.recruitment-item {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recruitment-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.recruitment-logo {
+    margin-bottom: 20px;
+}
+
+.recruitment-logo i {
+    font-size: 3rem;
+    color: #f97216;
+}
+
+.recruitment-step-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.recruitment-step-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .recruitment-grid {
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
     }
 
-   
-    .recruitment-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 30px;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
+
 
     .recruitment-item {
-        background: white;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 20px;
+    }
+}
+
+/* The BPO Back Office */
+.bpo-back-office-key-heading {
+    width: 100%;
+    font-size: 35px;
+    color: #121212;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: none;
+    margin: 20px 30px 0px 10px;
+}
+
+.bpo-back-office-key-separator {
+    width: 15%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+.bpo-back-office-key-divider {
+    width: 80%;
+    height: 3px;
+    background: #f97216;
+    border: none;
+    margin: 0;
+    opacity: 0.7;
+}
+
+.bpo-back-office-key-paragraph1 {
+    width: calc(100% - 60px);
+    font-size: 20px;
+    color: #121212;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: none;
+    text-decoration: none;
+    margin: 20px 30px 0px 10px;
+}
+
+/* Why Outsource Back Office HR & Payroll */
+.Outsource-back-office-key-heading {
+    width: 100%;
+    font-size: 35px;
+    color: #121212;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: none;
+    margin: 20px 30px 0px 10px;
+}
+
+.Outsource-back-office-key-separator {
+    width: 15%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+.Outsource-back-office-key-divider {
+    width: 80%;
+    height: 3px;
+    background: #f97216;
+    border: none;
+    margin: 0;
+    opacity: 0.7;
+}
+
+.Outsource-back-office-key-paragraph1 {
+    width: calc(100% - 60px);
+    font-size: 20px;
+    color: #121212;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: none;
+    text-decoration: none;
+    margin: 20px 30px 0px 10px;
+}
+
+.outsource-reasons-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.outsource-reason-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 5px 0;
+}
+
+.outsource-reason-item:last-child {
+    border-bottom: none;
+}
+
+.reason-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #f97216;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.reason-text {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #121212;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .outsource-reason-item {
+        padding: 12px 0;
+        margin-bottom: 12px;
     }
 
-    .recruitment-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    .reason-text {
+        font-size: 14px;
     }
 
-    .recruitment-logo {
-        margin-bottom: 20px;
+    .reason-dot {
+        margin-right: 12px;
+        margin-top: 6px;
+    }
+}
+
+/* Why Outsource with AlliedFusion BPO */
+.Outsource-oppty-back-office-key-heading {
+    width: 100%;
+    font-size: 35px;
+    color: #121212;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: none;
+    margin: 20px 30px 0px 10px;
+}
+
+.Outsource-oppty-back-office-key-separator {
+    width: 15%;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+.Outsource-oppty-back-office-key-divider {
+    width: 80%;
+    height: 3px;
+    background: #f97216;
+    border: none;
+    margin: 0;
+    opacity: 0.7;
+}
+
+.Outsource-oppty-back-office-key-paragraph1 {
+    width: calc(100% - 60px);
+    font-size: 20px;
+    color: #121212;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: none;
+    text-decoration: none;
+    margin: 20px 30px 0px 10px;
+}
+
+.outsource-oppty-reasons-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.outsource-oppty-reason-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 5px 0;
+}
+
+.outsource-oppty-reason-item:last-child {
+    border-bottom: none;
+}
+
+.reason-oppty-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #f97216;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.reason-oppty-text {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #121212;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .outsource-oppty-reason-item {
+        padding: 12px 0;
+        margin-bottom: 12px;
     }
 
-    .recruitment-logo i {
-        font-size: 3rem;
-        color: #f97216;
+    .reason-oppty-text {
+        font-size: 14px;
     }
 
-    .recruitment-step-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 15px;
-        color: #333;
+    .reason-oppty-dot {
+        margin-right: 12px;
+        margin-top: 6px;
+    }
+}
+
+/* Explore More Support Solutions: */
+.support-back-office-content-section {
+    width: 100%;
+    font-size: 20px;
+    color: #121212;
+    font-weight: bold;
+    line-height: 50px;
+    letter-spacing: none;
+    margin: 20px 30px 0px 10px;
+}
+
+
+.support-back-office-reasons-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.support-back-office-reason-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 5px 0;
+}
+
+.support-back-office-reason-item:last-child {
+    border-bottom: none;
+}
+
+.support-back-office-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #f97216;
+    border-radius: 50%;
+    margin-right: 15px;
+    margin-top: 8px;
+    flex-shrink: 0;
+}
+
+.support-back-office-text {
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #121212;
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .support-back-office-reason-item {
+        padding: 12px 0;
+        margin-bottom: 12px;
     }
 
-    .recruitment-step-text {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #666;
-        margin: 0;
+    .support-back-office-text {
+        font-size: 14px;
     }
 
-    @media (max-width: 768px) {
-        .recruitment-grid {
-            grid-template-columns: 1fr;
-            grid-gap: 20px;
-        }
-        
-       
-        
-        .recruitment-item {
-            padding: 20px;
-        }
+    .support-back-office-dot {
+        margin-right: 12px;
+        margin-top: 6px;
     }
+}
