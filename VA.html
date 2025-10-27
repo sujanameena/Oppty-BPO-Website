@@ -101,7 +101,243 @@
                 </div>
             </div>
         </header>
+        <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
 
+        /* --- Hero Section Styles --- */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+        
+        /* 1. The Background Image (<img> tag) */
+        .hero-background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This makes the image cover the area */
+            z-index: 1;
+
+            /* 
+             * THE FIX: This tells the browser WHICH PART of the image to focus on.
+             * 'center' is the most common. You can also use 'top', 'bottom', etc.
+             */
+            object-position: center; 
+        }
+
+        /* 2. The Overlay (<div>) for better text contrast */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 37, 64, 0.75);
+            z-index: 2;
+        }
+
+        /* 3. The Content Container */
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 3;
+            padding: 30px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            animation: slideInLeft 1s forwards;
+        }
+
+        .hero-content p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            animation: fadeInUp 1s 0.3s forwards;
+        }
+
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .primary-cta {
+            background: #00d4ff;
+            color: #0a2540;
+            border: none;
+            padding: 16px 45px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s 0.6s;
+        }
+
+        .primary-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .secondary-cta {
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 16px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: 2px solid #00d4ff;
+        }
+
+        .secondary-cta:hover {
+            color: white;
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* --- Section 2: Services --- */
+        .services {
+            padding: 100px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: #0a2540;
+            margin-bottom: 60px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #0a2540;
+        }
+
+        .service-card p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* --- Animations --- */
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 768px) {
+            .cta-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .primary-cta,
+            .secondary-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        
+        <img class="hero-background-image" 
+             src="images/va image.jpg" 
+             alt="A professional and modern office background">
+        
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <h1>Reclaim Your Time. Amplify Your Impact.</h1>
+            <p>Professional virtual assistance for emails, scheduling, customer support, and more. Focus on your business, we'll handle the rest.</p>
+            <div class="cta-container">
+                <button class="primary-cta">Hire Your VA Today</button>
+                <a href="#" class="secondary-cta">View Plans & Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2 class="section-title">Our Virtual Assistance Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Email Management</h3>
+                <p>We organize, respond to, and prioritize your inbox so you never miss an important message — even while you're focused on strategy.</p>
+            </div>
+            <div class="service-card">
+                <h3>Scheduling & Calendar</h3>
+                <p>From meetings to deadlines, we manage your calendar with precision, eliminating double bookings and saving you hours every week.</p>
+            </div>
+            <div class="service-card">
+                <h3>Customer Support</h3>
+                <p>Provide 24/7 responsive support with personalized replies that reflect your brand voice — without hiring a full team.</p>
+            </div>
+        </div>
+    </section>
 
 
         <!-- footer section -->
