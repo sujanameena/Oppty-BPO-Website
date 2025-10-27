@@ -19,3 +19,51 @@
                 });
             });
         });
+        // eCommerce Call Center Services
+        
+            function scrollToForm() {
+                document.querySelector('.ecommerce-right').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Show success modal
+                document.getElementById('successModal').style.display = 'flex';
+
+                // Reset form
+                this.reset();
+            });
+
+            function closeModal() {
+                document.getElementById('successModal').style.display = 'none';
+            }
+
+            // Close modal when clicking outside
+            document.getElementById('successModal').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closeModal();
+                }
+            });
+            // Telecom with 99% service accuracy, 24/7 support
+            // Frequently Asked Questions
+            document.querySelectorAll('.faq-question').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var item = btn.parentElement;
+                    var expanded = btn.getAttribute('aria-expanded') === 'true';
+                    // Close all
+                    document.querySelectorAll('.faq-item').forEach(function (i) {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        i.querySelector('.faq-toggle').textContent = '+';
+                    });
+                    // Toggle current
+                    if (!expanded) {
+                        item.classList.add('active');
+                        btn.setAttribute('aria-expanded', 'true');
+                        btn.querySelector('.faq-toggle').textContent = '−';
+                    }
+                });
+            });
