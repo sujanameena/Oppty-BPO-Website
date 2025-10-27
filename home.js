@@ -64,3 +64,59 @@ document.querySelectorAll('.hover-image-read-more').forEach(function (btn) {
         e.stopPropagation();
     });
 });
+// second side bar js
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('capabilitiesToggle');
+    const sidebar = document.getElementById('capabilitiesSidebar');
+    const closeBtn = document.getElementById('closeSidebar');
+    const overlay = document.getElementById('sidebarOverlay');
+    const arrow = toggleBtn.querySelector('.capabilities-arrow');
+
+    let isOpen = false;
+
+    function openSidebar() {
+        sidebar.classList.add('open');
+        overlay.classList.add('active');
+        arrow.classList.add('rotated');
+        document.body.style.overflow = 'hidden'; // Prevent background scroll
+        isOpen = true;
+    }
+
+    function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('active');
+        arrow.classList.remove('rotated');
+        document.body.style.overflow = ''; // Restore scroll
+        isOpen = false;
+    }
+
+    // Toggle sidebar on button click
+    toggleBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (isOpen) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    });
+
+    // Close sidebar when clicking close button
+    closeBtn.addEventListener('click', closeSidebar);
+
+    // Close sidebar when clicking overlay
+    overlay.addEventListener('click', closeSidebar);
+
+    // Close sidebar on escape key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && isOpen) {
+            closeSidebar();
+        }
+    });
+
+    // Close sidebar when clicking outside (additional safety)
+    document.addEventListener('click', function (e) {
+        if (isOpen && !sidebar.contains(e.target) && !toggleBtn.contains(e.target)) {
+            closeSidebar();
+        }
+    });
+});

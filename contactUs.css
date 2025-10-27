@@ -83,7 +83,7 @@
             }
 
             .btn {
-                background: #f76e11;
+                background: #f97216;
                 color: white;
                 padding: 12px 30px;
                 border: none;
@@ -95,7 +95,7 @@
 
             .btn:hover {
                 background: #ffffff;
-                border: 1.5px solid #ed1c24;
+                border: 1.5px solid #f97216;
             }
 
             .info-item {
