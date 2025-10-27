@@ -671,6 +671,27 @@
                 </div>
             </div>
         </section>
+         <!-- // Frequently Asked Questions  script-->
+          <script>
+            document.querySelectorAll('.faq-question').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var item = btn.parentElement;
+                    var expanded = btn.getAttribute('aria-expanded') === 'true';
+                    // Close all
+                    document.querySelectorAll('.faq-item').forEach(function (i) {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                        i.querySelector('.faq-toggle').textContent = '+';
+                    });
+                    // Toggle current
+                    if (!expanded) {
+                        item.classList.add('active');
+                        btn.setAttribute('aria-expanded', 'true');
+                        btn.querySelector('.faq-toggle').textContent = '−';
+                    }
+                });
+            });
+        </script>
         <!-- ISO-standard security -->
         <div class="ISO-standard-container">
        <!-- first slide -->
