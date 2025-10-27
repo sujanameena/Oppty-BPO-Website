@@ -16,7 +16,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--dark-bg); /* Fallback bg color */
 }
-/* header start */
+/* header start here*/
 .header-container {
     position: fixed;
     top: 0;
@@ -150,8 +150,8 @@ body {
     z-index: 100;
     /* position: fixed; */
 }
-/* header end */
-/* --- HERO BANNER SECTION --- */
+/* header end here */
+/* --- HERO BANNER SECTION starts here--- */
 .hero-banner {
     position: relative;
     height: 100vh; /* Full viewport height */
@@ -317,8 +317,10 @@ iframe {
     width: 95%;
   }
 }
-/*what we do section*/
+/* hero section ends here*/
 
+
+/*what we do section starts here*/
 
 /* --- FOURTH PAGE SECTION --- */
 .fourth-page-container {
@@ -492,7 +494,10 @@ iframe {
     margin-top: 50px;
   }
 }
-/*sliding images section*/
+/*what we do section ends here*/
+
+
+/* cx sliding images section starts here*/
 
 /* --- SECTION STYLING --- */
 .cx-slider-section { padding: 100px 0; overflow: hidden; }
@@ -557,8 +562,9 @@ iframe {
     background-color: rgb(8, 8, 9); /* Overlay becomes more transparent */
 }
 .cx-card:hover .read-more { gap: 10px; }
+/*cx sliding section ends here*/
 
-/* --- SLIDER CONTROLS --- */
+/* --- SLIDER CONTROLS Section starts here--- */
 .slider-controls { display: flex; align-items: center; gap: 15px; margin-top: 40px; }
 .slider-progress-bar { flex-grow: 1; height: 2px; background-color: var(--border-color); }
 .progress-inner { height: 100%; width: 0; background-color: var(--text-light); transition: width 0.2s linear; }
@@ -671,9 +677,9 @@ iframe {
 @media (max-width: 992px) {
     .story-slide { grid-template-columns: 1fr; gap: 40px; }
 }
-/*leadership section*/
+/*slider sections ends here*/
 
-
+/*leadership section starts here*/
 /* --- SECTION STYLING --- */
 .thought-leadership-section {
     padding: 100px 0;
@@ -790,11 +796,9 @@ iframe {
         grid-template-columns: 1fr; /* 1 column on mobile */
     }
 }
+/*leadership section ends here*/
 
-
-
-
-/*footer section*/
+/*footer section starts here*/
 .site-footer {
     background-color: var(--dark-bg);
     color: var(--text-light);
@@ -893,7 +897,9 @@ iframe {
         margin-right: auto;
     }
 }
-/* copy rights */
+/*footer section ends here*/
+
+/* copy rights starts here*/
 .site-footer {
             background-color: #212529; /* Dark charcoal background */
             padding: 40px 20px;
@@ -954,3 +960,4 @@ iframe {
                 max-height: 85px; /* Adjusted for medium size on mobile */
             }
         }
+/* copy rights ends here*/

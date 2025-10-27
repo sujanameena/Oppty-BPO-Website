@@ -16,7 +16,7 @@ body {
     background-color: var(--dark-bg);
     color: var(--text-light);
 }
-/* header start */
+/* header section starts here */
 .header-container {
     position: fixed;
     top: 0;
@@ -150,7 +150,8 @@ body {
     z-index: 100;
     /* position: fixed; */
 }
-/* header end */
+/* header section ends here */
+/* --- HERO SECTION WITH BACKGROUND VIDEO Starts here --- */
 .hero-section {
     /* Sizing and Positioning */
     height: 120vh;
@@ -263,8 +264,9 @@ body {
     margin-top: 5px;
     line-height: 1.2;
 }
+/* --- HERO SECTION WITH BACKGROUND VIDEO Ends here --- */
 
-/* --- Award section --- */
+/* --- Award section starts here --- */
 
 /* --- SECTION STYLING --- */
 .awards-section {
@@ -408,11 +410,10 @@ body {
     background-color: var(--primary-orange);
     border-color: var(--primary-orange);
 }
+/* --- Award section ends here --- */
 
 
-/* --- In the news section --- */
-
-
+/* --- In the news section starts here --- */
 
 /* --- SECTION STYLING --- */
 .news-section {
@@ -555,7 +556,9 @@ body {
     transform: rotate(-45deg);
     margin-right: 2px;
 }
+/* --- In the news section ends here --- */
 
+/* --- Clients section starts here --- */
 /*clients section */
 
 :root {
@@ -789,6 +792,9 @@ body {
     align-items: center;
   }
 }
+/* --- Clients section ends here --- */
+
+/* --- Image hover section starts here --- */
 /*Image hover section */
 /* --- FOURTH PAGE SECTION --- */
 .fourth-page-container {
@@ -962,8 +968,11 @@ body {
     margin-top: 50px;
   }
 }
+/* --- Image hover section ends here --- */
+
+
+
 /* css for companies scrolling section */
-/* --- Partnerships Section --- */
 .companies-section {
   background: #ffffff; /* White background */
   text-align: center;
@@ -1060,8 +1069,9 @@ body {
     width: 110px;
   }
 }
-/*childer sliding section*/
+/* --- Partnerships Section ends here --- */
 
+/*childer sliding section starts here*/
 /* --- Section Wrapper --- */
 .human-side-section {
     background-color: var(--light-bg, #f5f5f7); /* Light background for this section */
@@ -1181,8 +1191,9 @@ body {
         justify-content: center; /* Center the link when the layout is centered */
     }
 }
+/* --- Childer sliding section ends here --- */
 
-
+/* --- Global Partner Section Starts Here --- */
 /*global partner*/
 
 .global-partner-section {
@@ -1279,6 +1290,9 @@ body {
     font-size: 1.5rem;
   }
 }
+/* --- Global Partner Section Ends Here --- */
+
+/*footer section starts here*/
 /*footer section*/
 .site-footer {
     background-color: black;
@@ -1378,6 +1392,9 @@ body {
         margin-right: auto;
     }
 }
+/*footer section ends here */
+
+/*copy right stars here*/
 /* copy rights */
 .site-footer {
             background-color: #212529; /* Dark charcoal background */
@@ -1439,3 +1456,5 @@ body {
                 max-height: 85px; /* Adjusted for medium size on mobile */
             }
         }
+
+/*copy right section ends here */

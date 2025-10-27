@@ -1,5 +1,5 @@
 /*main header*/
-/* header start */
+/* header starts here */
 .header-container {
   position: fixed;
   top: 0;
@@ -134,10 +134,10 @@
   /* position: fixed; */
 }
 
-/* header end */
+/* header ends here */
 
 /* ============================================================
-   PODCAST BANNER SECTION
+   PODCAST BANNER SECTION starts here
 ============================================================ */
 .podcast-banner-section {
   position: relative;
@@ -209,9 +209,10 @@
     font-size: clamp(2.5rem, 10vw, 4rem);
   }
 }
+/*podcasts ends here*/
 
 /* ============================================================
-   IMAGE CARD GRID SECTION
+   IMAGE CARD GRID SECTION starts here
 ============================================================ */
 .card-container {
   max-width: 1200px;
@@ -335,10 +336,11 @@
     min-height: 350px;
   }
 }
+/* image hover section ends here*/
 
 /*footer section*/
 /* ============================================================
-   FOOTER SECTION
+   FOOTER SECTION starts here
 ============================================================ */
 .site-footer {
   background-color: #000000;
@@ -441,8 +443,9 @@
     margin-right: auto;
   }
 }
+/*footer section ends here*/
 
-/*+ and - section */
+/*+ and - section strats here */
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -594,8 +597,9 @@ body {
     padding: 0 1.5rem;
   }
 }
+/* + and - section ends here*/
 
-/*case study section*/
+/*case study section starts here*/
 /* body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -693,7 +697,7 @@ body {
   line-height: 1.4;
 } */
 
-/* SLIDER STATES */
+/* SLIDER STARTES */
 /* .slide.large {
   width: 62%;
   left: 0;
@@ -811,6 +815,8 @@ body {
     height: auto;
   }
 } */
+ /*case study section ends here*/
+
   /* Stack slides on mobile */
   .slide {
     position: relative;
@@ -838,7 +844,7 @@ body {
   }
 
 
-  /* copy rights */
+  /* copy rights section starts here*/
   .site-footer {
     background-color: #212529;
     /* Dark charcoal background */
@@ -913,8 +919,9 @@ body {
     }
 
   }
+/* copy right section ends here*/
 
-  /* new section */
+  /* cards section starts here*/
   .interactive-3d-section {
     padding: 100px 0;
   }
@@ -1075,3 +1082,4 @@ body {
       transition: none;
     }
   }
+  /* cards section ends here*/
