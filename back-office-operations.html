@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back-Office.com</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="back-office-operations.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@icon/dripicons@2.0.0/dripicons.css">
+    <link href="https://fonts.googleapis.com/css?family=Dripicons" rel="stylesheet">
+    <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="home.js"></script>
+    <script src="back-office-operations.js"></script>
+</head>
+
+<body class="main-body">
+    <div class="first-page-container">
+        <header>
+            <div class="header-container">
+                <nav class="navbar"
+                    style="background: transparent; border: none; justify-content: flex-start; color: #fff;"></nav>
+                <div class="container-fluid d-flex align-items-center" style="justify-content: flex-start;width:40%;">
+                    <button id="customHamburger" class="navbar-toggler border-0 shadow-none" type="button"
+                        aria-label="Toggle navigation">
+                        <span class="hamburger-lines"
+                            style="display:inline-block;width:34px;height:24px;position:relative;">
+                            <span
+                                style="position:absolute;left:0;top:0;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                            <span
+                                style="position:absolute;left:0;top:10px;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                            <span
+                                style="position:absolute;left:0;top:20px;width:100%;height:3px;background:#fff;border-radius:2px;transition:all .2s;"></span>
+                        </span>
+                    </button>
+                </div>
+                </nav>
+                <!-- Sidebar -->
+                <div id="sidebar" class="sidebar">
+                    <ul class="sidebar-menu">
+
+                        <li class="nav_bar_list_item"><a class="anchor" href="home.html">Home</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
+
+                        <li class="nav_bar_list_item">
+                            <a class="anchor" href="#" id="capabilitiesToggle">
+                                Capabilities-Service
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </li>
+
+                        <!-- Capabilities Sidebar -->
+                        <div id="capabilitiesSidebar" class="capabilities-sidebar">
+                            <div class="capabilities-sidebar-header">
+                                <h3>Our Capabilities & Services</h3>
+                                <button id="closeSidebar" class="close-sidebar-btn">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="capabilities-sidebar-content">
+                                <ul class="capabilities-menu">
+                                    <li><a href="customer-support.html">Customer Support</a></li>
+                                    <li><a href="data-entry.html">Data Entry</a></li>
+                                    <li><a href="back-office-operations.html">Back-Office Operations</a></li>
+                                    <li><a href="technical-support.html">Technical Support</a></li>
+                                    <li><a href="virtual-assistance.html">Virtual Assistance</a></li>
+                                    <!-- <li class="divider"></li> -->
+                                    <!-- <li><a href="all-services.html" class="view-all-link">View All Services</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Overlay for sidebar -->
+                        <div id="sidebarOverlay" class="sidebar-overlay"></div>
+                        <li class="nav_bar_list_item"><a class="anchor" href="perspectives.html">Perspectives</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
+
+                    </ul>
+                </div>
+                <img src="assets/oppty.png" alt="OpptyBPO-Logo" class="logo-img" style="margin-right: -51px;">
+                <div class="search-button">
+                    <button id="searchBtn" class="search-icon-btn" type="button" aria-label="Search"
+                        onclick="window.location.href='search.html'" style="border: none; box-shadow: none;">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <div class="register-now">
+                    <button class="btn btn-primary" onclick="window.location.href='contactUs.html'">Contact Us</button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- back-office-first-page-element -->
+    <div class="back-office-first-page-element">
+        <div class="bubble-container">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
+        <div class="back-office-heading-container">
+            <h1 class="back-office-main-heading">
+                <span class="word-drop" style="animation-delay: 0s;">BACK OFFICE</span>
+                <span class="word-drop" style="animation-delay: 0.3s;">OUTSOURCING</span>
+            </h1>
+        </div>
+    </div>
+    <!-- second page -->
+    <div class="back-office-second-page-element">
+        <div class="back-office-content-section">
+            <h2 class="back-office-heading">Streamline Operations with Philippine Back Office Outsourcing</h2>
+            <div class="back-office-separator">
+                <hr class="back-office-divider">
+            </div>
+            <p class="back-office-paragraph1">
+                Back office BPO services are essential for delivering superior customer experiences by streamlining
+                operations and optimizing resources. By outsourcing these crucial functions, businesses can scale
+                operations more effectively and share workloads, resulting in improved productivity and efficiency.
+                This is especially true in HR and payroll management, where outsourcing helps achieve significant cost
+                savings,
+                ensures resource optimization, and maintains strict compliance with legal and regulatory requirements.
+            </p>
+            <p class="back-office-paragraph2">
+                Oppty BPO is a leader in <strong>back office outsourcing in the Philippines,</strong> providing a wide
+                range of services
+                designed to help businesses thrive. From data management and processing to finance, HR, and payroll
+                solutions,
+                their expert team offers customized support to enhance operational efficiency. By partnering with Oppty
+                BPO,
+                companies can reduce overhead costs, focus on core activities, and achieve greater flexibility in
+                managing day-to-day tasks.
+            </p>
+            <p class="back-office-paragraph3">
+                For example, Oppty BPO’s <strong>administrative support outsourcing</strong> services handle tasks like
+                scheduling and document management,
+                further streamlining operations and freeing clients to focus on core activities.
+            </p>
+            <p class="back-office-paragraph4">
+                With a strong emphasis on quality and compliance, Oppty BPO ensures that businesses experience
+                operational excellence while
+                maintaining industry best practices. Whether you’re looking to streamline administrative tasks or
+                optimize resource allocation, outsourcing
+                to the Philippines provides a reliable and cost-effective solution.
+            </p>
+        </div>
+        <!-- reach out to us anytime -->
+        <div class="reach-out-section">
+            <div class="reach-out-content">
+                <h2 class="reach-out-heading">Reach out to us anytime!</h2>
+                <button class="talk-to-us-btn" onclick="redirectToContact()">Talk to Us</button>
+            </div>
+        </div>
+        <!-- The Back Office -->
+        <div class="back-office-content-section">
+            <h2 class="back-office-key-heading">The Back Office: The Key to Efficient HR & Payroll Management</h2>
+            <div class="back-office-key-separator">
+                <hr class="back-office-key-divider">
+            </div>
+            <p class="back-office-key-paragraph1">
+                Back office outsourcing in the Philippines encompasses administrative and support functions crucial
+                in HR & payroll management. It involves tasks like recruitment, onboarding, payroll, time and expense
+                management, payroll tax, and employee data handling. Efficient back office outsourcing in the
+                Philippines
+                ensures streamlined business operations and optimized HR functionalities.
+            </p>
+        </div>
+        <!-- signup-section -->
+        <div class="back-office-signup-section">
+            <div class="back-office-signup-content">
+                <h2 class="back-office-cta-heading1">Streamline Success with Back Office Outsourcing</h2>
+                <p class="back-office-signup-text">
+                    Maximize Efficiency, Reduce Costs, and Focus on Growth — Contact Us Today to Get Started!
+                </p>
+                <div class="back-office-signup-form-container">
+                    <form class="back-office-signup-form" id="signupForm">
+                        <div class="back-office-form-row">
+                            <div class="back-office-form-group">
+                                <input type="email" id="emailInput" class="back-office-form-input"
+                                    placeholder="Enter your email address" required>
+                                <span class="back-office-error-message" id="emailError"></span>
+                            </div>
+                            <button type="submit" class="back-office-signup-btn">Sign Up</button>
+                        </div>
+                    </form>
+                    <div class="back-office-success-message" id="successMessage" style="display: none;">
+                        <i class="fa fa-check-circle"></i>
+                        <p>Form sent successfully! Thank you for signing up.</p>
+                    </div>
+                </div>
+                <p class="terms-text">
+                    By signing up you agree to our <strong>Terms of Service</strong> and <strong>Privacy
+                        Policy</strong>.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Recruitment Process Section -->
+    <div class="recruitment-process-section">
+
+            <div class="recruitment-grid">
+                <!-- Row 1 -->
+                <div class="recruitment-item">
+                    <div class="recruitment-logo">
+                        <i class="fa fa-envelope-open-o"></i>
+                    </div>
+                    <h3 class="recruitment-step-title">Recruitment Process</h3>
+                    <p class="recruitment-step-text">The back office is responsible for the recruitment process,
+                         from posting job openings to screening resumes to interviewing candidates. The back office
+                          also helps to onboard new employees, providing them with the information and resources they need to be successful in their new roles.</p>
+                </div>
+                <div class="recruitment-item">
+                    <div class="recruitment-logo">
+                        <i class="fa fa-user-circle"></i>
+                    </div>
+                    <h3 class="recruitment-step-title">Onboarding Employees</h3>
+                    <p class="recruitment-step-text">Onboarding is the process of integrating new employees into a company’s culture and providing
+                         them with the knowledge and skills they need to be successful. The back office plays a key role in onboarding, providing
+                          new employees with access to company policies and procedures, training materials, and mentors.</p>
+                </div>
+                <!-- Row 2 -->
+                <div class="recruitment-item">
+                    <div class="recruitment-logo">
+                        <i class="fa fa-book"></i>
+                    </div>
+                    <h3 class="recruitment-step-title">Payroll Management</h3>
+                    <p class="recruitment-step-text">Payroll management is the process of calculating and distributing employee wages and salaries.
+                         The back office is responsible for ensuring that payroll is accurate and timely, and that employees are paid in accordance with
+                          company policies and government regulations.</p>
+                </div>
+                <div class="recruitment-item">
+                    <div class="recruitment-logo">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                    <h3 class="recruitment-step-title">Time and Expense Management</h3>
+                    <p class="recruitment-step-text">Time and expense management is the process of tracking employee time and expenses. The back office
+                         is responsible for ensuring that employees are accurately tracking their time and expenses, and that they are reimbursed for approved
+                          expenses in a timely manner.</p>
+                </div>
+                <!-- Row 3 -->
+                <div class="recruitment-item">
+                    <div class="recruitment-logo">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </div>
+                    <h3 class="recruitment-step-title">Payroll Tax</h3>
+                    <p class="recruitment-step-text">Payroll tax is the tax that employers are required to withhold from employee wages and salaries.
+                         The back office is responsible for calculating and submitting payroll tax payments to the government.</p>
+                </div>
+                <div class="recruitment-item">
+                    <div class="recruitment-logo">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <h3 class="recruitment-step-title">Employee Data Management</h3>
+                    <p class="recruitment-step-text">Employee data management is the process of collecting, storing, and protecting employee data. The back
+                         office is responsible for ensuring that employee data is accurate, secure, and accessible only to authorized personnel.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+
+
+</body>
+
+</html>

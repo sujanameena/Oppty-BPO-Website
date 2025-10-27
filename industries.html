@@ -23,8 +23,7 @@
                     style="background: transparent; border: none; justify-content: flex-start; color: #fff;"></nav>
                 <div class="container-fluid d-flex align-items-center" style="justify-content: flex-start;width:40%;">
                     <button id="customHamburger" class="navbar-toggler border-0 shadow-none" type="button"
-                        aria-label="Toggle navigation"
-                        style="outline: none; background: transparent; padding: 10px; width: 56px; height: 56px; display: inline-flex; align-items: center; justify-content: center;">
+                        aria-label="Toggle navigation">
                         <span class="hamburger-lines"
                             style="display:inline-block;width:34px;height:24px;position:relative;">
                             <span
@@ -43,25 +42,50 @@
 
                         <li class="nav_bar_list_item"><a class="anchor" href="home.html">Home</a></li>
                         <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
-                        <!-- <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li> -->
-                        <li class="nav_bar_list_item"><a class="anchor"
-                                href="capabilities.html">Capabilities-Service</a></li>
-                        <!-- <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a>
-                        </li> -->
-                        <li class="nav_bar_list_item"><a class="anchor"
-                                href="perspectives.html">Perspectives</a></li>
-                                <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
-                    </ul>
 
+                        <li class="nav_bar_list_item">
+                            <a class="anchor" href="#" id="capabilitiesToggle">
+                                Capabilities-Service
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </li>
+
+                        <!-- Capabilities Sidebar -->
+                        <div id="capabilitiesSidebar" class="capabilities-sidebar">
+                            <div class="capabilities-sidebar-header">
+                                <h3>Our Capabilities & Services</h3>
+                                <button id="closeSidebar" class="close-sidebar-btn">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="capabilities-sidebar-content">
+                                <ul class="capabilities-menu">
+                                    <li><a href="customer-support.html">Customer Support</a></li>
+                                    <li><a href="data-entry.html">Data Entry</a></li>
+                                    <li><a href="back-office-operations.html">Back-Office Operations</a></li>
+                                    <li><a href="technical-support.html">Technical Support</a></li>
+                                    <li><a href="virtual-assistance.html">Virtual Assistance</a></li>
+                                    <!-- <li class="divider"></li> -->
+                                    <!-- <li><a href="all-services.html" class="view-all-link">View All Services</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Overlay for sidebar -->
+                        <div id="sidebarOverlay" class="sidebar-overlay"></div>
+                        <li class="nav_bar_list_item"><a class="anchor" href="perspectives.html">Perspectives</a></li>
+                        <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
+
+                    </ul>
                 </div>
-               <img src="assets/oppty.png" alt="OpptyBPO-Logo" class="logo-img" style="margin-right: -51px;">
+                <img src="assets/oppty.png" alt="OpptyBPO-Logo" class="logo-img" style="margin-right: -51px;">
                 <div class="search-button">
-                    <button id="searchBtn" class="search-icon-btn" type="button" aria-label="Search" onclick="window.location.href='search.html'"
-                        style="border: none; box-shadow: none;">
+                    <button id="searchBtn" class="search-icon-btn" type="button" aria-label="Search"
+                        onclick="window.location.href='search.html'" style="border: none; box-shadow: none;">
                         <i class="fa fa-search"></i>
                     </button>
                 </div>
-               <div class="register-now">
+                <div class="register-now">
                     <button class="btn btn-primary" onclick="window.location.href='contactUs.html'">Contact Us</button>
                 </div>
             </div>
