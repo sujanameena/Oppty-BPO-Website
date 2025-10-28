@@ -14,12 +14,11 @@
 </head>
 
 <body class="main-body">
-    <div class="first-page-container">
-        <header>
+    <header>
             <div class="header-container">
                 <nav class="navbar"
                     style="background: transparent; border: none; justify-content: flex-start; color: #fff;"></nav>
-                <div class="container-fluid d-flex align-items-center" style="justify-content: flex-start;width:10%;">
+                <div class="container-fluid d-flex align-items-center" style="justify-content: flex-start;width:40%;">
                     <button id="customHamburger" class="navbar-toggler border-0 shadow-none" type="button"
                         aria-label="Toggle navigation">
                         <span class="hamburger-lines"
@@ -40,51 +39,43 @@
 
                         <li class="nav_bar_list_item"><a class="anchor" href="home.html">Home</a></li>
                         <li class="nav_bar_list_item"><a class="anchor" href="industries.html">Industries</a></li>
-                        
-                        <li class="nav_bar_list_item"><a class="anchor"
-                                href="capabilities.html">Capabilities-Service</a></li>
 
+                        <li class="nav_bar_list_item">
+                            <a class="anchor" href="#" id="capabilitiesToggle">
+                                Capabilities-Service
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </a>
+                        </li>
+
+                        <!-- Capabilities Sidebar -->
+                        <div id="capabilitiesSidebar" class="capabilities-sidebar">
+                            <div class="capabilities-sidebar-header">
+                                <h3 style="color: #f97216;">Our Capabilities & Services</h3>
+                                <button id="closeSidebar" class="close-sidebar-btn">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="capabilities-sidebar-content">
+                                <ul class="capabilities-menu">
+                                    <li><a href="customer-support.html">Customer Support</a></li>
+                                    <li><a href="data-entry.html">Data Entry</a></li>
+                                    <li><a href="back-office-operations.html">Back-Office Operations</a></li>
+                                    <li><a href="technical-support.html">Technical Support</a></li>
+                                    <li><a href="virtual-assistance.html">Virtual Assistance</a></li>
+                                    <li><a href="expertise-experience.html">Expertise & Experience</a></li>
+                                     <li><a href="quality-efficiency.html">Quality & Efficiency</a></li>
+                                    <!-- <li class="divider"></li> -->
+                                    <!-- <li><a href="all-services.html" class="view-all-link">View All Services</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Overlay for sidebar -->
+                        <div id="sidebarOverlay" class="sidebar-overlay"></div>
                         <li class="nav_bar_list_item"><a class="anchor" href="perspectives.html">Perspectives</a></li>
                         <li class="nav_bar_list_item"><a class="anchor" href="aboutUs.html">About Us</a></li>
 
                     </ul>
-                    <style>
-                        .expandable {
-                            position: relative;
-                        }
-
-                        .expandable .expand-btn {
-                            transition: opacity 0.2s;
-                        }
-
-                        .expandable:hover .expand-btn {
-                            display: inline-block !important;
-                        }
-
-                        .expand-content li a {
-                            font-size: 0.95em;
-                            color: #555;
-                        }
-                    </style>
-                    <script>
-                        document.addEventListener('DOMContentLoaded', function () {
-                            var expandable = document.querySelector('.expandable');
-                            var expandBtn = expandable.querySelector('.expand-btn');
-                            var expandContent = expandable.querySelector('.expand-content');
-                            var expandIcon = expandable.querySelector('.expand-icon');
-
-                            expandBtn.addEventListener('click', function (e) {
-                                e.preventDefault();
-                                if (expandContent.style.display === 'none' || expandContent.style.display === '') {
-                                    expandContent.style.display = 'block';
-                                    expandIcon.innerHTML = '&#9660;';
-                                } else {
-                                    expandContent.style.display = 'none';
-                                    expandIcon.innerHTML = '&#9654;';
-                                }
-                            });
-                        });
-                    </script>
                 </div>
                 <img src="assets/oppty.png" alt="OpptyBPO-Logo" class="logo-img" style="margin-right: -51px;">
                 <div class="search-button">
@@ -93,9 +84,6 @@
                         <i class="fa fa-search"></i>
                     </button>
                 </div>
-                <!-- <div class="search-button">
-                    <button class="fa fa-search button-css" onclick="window.location.href='search.html'"></button>
-                </div> -->
                 <div class="register-now">
                     <button class="btn btn-primary" onclick="window.location.href='contactUs.html'">Contact Us</button>
                 </div>

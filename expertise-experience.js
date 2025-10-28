@@ -48,22 +48,4 @@
                 }
             });
             // Telecom with 99% service accuracy, 24/7 support
-            // Frequently Asked Questions
-            document.querySelectorAll('.faq-question').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    var item = btn.parentElement;
-                    var expanded = btn.getAttribute('aria-expanded') === 'true';
-                    // Close all
-                    document.querySelectorAll('.faq-item').forEach(function (i) {
-                        i.classList.remove('active');
-                        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                        i.querySelector('.faq-toggle').textContent = '+';
-                    });
-                    // Toggle current
-                    if (!expanded) {
-                        item.classList.add('active');
-                        btn.setAttribute('aria-expanded', 'true');
-                        btn.querySelector('.faq-toggle').textContent = '−';
-                    }
-                });
-            });
+           
