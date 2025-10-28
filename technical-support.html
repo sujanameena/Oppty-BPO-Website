@@ -123,7 +123,7 @@
             /* TECHNICAL SUPPORT HERO SECTION STYLES */
             .tech-support-hero {
                 position: relative;
-                height: 70vh;
+                
                 display: grid;
                 place-items: center;
                 padding: 2rem;
@@ -809,7 +809,293 @@
         });
     </script>
 <!--Help desk section ends here-->
+<!--Production support section starts here-->
+<style>
+        /* KEYFRAME ANIMATIONS */
+        @keyframes core-pulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 107, 8, 0.3), inset 0 0 10px rgba(255, 107, 8, 0.2); }
+            50% { box-shadow: 0 0 60px 15px rgba(255, 107, 8, 0.5), inset 0 0 20px rgba(255, 107, 8, 0.4); }
+        }
+        @keyframes node-fade-in {
+            from { opacity: 0; transform: var(--transform-from); }
+            to { opacity: 1; transform: var(--transform-to); }
+        }
+        @keyframes draw-line { to { stroke-dashoffset: 0; } }
 
+        /* COMMAND CENTER SECTION STYLES */
+        .cortex-section {
+            position: relative;
+            padding: 120px 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            overflow: hidden;
+        }
+
+        /* Canvas Background */
+        #neural-canvas {
+            position: absolute; inset: 0;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        
+        /* Main Content Container */
+        .cortex-section .container {
+            max-width: 1400px; /* Increased width for new layout */
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 100px;
+            opacity: 0; transform: translateY(30px);
+        }
+        .section-header.is-visible {
+            opacity: 1; transform: translateY(0);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section-header h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: #fff; margin: 0; }
+        .section-header p { font-size: clamp(1rem, 2vw, 1.2rem); margin: 0.5rem auto 0; color: #ff6b08; font-weight: 600; }
+
+        /* The Cortex Layout */
+        .cortex-layout {
+            position: relative;
+            height: 700px; /* Increased height for new layout */
+            display: grid;
+            place-items: center;
+        }
+
+        /* Central Core */
+        .cortex-core {
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #1a1a1a, #000);
+            border: 2px solid rgba(255, 107, 8, 0.4);
+            display: grid;
+            place-items: center;
+            text-align: center;
+            animation: core-pulse 4s infinite ease-in-out;
+            opacity: 0; transform: scale(0.8);
+            transition: opacity 1s ease, transform 1s ease, box-shadow 0.3s ease;
+        }
+        .is-visible .cortex-core { opacity: 1; transform: scale(1); }
+        .core-text { font-weight: 800; font-size: 1.5rem; color: #ff6b08; }
+        
+        /* Feature Nodes */
+        .cortex-node {
+            position: absolute;
+            width: 350px;
+            background: rgba(28, 28, 28, 0.7);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 8, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+        }
+        .is-visible .cortex-node { animation: node-fade-in 1s ease forwards; }
+        
+        /* Node Positioning & Animation Delays */
+        .node-1 { top: 0; left: 10%; --transform-from: scale(0.9); --transform-to: scale(1); animation-delay: 1.2s; }
+        .node-2 { top: 0; right: 10%; --transform-from: scale(0.9); --transform-to: scale(1); animation-delay: 1.4s; }
+        .node-3 { bottom: 0; right: 0; --transform-from: scale(0.9); --transform-to: scale(1); animation-delay: 1.6s; }
+        .node-4 { bottom: 0; left: 0; --transform-from: scale(0.9); --transform-to: scale(1); animation-delay: 1.8s; }
+        .hex-image {
+            flex-shrink: 0;
+            width: 100px; height: 115.47px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            position: relative;
+        }
+        .hex-image img { width: 100%; height: 100%; object-fit: cover; }
+        .node-text h3 { font-size: 1.25rem; color: #fff; margin: 0 0 10px; }
+        .node-text p { color: rgba(255,255,255,0.7); margin: 0; line-height: 1.6; font-size: 0.9rem; }
+        
+        /* SVG Connection Layer */
+        #connection-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: -1; }
+        .conduit-path {
+            stroke: rgba(255, 107, 8, 0.2);
+            stroke-width: 2px;
+            fill: none;
+            transition: stroke 0.3s ease;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+        .is-visible .conduit-path { animation: draw-line 1.5s ease-out 0.5s forwards; }
+        .data-pulse { fill: #ff6b08; r: 3px; filter: drop-shadow(0 0 4px #ff6b08); opacity: 0; }
+        .is-visible .data-pulse { opacity: 1; transition: opacity 0.5s ease 1.5s; }
+
+        /* Hover Interactions */
+        .cortex-node:hover { border-color: #ff6b08; box-shadow: 0 0 30px rgba(255, 107, 8, 0.3); }
+        .cortex-layout:has(.node-1:hover) #conduit1, .cortex-layout:has(.node-2:hover) #conduit2, .cortex-layout:has(.node-3:hover) #conduit3, .cortex-layout:has(.node-4:hover) #conduit4, .cortex-layout:has(.node-5:hover) #conduit5 { stroke: #ff6b08; }
+        .cortex-layout:has(.cortex-node:hover) .cortex-core { box-shadow: 0 0 60px 15px rgba(255, 107, 8, 0.5), inset 0 0 20px rgba(255, 107, 8, 0.4); }
+
+        @media (max-width: 1200px) { .cortex-layout { transform: scale(0.8); } }
+        @media (max-width: 900px) { .cortex-layout { transform: scale(1); height: auto; display: flex; flex-direction: column; gap: 40px; } .cortex-node { position: static; transform: none !important; width: 100%; box-sizing: border-box; } #connection-svg { display: none; } }
+    </style>
+</head>
+<body>
+
+    <section class="cortex-section">
+        <canvas id="neural-canvas"></canvas>
+        <div class="container">
+            <header class="section-header">
+                <h2>The Global Nerve Center</h2>
+                <p>Oppty BPO's intelligent, centralized command for your entire IT infrastructure.</p>
+            </header>
+
+            <div class="cortex-layout">
+                <div class="cortex-core">
+                    <span class="core-text">OPPTY<br>CORE</span>
+                </div>
+
+                <div class="cortex-node node-1">
+                    <div class="hex-image"><img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Technician diagnosing a system."></div>
+                    <div class="node-text">
+                        <h3>Proactive Diagnostics</h3>
+                        <p>Our system anticipates issues by analyzing performance metrics, preventing downtime before it starts.</p>
+                    </div>
+                </div>
+
+                <div class="cortex-node node-2">
+                    <div class="hex-image"><img src="https://images.pexels.com/photos/5775854/pexels-photo-5775854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Secure data center."></div>
+                    <div class="node-text">
+                        <h3>Secure Endpoint Management</h3>
+                        <p>We manage and secure every device, from servers to remote laptops, under one unified security protocol.</p>
+                    </div>
+                </div>
+                
+                 <div class="cortex-node node-3">
+                    <div class="hex-image"><img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Team collaborating on scaling infrastructure."></div>
+                    <div class="node-text">
+                        <h3>Infrastructure Scaling</h3>
+                        <p>Our team provides dynamic resource allocation, ensuring your IT infrastructure scales seamlessly with your business growth.</p>
+                    </div>
+                </div>
+
+                <!-- New Node 4 -->
+                <div class="cortex-node node-4">
+                    <div class="hex-image"><img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cloud server racks."></div>
+                    <div class="node-text">
+                        <h3>Cloud Architecture</h3>
+                        <p>We design, deploy, and manage scalable cloud solutions, optimizing costs and ensuring peak performance on AWS, Azure, and GCP.</p>
+                    </div>
+                </div>
+
+                <svg id="connection-svg">
+                    <path class="conduit-path" id="conduit1" /><path class="conduit-path" id="conduit2" /><path class="conduit-path" id="conduit3" /><path class="conduit-path" id="conduit4" /><path class="conduit-path" id="conduit5" />
+                    <circle class="data-pulse" id="pulse1" /><circle class="data-pulse" id="pulse2" /><circle class="data-pulse" id="pulse3" /><circle class="data-pulse" id="pulse4" /><circle class="data-pulse" id="pulse5" />
+                </svg>
+            </div>
+        </div>
+    </section>
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const section = document.querySelector('.cortex-section');
+            if (!section) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        section.classList.add('is-visible');
+                        animateSVGPaths();
+                        observer.unobserve(section);
+                    }
+                });
+            }, { threshold: 0.2 });
+            observer.observe(section);
+            
+            const canvas = document.getElementById('neural-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            
+            function resizeCanvas() { canvas.width = section.offsetWidth; canvas.height = section.offsetHeight; initParticles(); }
+            window.addEventListener('resize', resizeCanvas);
+
+            class Particle {
+                constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.vx = Math.random() * 0.4 - 0.2; this.vy = Math.random() * 0.4 - 0.2; this.radius = Math.random() * 1.5 + 0.5; }
+                update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > canvas.width) this.vx *= -1; if (this.y < 0 || this.y > canvas.height) this.vy *= -1; }
+                draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255, 107, 8, 0.5)'; ctx.fill(); }
+            }
+            function initParticles() {
+                const particleCount = window.innerWidth > 768 ? 100 : 40;
+                particles = [];
+                for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+            }
+            function connectAndDraw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i; j < particles.length; j++) {
+                        const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                        if (dist < 120) {
+                            ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(255, 107, 8, ${0.3 * (1 - dist / 120)})`; ctx.lineWidth = 0.5; ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(connectAndDraw);
+            }
+            resizeCanvas(); connectAndDraw();
+
+            const svg = document.getElementById('connection-svg');
+            const core = document.querySelector('.cortex-core');
+            const nodes = {
+                pulse1: { path: document.getElementById('conduit1'), node: document.querySelector('.node-1'), pulse: document.getElementById('pulse1'), progress: 0, speed: 0.005 },
+                pulse2: { path: document.getElementById('conduit2'), node: document.querySelector('.node-2'), pulse: document.getElementById('pulse2'), progress: 0.2, speed: 0.004 },
+                pulse3: { path: document.getElementById('conduit3'), node: document.querySelector('.node-3'), pulse: document.getElementById('pulse3'), progress: 0.4, speed: 0.006 },
+                pulse4: { path: document.getElementById('conduit4'), node: document.querySelector('.node-4'), pulse: document.getElementById('pulse4'), progress: 0.6, speed: 0.005 },
+            };
+
+            function updateSVGPaths() {
+                const coreRect = core.getBoundingClientRect();
+                const svgRect = svg.getBoundingClientRect();
+                const coreX = coreRect.left - svgRect.left + coreRect.width / 2;
+                const coreY = coreRect.top - svgRect.top + coreRect.height / 2;
+
+                Object.values(nodes).forEach(item => {
+                    const nodeRect = item.node.getBoundingClientRect();
+                    const nodeX = nodeRect.left - svgRect.left + nodeRect.width / 2;
+                    const nodeY = nodeRect.top - svgRect.top + nodeRect.height / 2;
+                    
+                    // Calculate a control point for a nice curve
+                    const controlX = (coreX + nodeX) / 2 + (coreY - nodeY) * 0.2;
+                    const controlY = (coreY + nodeY) / 2 + (nodeX - coreX) * 0.2;
+                    
+                    item.path.setAttribute('d', `M${coreX},${coreY} Q${controlX},${controlY} ${nodeX},${nodeY}`);
+                });
+            }
+            
+            function animateSVGPaths() {
+                Object.values(nodes).forEach(item => {
+                    const length = item.path.getTotalLength();
+                    item.path.style.strokeDasharray = length;
+                    item.path.style.strokeDashoffset = length;
+                });
+            }
+            
+            function animatePulses() {
+                if (section.classList.contains('is-visible')) {
+                    Object.values(nodes).forEach(item => {
+                        item.progress = (item.progress + item.speed) % 1;
+                        const point = item.path.getPointAtLength(item.progress * item.path.getTotalLength());
+                        item.pulse.setAttribute('cx', point.x);
+                        item.pulse.setAttribute('cy', point.y);
+                    });
+                }
+                requestAnimationFrame(animatePulses);
+            }
+            
+            updateSVGPaths();
+            animatePulses();
+            window.addEventListener('resize', updateSVGPaths);
+        });
+    </script>
+<!--production support section ends here-->
 <!-- footer section strats here-->
     <footer class="site-footer">
         <div class="footer-container">
