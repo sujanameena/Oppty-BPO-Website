@@ -112,7 +112,7 @@
             /* TECHNICAL SUPPORT HERO SECTION STYLES */
             .tech-support-hero {
                 position: relative;
-                height: 70vh;
+                
                 display: grid;
                 place-items: center;
                 padding: 2rem;
@@ -798,7 +798,886 @@
         });
     </script>
 <!--Help desk section ends here-->
+<!--Production support section starts here-->
+<style>
+        /* KEYFRAME ANIMATIONS */
+        @keyframes core-pulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 107, 8, 0.3), inset 0 0 10px rgba(255, 107, 8, 0.2); }
+            50% { box-shadow: 0 0 60px 15px rgba(255, 107, 8, 0.5), inset 0 0 20px rgba(255, 107, 8, 0.4); }
+        }
+        @keyframes node-fade-in {
+            from { opacity: 0; transform: var(--transform-from); }
+            to { opacity: 1; transform: var(--transform-to); }
+        }
+        @keyframes draw-line { to { stroke-dashoffset: 0; } }
 
+        /* COMMAND CENTER SECTION STYLES */
+        .cortex-section {
+            position: relative;
+            padding: 120px 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            overflow: hidden;
+        }
+
+        /* Canvas Background */
+        #neural-canvas {
+            position: absolute; inset: 0;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        
+        /* Main Content Container */
+        .cortex-section .container {
+            max-width: 1400px; /* Increased width for new layout */
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 100px;
+            opacity: 0; transform: translateY(30px);
+        }
+        .section-header.is-visible {
+            opacity: 1; transform: translateY(0);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        .section-header h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: #fff; margin: 0; }
+        .section-header p { font-size: clamp(1rem, 2vw, 1.2rem); margin: 0.5rem auto 0; color: #ff6b08; font-weight: 600; }
+
+        /* The Cortex Layout */
+        .cortex-layout {
+            position: relative;
+            height: 700px; /* Increased height for new layout */
+            display: grid;
+            place-items: center;
+        }
+
+        /* Central Core */
+        .cortex-core {
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #1a1a1a, #000);
+            border: 2px solid rgba(255, 107, 8, 0.4);
+            display: grid;
+            place-items: center;
+            text-align: center;
+            animation: core-pulse 4s infinite ease-in-out;
+            opacity: 0; transform: scale(0.8);
+            transition: opacity 1s ease, transform 1s ease, box-shadow 0.3s ease;
+        }
+        .is-visible .cortex-core { opacity: 1; transform: scale(1); }
+        .core-text { font-weight: 800; font-size: 1.5rem; color: #ff6b08; }
+        
+        /* Feature Nodes */
+        .cortex-node {
+            position: absolute;
+            width: 350px;
+            background: rgba(28, 28, 28, 0.7);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 107, 8, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+        }
+        .is-visible .cortex-node { animation: node-fade-in 1s ease forwards; }
+        
+        /* Node Positioning & Animation Delays */
+        .node-1 { top: 0; left: 10%; --transform-from: scale(0.9); --transform-to: scale(1); animation-delay: 1.2s; }
+        .node-2 { top: 0; right: 10%; --transform-from: scale(0.9); --transform-to: scale(1); animation-delay: 1.4s; }
+        .node-3 { bottom: 0; right: 0; --transform-from: scale(0.9); --transform-to: scale(1); animation-delay: 1.6s; }
+        .node-4 { bottom: 0; left: 0; --transform-from: scale(0.9); --transform-to: scale(1); animation-delay: 1.8s; }
+        .hex-image {
+            flex-shrink: 0;
+            width: 100px; height: 115.47px;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            position: relative;
+        }
+        .hex-image img { width: 100%; height: 100%; object-fit: cover; }
+        .node-text h3 { font-size: 1.25rem; color: #fff; margin: 0 0 10px; }
+        .node-text p { color: rgba(255,255,255,0.7); margin: 0; line-height: 1.6; font-size: 0.9rem; }
+        
+        /* SVG Connection Layer */
+        #connection-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; z-index: -1; }
+        .conduit-path {
+            stroke: rgba(255, 107, 8, 0.2);
+            stroke-width: 2px;
+            fill: none;
+            transition: stroke 0.3s ease;
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+        }
+        .is-visible .conduit-path { animation: draw-line 1.5s ease-out 0.5s forwards; }
+        .data-pulse { fill: #ff6b08; r: 3px; filter: drop-shadow(0 0 4px #ff6b08); opacity: 0; }
+        .is-visible .data-pulse { opacity: 1; transition: opacity 0.5s ease 1.5s; }
+
+        /* Hover Interactions */
+        .cortex-node:hover { border-color: #ff6b08; box-shadow: 0 0 30px rgba(255, 107, 8, 0.3); }
+        .cortex-layout:has(.node-1:hover) #conduit1, .cortex-layout:has(.node-2:hover) #conduit2, .cortex-layout:has(.node-3:hover) #conduit3, .cortex-layout:has(.node-4:hover) #conduit4, .cortex-layout:has(.node-5:hover) #conduit5 { stroke: #ff6b08; }
+        .cortex-layout:has(.cortex-node:hover) .cortex-core { box-shadow: 0 0 60px 15px rgba(255, 107, 8, 0.5), inset 0 0 20px rgba(255, 107, 8, 0.4); }
+
+        @media (max-width: 1200px) { .cortex-layout { transform: scale(0.8); } }
+        @media (max-width: 900px) { .cortex-layout { transform: scale(1); height: auto; display: flex; flex-direction: column; gap: 40px; } .cortex-node { position: static; transform: none !important; width: 100%; box-sizing: border-box; } #connection-svg { display: none; } }
+    </style>
+</head>
+<body>
+
+    <section class="cortex-section">
+        <canvas id="neural-canvas"></canvas>
+        <div class="container">
+            <header class="section-header">
+                <h2>The Global Nerve Center</h2>
+                <p>Oppty BPO's intelligent, centralized command for your entire IT infrastructure.</p>
+            </header>
+
+            <div class="cortex-layout">
+                <div class="cortex-core">
+                    <span class="core-text">OPPTY<br>CORE</span>
+                </div>
+
+                <div class="cortex-node node-1">
+                    <div class="hex-image"><img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Technician diagnosing a system."></div>
+                    <div class="node-text">
+                        <h3>Proactive Diagnostics</h3>
+                        <p>Our system anticipates issues by analyzing performance metrics, preventing downtime before it starts.</p>
+                    </div>
+                </div>
+
+                <div class="cortex-node node-2">
+                    <div class="hex-image"><img src="https://images.pexels.com/photos/5775854/pexels-photo-5775854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Secure data center."></div>
+                    <div class="node-text">
+                        <h3>Secure Endpoint Management</h3>
+                        <p>We manage and secure every device, from servers to remote laptops, under one unified security protocol.</p>
+                    </div>
+                </div>
+                
+                 <div class="cortex-node node-3">
+                    <div class="hex-image"><img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Team collaborating on scaling infrastructure."></div>
+                    <div class="node-text">
+                        <h3>Infrastructure Scaling</h3>
+                        <p>Our team provides dynamic resource allocation, ensuring your IT infrastructure scales seamlessly with your business growth.</p>
+                    </div>
+                </div>
+
+                <!-- New Node 4 -->
+                <div class="cortex-node node-4">
+                    <div class="hex-image"><img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Cloud server racks."></div>
+                    <div class="node-text">
+                        <h3>Cloud Architecture</h3>
+                        <p>We design, deploy, and manage scalable cloud solutions, optimizing costs and ensuring peak performance on AWS, Azure, and GCP.</p>
+                    </div>
+                </div>
+
+                <svg id="connection-svg">
+                    <path class="conduit-path" id="conduit1" /><path class="conduit-path" id="conduit2" /><path class="conduit-path" id="conduit3" /><path class="conduit-path" id="conduit4" /><path class="conduit-path" id="conduit5" />
+                    <circle class="data-pulse" id="pulse1" /><circle class="data-pulse" id="pulse2" /><circle class="data-pulse" id="pulse3" /><circle class="data-pulse" id="pulse4" /><circle class="data-pulse" id="pulse5" />
+                </svg>
+            </div>
+        </div>
+    </section>
+ 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const section = document.querySelector('.cortex-section');
+            if (!section) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        section.classList.add('is-visible');
+                        animateSVGPaths();
+                        observer.unobserve(section);
+                    }
+                });
+            }, { threshold: 0.2 });
+            observer.observe(section);
+            
+            const canvas = document.getElementById('neural-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            
+            function resizeCanvas() { canvas.width = section.offsetWidth; canvas.height = section.offsetHeight; initParticles(); }
+            window.addEventListener('resize', resizeCanvas);
+
+            class Particle {
+                constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.vx = Math.random() * 0.4 - 0.2; this.vy = Math.random() * 0.4 - 0.2; this.radius = Math.random() * 1.5 + 0.5; }
+                update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > canvas.width) this.vx *= -1; if (this.y < 0 || this.y > canvas.height) this.vy *= -1; }
+                draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255, 107, 8, 0.5)'; ctx.fill(); }
+            }
+            function initParticles() {
+                const particleCount = window.innerWidth > 768 ? 100 : 40;
+                particles = [];
+                for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+            }
+            function connectAndDraw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i; j < particles.length; j++) {
+                        const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                        if (dist < 120) {
+                            ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(255, 107, 8, ${0.3 * (1 - dist / 120)})`; ctx.lineWidth = 0.5; ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(connectAndDraw);
+            }
+            resizeCanvas(); connectAndDraw();
+
+            const svg = document.getElementById('connection-svg');
+            const core = document.querySelector('.cortex-core');
+            const nodes = {
+                pulse1: { path: document.getElementById('conduit1'), node: document.querySelector('.node-1'), pulse: document.getElementById('pulse1'), progress: 0, speed: 0.005 },
+                pulse2: { path: document.getElementById('conduit2'), node: document.querySelector('.node-2'), pulse: document.getElementById('pulse2'), progress: 0.2, speed: 0.004 },
+                pulse3: { path: document.getElementById('conduit3'), node: document.querySelector('.node-3'), pulse: document.getElementById('pulse3'), progress: 0.4, speed: 0.006 },
+                pulse4: { path: document.getElementById('conduit4'), node: document.querySelector('.node-4'), pulse: document.getElementById('pulse4'), progress: 0.6, speed: 0.005 },
+            };
+
+            function updateSVGPaths() {
+                const coreRect = core.getBoundingClientRect();
+                const svgRect = svg.getBoundingClientRect();
+                const coreX = coreRect.left - svgRect.left + coreRect.width / 2;
+                const coreY = coreRect.top - svgRect.top + coreRect.height / 2;
+
+                Object.values(nodes).forEach(item => {
+                    const nodeRect = item.node.getBoundingClientRect();
+                    const nodeX = nodeRect.left - svgRect.left + nodeRect.width / 2;
+                    const nodeY = nodeRect.top - svgRect.top + nodeRect.height / 2;
+                    
+                    // Calculate a control point for a nice curve
+                    const controlX = (coreX + nodeX) / 2 + (coreY - nodeY) * 0.2;
+                    const controlY = (coreY + nodeY) / 2 + (nodeX - coreX) * 0.2;
+                    
+                    item.path.setAttribute('d', `M${coreX},${coreY} Q${controlX},${controlY} ${nodeX},${nodeY}`);
+                });
+            }
+            
+            function animateSVGPaths() {
+                Object.values(nodes).forEach(item => {
+                    const length = item.path.getTotalLength();
+                    item.path.style.strokeDasharray = length;
+                    item.path.style.strokeDashoffset = length;
+                });
+            }
+            
+            function animatePulses() {
+                if (section.classList.contains('is-visible')) {
+                    Object.values(nodes).forEach(item => {
+                        item.progress = (item.progress + item.speed) % 1;
+                        const point = item.path.getPointAtLength(item.progress * item.path.getTotalLength());
+                        item.pulse.setAttribute('cx', point.x);
+                        item.pulse.setAttribute('cy', point.y);
+                    });
+                }
+                requestAnimationFrame(animatePulses);
+            }
+            
+            updateSVGPaths();
+            animatePulses();
+            window.addEventListener('resize', updateSVGPaths);
+        });
+    </script>
+<!--production support section ends here-->
+
+<!--Infrastructure support section starts here-->
+
+<style>
+
+        /* KEYFRAME ANIMATIONS */
+        @keyframes slide-in-up {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes scan-line {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+
+        /* INFRASTRUCTURE SHOWCASE SECTION STYLES */
+        .infra-showcase-section {
+            position: relative;
+            padding: 120px 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            overflow: hidden;
+        }
+
+        /* Layer 1: Generative Canvas Background */
+        #data-fabric-canvas {
+            position: absolute; inset: 0;
+            z-index: 1;
+            opacity: 0.7;
+        }
+        
+        /* Layer 2: Main Content Container */
+        .infra-showcase-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            opacity: 0;
+        }
+        .section-header.is-visible {
+            animation: slide-in-up 1s ease-out forwards;
+        }
+        .section-header h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; color: #fff; margin: 0; }
+        .section-header p { font-size: clamp(1rem, 2vw, 1.2rem); margin: 0.5rem auto 0; color: #ff6b08; font-weight: 600; }
+
+        /* The Interactive Showcase Layout */
+        .solutions-showcase {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: start;
+            opacity: 0;
+        }
+        .solutions-showcase.is-visible {
+            animation: slide-in-up 1s ease-out 0.3s forwards;
+        }
+
+        /* Left Side: Trigger List */
+        .trigger-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+        }
+        .trigger-item {
+            padding: 20px 25px;
+            background: rgba(28, 28, 28, 0.7);
+            border: 1px solid rgba(255, 107, 8, 0.2);
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.7);
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .trigger-item:hover, .trigger-item.active {
+            background: #ff6b08;
+            color: #fff;
+            border-color: #ff6b08;
+        }
+
+        /* Right Side: Display Panel */
+        .display-panel {
+            position: relative;
+            border-radius: 16px;
+            background: #1c1c1c;
+            border: 1px solid rgba(255, 107, 8, 0.3);
+            overflow: hidden;
+        }
+        .display-content {
+            padding: 40px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .display-content.is-active {
+            opacity: 1;
+        }
+        .display-image {
+            margin-bottom: 30px;
+        }
+        .display-image img {
+            width: 100%; display: block;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .display-text h3 { font-size: 2rem; color: #fff; margin: 0 0 15px 0; }
+        .display-text p { color: rgba(255,255,255,0.8); margin: 0; line-height: 1.8; font-size: 1.05rem; }
+
+        /* "Scan-in" Animation Effect */
+        .scan-line {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: #ff6b08;
+            box-shadow: 0 0 15px #ff6b08;
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+        .display-content.is-changing .scan-line {
+            opacity: 1;
+            animation: scan-line 0.5s ease-out;
+        }
+
+        @media (max-width: 900px) {
+            .solutions-showcase { grid-template-columns: 1fr; }
+            .trigger-list { display: flex; flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <section class="infra-showcase-section">
+        <canvas id="data-fabric-canvas"></canvas>
+
+        <div class="container">
+            <header class="section-header">
+                <h2>End-to-End Infrastructure Management</h2>
+                <p>Oppty BPO architects, manages, and secures the digital backbone of your enterprise.</p>
+            </header>
+
+            <div class="solutions-showcase">
+                <ul class="trigger-list">
+                    <li class="trigger-item active" data-target="noc">Network Operations Center (NOC)</li>
+                    <li class="trigger-item" data-target="security">Cybersecurity & Compliance</li>
+                    <li class="trigger-item" data-target="cloud">Cloud Services & DevOps</li>
+                    <li class="trigger-item" data-target="endpoints">Endpoint & Device Management</li>
+                    <li class="trigger-item" data-target="disaster">Disaster Recovery Planning</li>
+                    <li class="trigger-item" data-target="automation">IT Automation & Scripting</li>
+                </ul>
+
+                <div class="display-panel">
+                    <div class="scan-line"></div>
+                    <div class="display-content">
+                        <div class="display-image">
+                            <img id="display-img" src="" alt="Service illustration">
+                        </div>
+                        <div class="display-text">
+                            <h3 id="display-title"></h3>
+                            <p id="display-desc"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const section = document.querySelector('.infra-showcase-section');
+            if (!section) return;
+
+            // --- 1. Scroll-triggered Animations ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            const header = section.querySelector('.section-header');
+            const showcase = section.querySelector('.solutions-showcase');
+            if(header) observer.observe(header);
+            if(showcase) observer.observe(showcase);
+
+            // --- 2. Canvas Data Fabric Background ---
+            const canvas = document.getElementById('data-fabric-canvas');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            
+            function resizeCanvas() { canvas.width = section.offsetWidth; canvas.height = section.offsetHeight; initParticles(); }
+            window.addEventListener('resize', resizeCanvas);
+            
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
+                    this.vx = Math.random() * 0.4 - 0.2; this.vy = Math.random() * 0.4 - 0.2;
+                    this.radius = Math.random() * 1.5 + 0.5;
+                }
+                update() {
+                    this.x += this.vx; this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+                draw() {
+                    ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(255, 107, 8, 0.6)'; ctx.fill();
+                }
+            }
+            function initParticles() {
+                const particleCount = window.innerWidth > 768 ? 150 : 50;
+                particles = [];
+                for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+            }
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                particles.forEach(p => { p.update(); p.draw(); });
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i; j < particles.length; j++) {
+                        const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                        if (dist < 100) {
+                            ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${0.05 * (1 - dist / 100)})`; ctx.lineWidth = 0.5; ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animateParticles);
+            }
+            resizeCanvas();
+            animateParticles();
+
+            // --- 3. Interactive Showcase Logic ---
+            const triggers = document.querySelectorAll('.trigger-item');
+            const displayContent = document.querySelector('.display-content');
+            const displayImg = document.getElementById('display-img');
+            const displayTitle = document.getElementById('display-title');
+            const displayDesc = document.getElementById('display-desc');
+            
+            const contentData = {
+                noc: {
+                    title: "24/7 Network Operations",
+                    desc: "Our Global NOC provides round-the-clock proactive monitoring of your entire infrastructure. We use real-time analytics to detect and resolve potential issues like latency spikes, packet loss, and server resource depletion, ensuring your services meet and exceed all SLAs.",
+                    img: "https://images.pexels.com/photos/3747139/pexels-photo-3747139.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                },
+                security: {
+                    title: "Advanced Threat Mitigation",
+                    desc: "Oppty BPO deploys and manages next-generation firewalls, intrusion detection systems, and SIEM platforms. Our security specialists conduct continuous vulnerability scanning and threat intelligence analysis to protect your digital perimeter from evolving cyber threats.",
+                    img: "https://images.pexels.com/photos/5380649/pexels-photo-5380649.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                },
+                cloud: {
+                    title: "Multi-Cloud & DevOps Engineering",
+                    desc: "We provide expert management for your multi-cloud environment, including AWS, Azure, and GCP. Our team engineers for growth, managing CI/CD pipelines, container orchestration, and cost optimization to ensure your infrastructure scales seamlessly.",
+                    img: "https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                },
+                endpoints: {
+                    title: "Unified Endpoint Management",
+                    desc: "From corporate laptops to mobile devices, we enforce a unified security policy across every endpoint. Our team manages device provisioning, patching, and compliance to ensure your remote workforce remains secure and productive.",
+                    img: "https://images.pexels.com/photos/5775854/pexels-photo-5775854.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                },
+                disaster: {
+                    title: "Business Continuity & Recovery",
+                    desc: "We design and implement robust disaster recovery plans, including regular backups, failover testing, and data replication. In the event of an outage, our goal is to restore critical operations with minimal disruption and data loss.",
+                    img: "https://images.pexels.com/photos/4344860/pexels-photo-4344860.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                },
+                automation: {
+                    title: "IT Automation & Scripting",
+                    desc: "Our automation engineers identify and script repetitive IT tasks, from user provisioning to system health checks. This reduces human error, improves efficiency, and frees up your internal teams to focus on strategic initiatives.",
+                    img: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                }
+            };
+
+            function updateDisplay(target) {
+                // Animate out
+                displayContent.classList.remove('is-active');
+                displayContent.classList.add('is-changing');
+                
+                setTimeout(() => {
+                    // Update content
+                    const data = contentData[target];
+                    displayImg.src = data.img;
+                    displayTitle.textContent = data.title;
+                    displayDesc.textContent = data.desc;
+                    
+                    // Animate in
+                    displayContent.classList.remove('is-changing');
+                    setTimeout(() => displayContent.classList.add('is-active'), 50);
+
+                }, 250); // This delay should match the 'scan-line' animation
+            }
+
+            triggers.forEach(trigger => {
+                trigger.addEventListener('mouseenter', () => {
+                    // Remove active class from all triggers
+                    triggers.forEach(t => t.classList.remove('active'));
+                    // Add active class to the hovered one
+                    trigger.classList.add('active');
+                    
+                    const target = trigger.dataset.target;
+                    updateDisplay(target);
+                });
+            });
+
+            // Initial load
+            updateDisplay('noc');
+        });
+    </script>
+<!--Infrastructure support section ends here-->
+<!--call to function starts here-->
+    <style>
+        /* KEYFRAME ANIMATIONS */
+        @keyframes text-fade-in-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes flow-gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 40px 10px rgba(255, 107, 8, 0.15); opacity: 0.8; }
+            50% { box-shadow: 0 0 70px 25px rgba(255, 107, 8, 0.3); opacity: 1; }
+            100% { box-shadow: 0 0 40px 10px rgba(255, 107, 8, 0.15); opacity: 0.8; }
+        }
+
+        /* CTA NEXUS SECTION STYLES */
+        .cta-nexus-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            min-height: 600px;
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Layer 1: Interactive Canvas Background */
+        #particle-canvas {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 1;
+        }
+        
+        /* Layer 2: Main Content */
+        .cta-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .cta-header {
+            color: #fff;
+            margin-bottom: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .cta-header.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .cta-header h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin: 0 0 1rem 0;
+            line-height: 1.3;
+        }
+        .cta-header h2 span { display: block; }
+        .cta-header .line2 {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out 0.3s, transform 1s ease-out 0.3s;
+        }
+        .cta-header.is-visible .line2 { opacity: 1; transform: translateY(0); }
+
+        /* Button Wrapper & Glow Ring */
+        .cta-button-wrapper {
+            position: relative;
+            display: grid;
+            place-items: center;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        .cta-button-wrapper.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 1s ease-out 0.6s, transform 1s ease-out 0.6s;
+        }
+
+        .pulsing-glow-ring {
+            position: absolute;
+            width: 260px; height: 260px;
+            border-radius: 50%;
+            animation: pulse-ring 4s infinite ease-in-out;
+            transition: all 0.5s ease;
+        }
+        .cta-button-wrapper:hover .pulsing-glow-ring {
+            transform: scale(1.1);
+            box-shadow: 0 0 90px 30px rgba(255, 107, 8, 0.4);
+        }
+
+        /* The Nexus Button */
+        .cta-nexus-button {
+            position: relative;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            
+            background: #1c1c1c;
+            border: 2px solid rgba(255, 107, 8, 0.5);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+            
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                        background 0.4s ease, border-color 0.4s ease;
+        }
+
+        .cta-nexus-button:hover {
+            transform: scale(1.05);
+            border-color: #ff6b08;
+            background: linear-gradient(-45deg, #ff6b08, #ffae42, #ff6b08);
+            background-size: 200% 200%;
+            animation: flow-gradient 3s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <section class="cta-nexus-section">
+        <!-- Layer 1: Interactive Canvas Background -->
+        <canvas id="particle-canvas"></canvas>
+
+        <!-- Layer 2: Main Content -->
+        <div class="cta-container">
+            <header class="cta-header">
+                <h2>
+                    <span class="line1">Ready to simplify your workday?</span>
+                    <span class="line2">Let’s get started today.</span>
+                </h2>
+            </header>
+
+            <div class="cta-button-wrapper">
+                <div class="pulsing-glow-ring"></div>
+                <a href="#hire" class="cta-nexus-button">
+                    <span>Hire Your Assistant</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- 1. Scroll-triggered "is-visible" class ---
+            const animatedElements = document.querySelectorAll('.cta-header, .cta-button-wrapper');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            animatedElements.forEach(el => observer.observe(el));
+
+            // --- 2. Interactive Particle Nexus Canvas ---
+            const canvas = document.getElementById('particle-canvas');
+            const ctx = canvas.getContext('2d');
+
+            let particles = [];
+            const mouse = { x: null, y: null, radius: 150 };
+
+            function resizeCanvas() {
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+            }
+            resizeCanvas();
+
+            window.addEventListener('resize', resizeCanvas);
+
+            canvas.addEventListener('mousemove', function(event) {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            });
+            canvas.addEventListener('mouseout', function() {
+                mouse.x = null;
+                mouse.y = null;
+            });
+            
+            class Particle {
+                constructor(x, y, vx, vy, color, size) {
+                    this.x = x;
+                    this.y = y;
+                    this.vx = vx;
+                    this.vy = vy;
+                    this.baseX = this.x; // Original position
+                    this.baseY = this.y;
+                    this.color = color;
+                    this.size = size;
+                    this.density = (Math.random() * 30) + 1;
+                }
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+                update() {
+                    // Interaction logic
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    let forceDirectionX = dx / distance;
+                    let forceDirectionY = dy / distance;
+                    let maxDistance = mouse.radius;
+                    
+                    // If mouse is close, particles are drawn towards it.
+                    if (distance < maxDistance) {
+                        let force = (maxDistance - distance) / maxDistance;
+                        let directionX = forceDirectionX * force * this.density;
+                        let directionY = forceDirectionY * force * this.density;
+                        this.x += directionX;
+                        this.y += directionY;
+                    } 
+                    // If mouse is away, they return to base position.
+                    else {
+                        if (this.x !== this.baseX) {
+                            let dx = this.x - this.baseX;
+                            this.x -= dx / 10;
+                        }
+                        if (this.y !== this.baseY) {
+                            let dy = this.y - this.baseY;
+                            this.y -= dy / 10;
+                        }
+                    }
+
+                    this.x += this.vx;
+                    this.y += this.vy;
+
+                    if (this.x > canvas.width || this.x < 0) this.vx *= -1;
+                    if (this.y > canvas.height || this.y < 0) this.vy *= -1;
+
+                    this.draw();
+                }
+            }
+
+            function init() {
+                particles = [];
+                let numberOfParticles = (canvas.height * canvas.width) / 9000;
+                for (let i = 0; i < numberOfParticles; i++) {
+                    let size = Math.random() * 2 + 1;
+                    let x = Math.random() * canvas.width;
+                    let y = Math.random() * canvas.height;
+                    let vx = Math.random() * 0.4 - 0.2;
+                    let vy = Math.random() * 0.4 - 0.2;
+                    let color = 'rgba(255, 107, 8, ' + (Math.random() * 0.5 + 0.2) + ')';
+                    particles.push(new Particle(x, y, vx, vy, color, size));
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                }
+                requestAnimationFrame(animate);
+            }
+
+            init();
+            animate();
+        });
+    </script>
+    <!--call to functions ends here-->   
 <!-- footer section strats here-->
     <footer class="site-footer">
         <div class="footer-container">
