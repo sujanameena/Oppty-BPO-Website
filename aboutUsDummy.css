@@ -1,0 +1,1460 @@
+:root {
+    --primary-orange: #f36f21;
+    --text-light: #ffffff;
+    --text-secondary: #dddddd;
+    --dark-bg: #0d0d12;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+/* header section starts here */
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 80px;
+    background-color: black;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: cover;
+    display: block;
+    overflow: hidden;
+    margin: 0px -100px 0px -1px;
+}
+
+.search-icon-btn {
+    color: white;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    margin-left: 800px;
+}
+
+.register-now {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 68px;
+}
+
+.register-now button {
+    width: 120px;
+    background-color: #f97216;
+    border: 2px solid #f97216;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    height: 35px;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 20px 30px 0px 51px;
+}
+
+.register-now button:hover {
+    background-color: white;
+    color: #f97216;
+    border-color: #f97216;
+    cursor: pointer;
+}
+
+/* sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #ffffff;
+    color: #fff;
+    transition: left 0.3s;
+    z-index: 1050;
+    padding-top: 60px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    padding: 16px 24px;
+}
+
+.sidebar-menu li a {
+    color: #000000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-family: 'Poppins Medium';
+    font-weight: 500;
+}
+
+.sidebar-menu li a:hover {
+    color: #f97216;
+    background-color: #f5f5f5;
+    text-decoration: none;
+}
+
+.sidebar-menu li a i {
+    margin-right: 12px;
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 180px;
+        padding-top: 50px;
+    }
+}
+
+.expand-content {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin: 0;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 150px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    z-index: 100;
+    /* position: fixed; */
+}
+/* header section ends here */
+/* --- HERO SECTION WITH BACKGROUND VIDEO Starts here --- */
+.hero-section {
+    /* Sizing and Positioning */
+    height: 120vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* Hides any video overflow */
+
+    /* Flexbox for content alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Padding for content inside */
+    padding: 20px 5%;
+    text-align: left;
+    margin-top: 80px;
+}
+
+#background-video {
+    /* Video positioning */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Video sizing to cover the container */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    
+    /* Ensure it's in the background */
+    z-index: -2;
+}
+
+.hero-overlay {
+    /* Overlay positioning and color */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 10, 15, 0.65); /* Dark overlay */
+    
+    /* Place it above the video but below the text */
+    z-index: -1;
+}
+
+.hero-content {
+    width: 100%;
+    margin-top: 100px;
+    max-width: 950px; /* Constrains the width of the text for readability */
+    z-index: 1; /* Ensures content is on top */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Spacing between text elements */
+}
+
+.hero-tagline {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: -10px; /* Nudge closer to main heading */
+}
+
+.hero-content h1 {
+    font-size: clamp(2.8rem, 6vw, 4.2rem); /* Responsive font size */
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-content h2 {
+    font-size: clamp(2.5rem, 5vw, 3.8rem); /* Responsive font size */
+    font-weight: 700;
+    color: var(--primary-orange);
+    line-height: 1.1;
+    margin-top: -15px; /* Bring it closer to the h1 */
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 800px; /* Constrain paragraph width */
+}
+
+.hero-content p strong {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.hero-stats {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap; /* Allows stats to stack on smaller screens */
+    gap: 40px 50px; /* Row and column gap */
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 5px;
+    line-height: 1.2;
+}
+/* --- HERO SECTION WITH BACKGROUND VIDEO Ends here --- */
+
+/* --- Award section starts here --- */
+
+/* --- SECTION STYLING --- */
+.awards-section {
+    padding: 100px 0;
+    overflow: hidden; /* Important for containing the full-width slider */
+}
+
+.content-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 40px;
+    color:#ffffff;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 500;
+}
+
+.link-arrow {
+    color: var(--primary-orange);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+}
+
+.link-arrow:hover {
+    gap: 10px;
+}
+
+.link-arrow span {
+    font-size: 1.2em;
+}
+
+/* --- SLIDER TRACK & CARDS --- */
+.slider-track {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    padding: 0 5%; /* Provides start and end padding for a full-width feel */
+}
+
+.slider-track::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+.award-card {
+    flex: 0 0 clamp(260px, 22vw, 320px); /* Responsive card width */
+    aspect-ratio: 3 / 4; /* Maintains card proportions */
+    background-color: var(--card-bg);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.award-card:hover {
+    transform: scale(1.03);
+}
+
+.award-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(13, 13, 18, 0.95), transparent);
+    z-index: 2;
+}
+
+.card-overlay p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* --- SLIDER CONTROLS --- */
+.slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.slider-progress-bar {
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--border-color);
+    position: relative;
+}
+
+.progress-inner {
+    position: absolute;
+    height: 100%;
+    width: 0; /* JS will set this */
+    background-color: var(--text-light);
+    transition: width 0.2s linear;
+}
+
+.slider-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.slider-nav button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.slider-nav button:hover {
+    background-color: var(--primary-orange);
+    border-color: var(--primary-orange);
+}
+/* --- Award section ends here --- */
+
+
+/* --- In the news section starts here --- */
+
+/* --- SECTION STYLING --- */
+.news-section {
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.content-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 500;
+}
+
+.link-arrow {
+    color: var(--primary-orange);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+}
+
+.link-arrow:hover {
+    gap: 10px;
+}
+
+.link-arrow span {
+    font-size: 1.2em;
+}
+
+/* --- SLIDER TRACK & CARDS --- */
+.slider-track {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0 5%; /* Full-width padding */
+}
+
+.slider-track::-webkit-scrollbar {
+    display: none;
+}
+
+.news-card {
+    flex: 0 0 clamp(280px, 25vw, 320px);
+    min-height: 150px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card h3 {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+.news-card:hover h3 {
+    color: var(--primary-orange);
+}
+
+/* --- SLIDER CONTROLS --- */
+.slider-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.slider-progress-bar {
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--border-color);
+    position: relative;
+}
+
+.progress-inner {
+    position: absolute;
+    height: 100%;
+    width: 0;
+    background-color: var(--text-light);
+    transition: width 0.2s linear;
+}
+
+.slider-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.slider-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.slider-button:hover {
+    background-color: var(--primary-orange);
+    border-color: var(--primary-orange);
+    transform: scale(1.1);
+}
+
+.arrow {
+    border: solid var(--text-light);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.arrow.left {
+    transform: rotate(135deg);
+    margin-left: 2px;
+}
+
+.arrow.right {
+    transform: rotate(-45deg);
+    margin-right: 2px;
+}
+/* --- In the news section ends here --- */
+
+/* --- Clients section starts here --- */
+/*clients section */
+
+:root {
+  --primary-orange: #f36f21;
+  --text-dark: #1c1c1e;
+  --text-muted-dark: #555;
+  --border-color: #d1d1d6;
+  --light-bg: #f5f5f7;
+}
+
+/* --- Section Base --- */
+.client-carousel-section {
+  padding: 100px 0;
+  background: var(--light-bg);
+  overflow: hidden;
+}
+
+.content-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* --- Slider Layout --- */
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.6s ease;
+  width: 100%;
+}
+
+.client-slide {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  min-height: 500px;
+  padding: 0 10px;
+}
+
+/* --- Text Styling --- */
+.client-text h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.client-text p {
+  color: var(--text-muted-dark);
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.link-arrow {
+  color: var(--primary-orange);
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.3s;
+}
+
+.link-arrow:hover {
+  gap: 10px;
+}
+
+/* --- Video Container --- */
+.video-container {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.client-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.play-button::after {
+  content: "";
+  border-left: 18px solid #fff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: 4px;
+}
+
+.video-container:hover .play-button {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-container.is-playing .play-button {
+  opacity: 0;
+}
+
+.client-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  padding: 8px 14px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.client-info strong {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.client-info span {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* --- Controls --- */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.slider-progress-bar {
+  flex-grow: 1;
+  height: 4px;
+  background: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-inner {
+  height: 100%;
+  width: 0;
+  background: var(--primary-orange);
+  transition: width 0.5s ease;
+}
+
+.slider-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.slider-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-muted-dark);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.slider-button:hover {
+  border-color: var(--primary-orange);
+  color: var(--primary-orange);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .client-slide {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .client-info {
+    position: static;
+    background: none;
+    box-shadow: none;
+    color: var(--text-muted-dark);
+  }
+
+  .video-container {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 576px) {
+  .client-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .slider-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+/* --- Clients section ends here --- */
+
+/* --- Image hover section starts here --- */
+/*Image hover section */
+/* --- FOURTH PAGE SECTION --- */
+.fourth-page-container {
+  width: 100%;
+  background: #04040a;
+  color: #fff;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* --- TEXT CONTENT --- */
+.fourth-page-content-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.fourth-page-content-container h4 {
+  font-size: 1.2rem;
+  color: #bcbcbc;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.fourth-page-content-container h2 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+  max-width: 900px;
+}
+
+/* --- IMAGE ROW --- */
+.hover-image-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  padding: 0 30px;
+}
+
+/* --- EACH IMAGE CARD --- */
+.hover-image-item {
+  position: relative;
+  width: 240px;
+  height: 340px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-image-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 106, 0, 0.25);
+}
+
+.hover-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hover-image-item:hover img {
+  transform: scale(1.1);
+}
+
+/* --- TITLE ON IMAGE --- */
+.hover-image-heading {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 10px 0;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+/* --- OVERLAY (on hover) --- */
+.hover-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 3;
+  transition: opacity 0.3s ease;
+}
+
+.hover-image-item:hover .hover-image-overlay {
+  opacity: 1;
+}
+
+.hover-image-item:hover .hover-image-heading {
+  opacity: 0;
+}
+
+/* --- OVERLAY TEXT + BUTTON --- */
+.hover-image-overlay-text {
+  color: #e0e0e0;
+  font-size: 13px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  max-width: 85%;
+}
+
+.hover-image-read-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #f76e11;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.hover-image-read-more i {
+  transform: rotate(45deg);
+  font-size: 1.1em;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+  .hover-image-item {
+    width: 200px;
+    height: 280px;
+  }
+
+  .hover-image-row {
+    gap: 30px;
+  }
+
+  .fourth-page-content-container h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hover-image-item {
+    width: 180px;
+    height: 260px;
+  }
+
+  .fourth-page-content-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .hover-image-row {
+    gap: 20px;
+    margin-top: 50px;
+  }
+}
+/* --- Image hover section ends here --- */
+
+
+
+/* css for companies scrolling section */
+.companies-section {
+  background: #ffffff; /* White background */
+  text-align: center;
+  padding: 80px 0;
+}
+
+.business-heading {
+  margin-bottom: 40px;
+}
+
+.smartBusiness-heading {
+  font-size: 2.2rem;
+  color: #222;
+  font-weight: 600;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* --- Logo Slider --- */
+.companies-list-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.companies-slider {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  position: relative;
+}
+
+.companies-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  will-change: transform;
+  transition: transform 0.3s ease;
+}
+
+.company-icon img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: grayscale(0%);
+}
+
+.company-icon:hover img {
+  transform: scale(1.1);
+  filter: none;
+}
+
+/* --- View All Link --- */
+.view-all {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.view-all-text-partner-hover {
+  color: #222;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.view-all-text-partner-hover:hover {
+  color: #f76e11;
+}
+
+.view-all-text-partner-hover i {
+  color: #f76e11;
+  transition: transform 0.3s ease;
+}
+
+.view-all-text-partner-hover:hover i {
+  transform: translateY(-2px) rotate(45deg);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .companies-track {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .company-icon img {
+    width: 110px;
+  }
+}
+/* --- Partnerships Section ends here --- */
+
+/*childer sliding section starts here*/
+/* --- Section Wrapper --- */
+.human-side-section {
+    background-color: var(--light-bg, #f5f5f7); /* Light background for this section */
+    padding: 100px 0;
+    overflow-x: hidden; /* Prevents horizontal scrollbars */
+}
+
+/* --- Centered Content Container --- */
+.human-side-section .content-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+/* --- Section Title --- */
+.human-side-section .section-title {
+    color: var(--primary-orange, #f36f21);
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 500;
+    margin-bottom: 60px;
+}
+
+/* --- Two-Column Layout Grid --- */
+.human-side-section .split-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Left column is slightly wider */
+    align-items: center;
+    gap: 60px;
+}
+
+/* --- Static Left Column (Text) --- */
+.human-side-section .text-content {
+    color: var(--text-dark, #1c1c1e);
+}
+.human-side-section .text-content h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.human-side-section .text-content p {
+    color: var(--text-muted, #555);
+    line-height: 1.8;
+}
+.human-side-section .text-content strong {
+    color: var(--text-dark, #1c1c1e);
+}
+.human-side-section .link-arrow {
+    color: var(--primary-orange, #f36f21);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    transition: gap 0.3s;
+    margin-top: 20px;
+}
+.human-side-section .link-arrow:hover {
+    gap: 10px;
+}
+
+/* --- Sliding Right Column (Images) --- */
+.human-side-section .image-slider-container {
+    overflow: hidden; /* CRITICAL: This hides the slides that are off-screen */
+}
+.human-side-section .image-slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth slide animation */
+}
+.human-side-section .image-slide {
+    flex: 1 0 100%; /* Each slide takes the full container width */
+    text-align: center;
+}
+.human-side-section .image-slide img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    filter: grayscale(100%); /* Black and white effect */
+}
+.human-side-section .caption {
+    color: var(--text-muted, #555);
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* --- Dot Navigation Styling --- */
+.human-side-section .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 50px;
+}
+.human-side-section .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--text-muted, #555);
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 0; /* Reset button padding */
+}
+.human-side-section .dot.active {
+    background-color: var(--text-muted, #555);
+}
+
+/* --- Responsive Adjustments for Mobile --- */
+@media (max-width: 768px) {
+    .human-side-section .split-layout {
+        grid-template-columns: 1fr; /* Stack columns on top of each other */
+        gap: 40px;
+        text-align: center;
+    }
+    .human-side-section .link-arrow {
+        justify-content: center; /* Center the link when the layout is centered */
+    }
+}
+/* --- Childer sliding section ends here --- */
+
+/* --- Global Partner Section Starts Here --- */
+/*global partner*/
+
+.global-partner-section {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  padding: 80px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.partner-header {
+  margin-bottom: 60px;
+}
+
+.partner-title {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.partner-subtitle {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #f36f21;
+}
+
+.partner-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  padding: 0 40px;
+}
+
+.partner-card {
+  background-color: #111;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.25);
+  padding: 40px 30px;
+  width: 420px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px rgba(243, 111, 33, 0.4);
+}
+
+.partner-location {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f36f21;
+  margin-bottom: 20px;
+}
+
+.partner-info {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #d6d6d6;
+  margin-bottom: 30px;
+}
+
+.explore-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+}
+
+.explore-link i {
+  color: #f36f21;
+  transform: rotate(45deg);
+}
+
+.explore-link:hover {
+  color: #f36f21;
+}
+
+@media (max-width: 768px) {
+  .partner-card {
+    width: 90%;
+  }
+
+  .partner-title {
+    font-size: 2.2rem;
+  }
+
+  .partner-subtitle {
+    font-size: 1.5rem;
+  }
+}
+/* --- Global Partner Section Ends Here --- */
+
+/*footer section starts here*/
+/*footer section*/
+.site-footer {
+    background-color: black;
+    color: #ffffff;
+    padding: 80px 0;
+    font-size: 1rem;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.footer-grid {
+    display: grid;
+    /* First column is wider, the rest are equal */
+    grid-template-columns: 2fr 1.5fr 1.5fr 1fr 1fr; 
+    gap: 40px;
+}
+
+/* --- Column 1: About --- */
+.footer-about .footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    padding-right: 20px; /* Give it some breathing room */
+}
+
+/* --- General Column Styling --- */
+.footer-column h4 {
+    color: var(--primary-orange);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.footer-column p,
+.footer-column li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--text-light);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 1024px) {
+    .footer-grid {
+        /* On tablets, switch to a 3-column layout */
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .footer-about {
+        /* Make the 'about' section span all 3 columns */
+        grid-column: 1 / -1; 
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        /* On smaller tablets, switch to a 2-column layout */
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        /* On mobile, stack all columns vertically */
+        grid-template-columns: 1fr;
+    }
+    .footer-about, .footer-column {
+        text-align: center;
+    }
+    .footer-about p {
+        padding-right: 0;
+    }
+    .footer-about .footer-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+/*footer section ends here */
+
+/*copy right stars here*/
+/* copy rights */
+.site-footer {
+            background-color: #212529; /* Dark charcoal background */
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-top-border {
+            height: 1px;
+            background-color: #3e3e3e; /* Subtle lighter grey line */
+            max-width: 1140px; /* Adjust to match your site's content width */
+            margin: 0 auto 40px; /* Center it and add space below */
+        }
+
+        .recognitions-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
+            gap: 40px; /* Space between logos */
+        }
+
+        .recognitions-container img {
+            max-height: 100px; /* Medium size for logos */
+            width: auto;
+            object-fit: contain; /* Ensures logos scale correctly without distortion */
+            transition: transform 0.3s ease; /* Smooth hover transition */
+        }
+
+        .recognitions-container img:hover {
+            transform: scale(1.1); /* Slight scale increase on hover */
+        }
+
+        .copyright-text {
+            margin-top: 30px;
+            color: #adb5bd; /* Light grey text color */
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .copyright-text p {
+            margin-left: 0;
+        }
+        
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .recognitions-container {
+                flex-direction: column; /* Stack logos vertically on mobile */
+                gap: 30px;
+                padding: 25px;
+            }
+
+            .recognitions-container img {
+                max-height: 85px; /* Adjusted for medium size on mobile */
+            }
+        }
+
+/*copy right section ends here */
