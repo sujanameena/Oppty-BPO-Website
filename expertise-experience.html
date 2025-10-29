@@ -316,6 +316,40 @@
                         </form>
                     </div>
                 </div>
+                <script>
+                    document.getElementById('contactForm').addEventListener('submit', function (e) {
+                        e.preventDefault();
+
+                        // Collect form data
+                        const formData = {
+                            name: document.getElementById('name').value,
+                            email: document.getElementById('email').value,
+                            phone: document.getElementById('phone').value,
+                            website: document.getElementById('website').value,
+                            requirements: document.getElementById('requirements').value
+                        };
+
+                        // For now, just log the data and show the success modal
+                        console.log('Contact Form Data:', formData);
+
+                        // Show the success modal
+                        document.getElementById('successModal').style.display = 'block';
+
+                        // Reset the form
+                        this.reset();
+                    });
+
+                    function closeModal() {
+                        document.getElementById('successModal').style.display = 'none';
+                    }
+
+                    // Close modal when clicking outside
+                    document.getElementById('successModal').addEventListener('click', function (e) {
+                        if (e.target === this) {
+                            closeModal();
+                        }
+                    });
+                </script>
             </div>
         </div>
 
@@ -326,14 +360,32 @@
                     <h4>Thank You!</h4>
                     <span class="close-modal" onclick="closeModal()">&times;</span>
                 </div>
-                <div class="modal-body">
-                    <p>Your message has been sent successfully. We'll get back to you soon!</p>
+                <div class="modal-body" style="color: #222; background: #fff; padding: 24px 16px; text-align: center;">
+                    <div style="font-size: 40px; color: #28a745; margin-bottom: 12px;">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <p style="font-size: 18px; margin: 0;">
+                        Your message has been sent successfully. We'll get back to you soon!
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <button class="modal-btn" onclick="closeModal()">Close</button>
                 </div>
             </div>
         </div>
+        <script>
+            // Ensure the event listener is attached after the modal exists in the DOM
+            document.addEventListener('DOMContentLoaded', function () {
+                var successModal = document.getElementById('successModal');
+                if (successModal) {
+                    successModal.addEventListener('click', function (e) {
+                        if (e.target === this) {
+                            closeModal();
+                        }
+                    });
+                }
+            });
+        </script>
     </section>
     <!-- eCommerce first page -->
     <div class="eCommerce-first-page-element">
