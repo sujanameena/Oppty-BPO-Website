@@ -971,7 +971,8 @@ iframe {
     text-align: center;
     font-size: clamp(2rem, 4vw, 2.5rem);
     font-weight: 700;
-    margin-bottom: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /* --- ARTICLES GRID --- */
