@@ -172,7 +172,7 @@ header {
 .number {
     /* width: 44px; */
     /* height: 44px; */
-    color: #bd1a29;
+    color: #f97216;
     /* display: inline-flex; */
     font-weight: bold;
     font-size: 24px;
@@ -247,7 +247,7 @@ header {
     /* padding: 60px 10%; */
     max-width: 1000px;
     margin: 0 auto;
-    color: #bd1a29;
+    color: #f97216;
     margin: 10px 0px 0px 0px;
     font-size: 32px;
     font-weight: bold;
@@ -311,7 +311,7 @@ header {
 .offer-step .step-title {
     margin: 10px 20px 15px;
     font-weight: 600;
-    color: #bd1a29;
+    color: #f97216;
     font-size: 24px;
     display: block;
     text-align: left;
