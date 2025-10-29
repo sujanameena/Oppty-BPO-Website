@@ -356,12 +356,10 @@
             <div class="section-header">
                 <h2>Client Success Stories</h2>
             </div>
-
-            <div class="slider-container">
-                <div class="slider-track" id="client-slider-track">
-
-                    <!-- SLIDE 1 -->
-                    <div class="client-slide">
+            <div class="client-slider-wrapper">
+                <div class="client-slider-track">
+                    <!-- Slide 1 -->
+                    <div class="client-slide active">
                         <div class="client-text">
                             <h3>How a Global Retailer Cut Operational Costs by 40% with Oppty BPO</h3>
                             <p>Discover how we transformed their supply chain and customer service operations using
@@ -369,21 +367,15 @@
                                 gains.</p>
                             <a href="#" class="link-arrow">Read More <span>&nearr;</span></a>
                         </div>
-                        <div class="video-container">
-                            <img src="assets/prince sir.jpeg" alt="Global Retail Success Story" class="client-image"
-                                style="width:90%;height:90%;">
-                            <!-- <video class="client-video" playsinline loop muted poster="assets/poster1.jpg">
-                <source src="assets/video1.mp4" type="video/mp4">
-              </video> -->
-                            <!-- <div class="play-button"></div> -->
+                        <div class="client-image-container">
+                            <img src="assets/prince sir.jpeg" alt="Global Retail Success Story" class="client-image">
                             <div class="client-info">
                                 <strong>PRINCE</strong>
                                 <span>CEO, OPPTY TECH HUB.</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- SLIDE 2 -->
+                    <!-- Slide 2 -->
                     <div class="client-slide">
                         <div class="client-text">
                             <h3>Major Healthcare Provider Improves Patient Satisfaction by 35%</h3>
@@ -392,21 +384,15 @@
                                 their network.</p>
                             <a href="#" class="link-arrow">Read More <span>&nearr;</span></a>
                         </div>
-                        <div class="video-container">
-                            <img src="assets/karthik.jpeg" alt="Healthcare Success Story" class="client-image"
-                                style="width:90%;height:90%;">
-                            <!-- <video class="client-video" playsinline loop muted poster="assets/poster2.jpg">
-                <source src="assets/video2.mp4" type="video/mp4">
-              </video> -->
-                            <!-- <div class="play-button"></div> -->
+                        <div class="client-image-container">
+                            <img src="assets/karthik.jpeg" alt="Healthcare Success Story" class="client-image">
                             <div class="client-info">
                                 <strong>KARTHIKEYA</strong>
                                 <span>ASSOCIATE DIRECTOR, OPPTY TECH HUB</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- SLIDE 3 -->
+                    <!-- Slide 3 -->
                     <div class="client-slide">
                         <div class="client-text">
                             <h3>Leading Airline Achieves 54% Chargeback Win Rate with Oppty BPO</h3>
@@ -415,13 +401,8 @@
                                 fraud.</p>
                             <a href="#" class="link-arrow">Read More <span>&nearr;</span></a>
                         </div>
-                        <div class="video-container">
-                            <img src="assets/sastry.jpeg.jpeg" alt="Airline Success Story" class="client-image"
-                                style="width:100%;height:100%;">
-                            <!-- <video class="client-video" playsinline loop muted poster="assets/poster3.jpg">
-                    <source src="assets/video3.mp4" type="video/mp4">
-                </video> -->
-                            <!-- <div class="play-button"></div> -->
+                        <div class="client-image-container">
+                            <img src="assets/sastry.jpeg.jpeg" alt="Airline Success Story" class="client-image">
                             <div class="client-info">
                                 <strong>SASTRY</strong>
                                 <span>DIRECTOR OF PLACEMENTS & OPERATIONS</span>
@@ -429,19 +410,158 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Controls -->
-            <div class="slider-controls">
-                <div class="slider-progress-bar">
-                    <div class="progress-inner" id="client-progress"></div>
-                </div>
-                <div class="slider-nav">
-                    <button id="client-prev" class="slider-button" aria-label="Previous Client">&larr;</button>
-                    <button id="client-next" class="slider-button" aria-label="Next Client">&rarr;</button>
+                <!-- Dots Navigation -->
+                <div class="client-slider-dots">
+                    <span class="client-dot active" data-index="0"></span>
+                    <span class="client-dot" data-index="1"></span>
+                    <span class="client-dot" data-index="2"></span>
                 </div>
             </div>
         </div>
+        <style>
+            .client-carousel-section {
+                background: #181c24;
+                padding: 60px 0 40px 0;
+            }
+            .client-slider-wrapper {
+                max-width: 1100px;
+                margin: 0 auto;
+                position: relative;
+            }
+            .client-slider-track {
+                display: flex;
+                transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+                width: 100%;
+            }
+            .client-slide {
+                background: #232733;
+                border-radius: 18px;
+                box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                min-width: 100%;
+                max-width: 100%;
+                padding: 36px 32px;
+                opacity: 0;
+                pointer-events: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            .client-slide.active {
+                opacity: 1;
+                pointer-events: auto;
+                position: relative;
+            }
+            .client-text {
+                flex: 1 1 340px;
+                min-width: 260px;
+                margin-right: 32px;
+            }
+            .client-text h3 {
+                color: #fff;
+                font-size: 1.35rem;
+                margin-bottom: 12px;
+            }
+            .client-text p {
+                color: #d2d6e0;
+                margin-bottom: 18px;
+            }
+            .client-image-container {
+                flex: 0 0 220px;
+                text-align: center;
+            }
+            .client-image {
+                width: 170px;
+                height: 170px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid #f76e11;
+                margin-bottom: 12px;
+                background: #fff;
+            }
+            .client-info {
+                color: #fff;
+                font-size: 1rem;
+                text-align: center;
+            }
+            .client-info strong {
+                display: block;
+                font-size: 1.08rem;
+                color: #f76e11;
+            }
+            .client-info span {
+                font-size: 0.95rem;
+                color: #000000;
+            }
+            .client-slider-dots {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 28px;
+                gap: 12px;
+            }
+            .client-dot {
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background: #ccc;
+                cursor: pointer;
+                transition: background 0.2s;
+                display: inline-block;
+            }
+            .client-dot.active {
+                background: #f76e11;
+            }
+            @media (max-width: 900px) {
+                .client-slide {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 28px 14px;
+                }
+                .client-text {
+                    margin-right: 0;
+                    margin-bottom: 18px;
+                }
+                .client-image-container {
+                    margin: 0 auto;
+                }
+            }
+            @media (max-width: 600px) {
+                .client-slide {
+                    padding: 18px 4px;
+                }
+                .client-image {
+                    width: 120px;
+                    height: 120px;
+                }
+            }
+        </style>
+        <script>
+            (function () {
+                const slides = document.querySelectorAll('.client-slide');
+                const dots = document.querySelectorAll('.client-dot');
+                let current = 0;
+
+                function showSlide(idx) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle('active', i === idx);
+                    });
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === idx);
+                    });
+                    current = idx;
+                }
+
+                dots.forEach((dot, idx) => {
+                    dot.addEventListener('click', () => showSlide(idx));
+                });
+
+                showSlide(0);
+            })();
+        </script>
     </section>
 
     <!--Images hover section-->

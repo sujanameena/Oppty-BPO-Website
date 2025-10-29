@@ -574,7 +574,7 @@ body {
 .client-carousel-section {
   padding: 100px 0;
   background: var(--light-bg);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .content-container {
