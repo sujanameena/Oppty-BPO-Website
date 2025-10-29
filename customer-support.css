@@ -356,7 +356,7 @@ iframe {
 /* hero section ends here*/
 
 
-/*what we do section starts here*/
+/* /*what we do section starts here*/
 
 /* --- FOURTH PAGE SECTION --- */
 .fourth-page-container {
@@ -474,7 +474,6 @@ iframe {
     opacity: 0;
 }
 
-/* --- OVERLAY TEXT + BUTTON --- */
 .hover-image-overlay-text {
     color: #e0e0e0;
     font-size: 13px;
@@ -525,6 +524,12 @@ iframe {
         font-size: 1.6rem;
     }
 
+  .hover-image-row {
+    gap: 20px;
+    margin-top: 50px;
+  }
+} 
+/*what we do section ends here*/ 
     .hover-image-row {
         gap: 20px;
         margin-top: 50px;

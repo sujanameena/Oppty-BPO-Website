@@ -9,13 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Insight section loaded successfully.');
 });
-//what we do section
+//what we do section starts here
  document.querySelectorAll('.hover-image-read-more').forEach(function(btn) {
             btn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 // Add your logic here, e.g., open modal or navigate
             });
         });
+//what we do section ends here
 //sliding section for images
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('cx-slider');
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Set initial state
     updateProgress();
-});
+}); 
 
 //video slider section
 
