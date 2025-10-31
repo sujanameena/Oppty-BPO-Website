@@ -1,3 +1,27 @@
+ /* phones */
+ /* @media only screen and (min-width: 601px) and (max-width: 768px) {
+     body {
+         width: 100%;
+         height: auto;
+     }
+ } */
+
+ /* tablet */
+ /* @media only screen and (min-width: 769px) and (max-width: 1024px) {
+     body {
+         width: 100%;
+         height: auto;
+     }
+ } */
+
+ /* desktop */
+ /* @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+     body {
+         width: 100%;
+         height: auto;
+     }
+ } */
+
  .animation-container {
      position: relative;
      height: 20em;
@@ -324,6 +348,7 @@
      }
  }
 
+
  /* Awards & Recognition */
  .awards-section {
      padding: 80px 0;
@@ -400,7 +425,7 @@
 
  @media (max-width: 768px) {
      .awards-section {
-         padding: 60px 0;
+         padding: 50px 0;
      }
 
      .awards-heading {
@@ -1257,262 +1282,275 @@
      letter-spacing: 2px;
      margin: 200px 0px 0 70px;
  }
+
  /* Environment Health  */
  .environment-content {
-    padding: 32px 24px 32px 0;
-}
-
-.environment-heading {
-    font-size: 30px;
-    font-weight: 700;
-    color: #f97216;
-    margin-bottom: 18px;
-    font-family: Poppins, sans-serif;
-}
-
-.environment-paragraph {
-    font-size: 1.1rem;
-    color: #444;
-    margin-bottom: 14px;
-    line-height: 1.7;
-    font-family: Poppins, sans-serif;
-}
-
-.environment-image-container {
-    text-align: center;
-    padding: 24px 0 24px 24px;
-}
-
-.environment-image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(46, 125, 50, 0.12);
-    border: 2px solid #e0f2f1;
-}
-
-/* Responsive adjustments */
-@media (max-width: 991.98px) {
-    .environment-content {
-        padding: 24px 0;
-        text-align: center;
-    }
-    .environment-image-container {
-        padding: 24px 0 0 0;
-    }
-}
-/* Waste Management */
-.waste-management-section {
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
-.waste-management-content {
      padding: 32px 24px 32px 0;
-}
-.waste-heading {
-    font-size: 2.2rem;
-    font-weight: 700;
-    color: #f97216;
-    margin-bottom: 18px;
-    font-family: Poppins, sans-serif;
-}
-.waste-paragraph {
-    font-size: 1.1rem;
-    color: #444;
-    margin-bottom: 16px;
-    font-family: Poppins, sans-serif;
-}
-.waste-dot-list {
-    list-style: disc inside;
-    margin-bottom: 16px;
-    padding-left: 18px;
-}
-.waste-dot-text {
-    font-size: 1rem;
-    color: #222;
-    margin-bottom: 8px;
-}
-.waste-management-image-container {
-    text-align: center;
-    padding: 20px;
-}
-.waste-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(46, 125, 50, 0.12);
-}
-@media (max-width: 991px) {
-    .waste-management-section {
-        flex-direction: column;
-    }
-    .waste-management-content,
-    .waste-management-image-container {
-        padding: 10px 0;
-    }
-}
-/*footer section*/
-.site-footer {
-    background-color: black;
-    color: #ffffff;
-    padding: 80px 0;
-    font-size: 1rem;
-}
+ }
 
-.footer-container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 24px;
-    width: 100%;
-}
+ .environment-heading {
+     font-size: 30px;
+     font-weight: 700;
+     color: #f97216;
+     margin-bottom: 18px;
+     font-family: Poppins, sans-serif;
+ }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1.5fr 1.5fr 1fr 1fr;
-    gap: 40px;
-}
+ .environment-paragraph {
+     font-size: 1.1rem;
+     color: #444;
+     margin-bottom: 14px;
+     line-height: 1.7;
+     font-family: Poppins, sans-serif;
+ }
 
-/* --- Column 1: About --- */
-.footer-about .footer-logo {
-    max-width: 150px;
-    margin-bottom: 20px;
-}
+ .environment-image-container {
+     text-align: center;
+     padding: 24px 0 24px 24px;
+ }
 
-.footer-about p {
-    color: var(--text-secondary);
-    line-height: 1.7;
-    padding-right: 20px;
-}
+ .environment-image-container img {
+     max-width: 100%;
+     height: auto;
+     border-radius: 16px;
+     box-shadow: 0 4px 24px rgba(46, 125, 50, 0.12);
+     border: 2px solid #e0f2f1;
+ }
 
-/* --- General Column Styling --- */
-.footer-column h4 {
-    color: var(--primary-orange);
-    font-weight: 700;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-}
+ /* Responsive adjustments */
+ @media (max-width: 991.98px) {
+     .environment-content {
+         padding: 24px 0;
+         text-align: center;
+     }
 
-.footer-column p,
-.footer-column li {
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 10px;
-}
+     .environment-image-container {
+         padding: 24px 0 0 0;
+     }
+ }
 
-.footer-column a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+ /* Waste Management */
+ .waste-management-section {
+     margin-top: 60px;
+     margin-bottom: 60px;
+ }
 
-.footer-column a:hover {
-    color: var(--text-light);
-}
+ .waste-management-content {
+     padding: 32px 24px 32px 0;
+ }
 
-.footer-column ul {
-    list-style: none;
-}
+ .waste-heading {
+     font-size: 2.2rem;
+     font-weight: 700;
+     color: #f97216;
+     margin-bottom: 18px;
+     font-family: Poppins, sans-serif;
+ }
 
-/* --- RESPONSIVE ADJUSTMENTS --- */
-@media (max-width: 1024px) {
-    .footer-grid {
-        /* On tablets, switch to a 3-column layout */
-        grid-template-columns: repeat(3, 1fr);
-    }
+ .waste-paragraph {
+     font-size: 1.1rem;
+     color: #444;
+     margin-bottom: 16px;
+     font-family: Poppins, sans-serif;
+ }
 
-    .footer-about {
-        /* Make the 'about' section span all 3 columns */
-        grid-column: 1 / -1;
-    }
-}
+ .waste-dot-list {
+     list-style: disc inside;
+     margin-bottom: 16px;
+     padding-left: 18px;
+ }
 
-@media (max-width: 768px) {
-    .footer-grid {
-        /* On smaller tablets, switch to a 2-column layout */
-        grid-template-columns: 1fr 1fr;
-    }
-}
+ .waste-dot-text {
+     font-size: 1rem;
+     color: #222;
+     margin-bottom: 8px;
+ }
 
-@media (max-width: 576px) {
-    .footer-grid {
-        /* On mobile, stack all columns vertically */
-        grid-template-columns: 1fr;
-    }
+ .waste-management-image-container {
+     text-align: center;
+     padding: 20px;
+ }
 
-    .footer-about,
-    .footer-column {
-        text-align: center;
-    }
+ .waste-image {
+     max-width: 100%;
+     height: auto;
+     border-radius: 12px;
+     box-shadow: 0 2px 12px rgba(46, 125, 50, 0.12);
+ }
 
-    .footer-about p {
-        padding-right: 0;
-    }
+ @media (max-width: 991px) {
+     .waste-management-section {
+         flex-direction: column;
+     }
 
-    .footer-about .footer-logo {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
+     .waste-management-content,
+     .waste-management-image-container {
+         padding: 10px 0;
+     }
+ }
 
-/* copy rights */
-.site-footer {
-    background-color: #212529;
-    padding: 40px 20px;
-    text-align: center;
-}
+ /*footer section*/
+ .site-footer {
+     background-color: black;
+     color: #ffffff;
+     padding: 80px 0;
+     font-size: 1rem;
+ }
 
-.footer-top-border {
-    height: 1px;
-    background-color: #3e3e3e;
-    max-width: 1140px;
-    margin: 0 auto 40px;
-}
+ .footer-container {
+     max-width: 1280px;
+     margin: 0 auto;
+     padding: 0 24px;
+     width: 100%;
+ }
 
-.recognitions-container {
-    background-color: #ffffff;
-    border-radius: 12px;
-    padding: 30px 40px;
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
+ .footer-grid {
+     display: grid;
+     grid-template-columns: 2fr 1.5fr 1.5fr 1fr 1fr;
+     gap: 40px;
+ }
 
-.recognitions-container img {
-    max-height: 100px;
-    width: auto;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
+ /* --- Column 1: About --- */
+ .footer-about .footer-logo {
+     max-width: 150px;
+     margin-bottom: 20px;
+ }
 
-.recognitions-container img:hover {
-    transform: scale(1.1);
-}
+ .footer-about p {
+     color: var(--text-secondary);
+     line-height: 1.7;
+     padding-right: 20px;
+ }
 
-.copyright-text {
-    margin-top: 30px;
-    color: #adb5bd;
-    font-size: 18px;
-    text-align: left;
-}
+ /* --- General Column Styling --- */
+ .footer-column h4 {
+     color: var(--primary-orange);
+     font-weight: 700;
+     font-size: 1.1rem;
+     text-transform: uppercase;
+     margin-bottom: 25px;
+ }
 
-.copyright-text p {
-    margin-left: 0;
-}
+ .footer-column p,
+ .footer-column li {
+     color: var(--text-secondary);
+     line-height: 1.8;
+     margin-bottom: 10px;
+ }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-    .recognitions-container {
-        flex-direction: column;
-        gap: 30px;
-        padding: 25px;
-    }
+ .footer-column a {
+     color: var(--text-secondary);
+     text-decoration: none;
+     transition: color 0.3s ease;
+ }
 
-    .recognitions-container img {
-        max-height: 85px;
-    }
-}
+ .footer-column a:hover {
+     color: var(--text-light);
+ }
+
+ .footer-column ul {
+     list-style: none;
+ }
+
+ /* --- RESPONSIVE ADJUSTMENTS --- */
+ @media (max-width: 1024px) {
+     .footer-grid {
+         /* On tablets, switch to a 3-column layout */
+         grid-template-columns: repeat(3, 1fr);
+     }
+
+     .footer-about {
+         /* Make the 'about' section span all 3 columns */
+         grid-column: 1 / -1;
+     }
+ }
+
+ @media (max-width: 768px) {
+     .footer-grid {
+         /* On smaller tablets, switch to a 2-column layout */
+         grid-template-columns: 1fr 1fr;
+     }
+ }
+
+ @media (max-width: 576px) {
+     .footer-grid {
+         /* On mobile, stack all columns vertically */
+         grid-template-columns: 1fr;
+     }
+
+     .footer-about,
+     .footer-column {
+         text-align: center;
+     }
+
+     .footer-about p {
+         padding-right: 0;
+     }
+
+     .footer-about .footer-logo {
+         margin-left: auto;
+         margin-right: auto;
+     }
+ }
+
+ /* copy rights */
+ .site-footer {
+     background-color: #212529;
+     padding: 40px 20px;
+     text-align: center;
+ }
+
+ .footer-top-border {
+     height: 1px;
+     background-color: #3e3e3e;
+     max-width: 1140px;
+     margin: 0 auto 40px;
+ }
+
+ .recognitions-container {
+     background-color: #ffffff;
+     border-radius: 12px;
+     padding: 30px 40px;
+     max-width: 900px;
+     margin: 0 auto;
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: 40px;
+ }
+
+ .recognitions-container img {
+     max-height: 100px;
+     width: auto;
+     object-fit: contain;
+     transition: transform 0.3s ease;
+ }
+
+ .recognitions-container img:hover {
+     transform: scale(1.1);
+ }
+
+ .copyright-text {
+     margin-top: 30px;
+     color: #adb5bd;
+     font-size: 18px;
+     text-align: left;
+ }
+
+ .copyright-text p {
+     margin-left: 0;
+ }
+
+ /* Responsive design for smaller screens */
+ @media (max-width: 768px) {
+     .recognitions-container {
+         flex-direction: column;
+         gap: 30px;
+         padding: 25px;
+     }
+
+     .recognitions-container img {
+         max-height: 85px;
+     }
+ }

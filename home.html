@@ -107,12 +107,21 @@
                         to
                         a trustworthy source, like, Oppty BPO.
                     </p>
-                    <button class="hero-read-more-btn">
+                    <button class="hero-read-more-btn" id="heroReadMoreBtn">
                         Read More
                         <span class="hero-arrow">
                             <i class="fa fa-arrow-up"></i>
                         </span>
                     </button>
+                    <script>
+                        var btn = document.getElementById('heroReadMoreBtn');
+                        if (btn) {
+                            btn.addEventListener('click', function () {
+                                // Replace with your desired action, e.g. scroll or open a section
+                                window.location.href = 'about-us.html';
+                            });
+                        }
+                    </script>
                 </div>
             </div>
         </div>
